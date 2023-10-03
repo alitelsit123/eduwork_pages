@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Eduwork</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body class="bg-[#f8f9fa] text-[#404040] font-reguler">
+
+    <!-- Navbar section -->
+    <div class="fixed bg-white w-full h-[80px] left-0 top-0 z-40">
+        <nav class="absolute mx-[15%] w-[70%] h-[80px] ml-3/6 top-0 z-50">
+            <div class="absolute w-full my-[10px] left-0 top-[20px] z-60">
+                <img class="absolute float-left w-[154px] h-[31px] left-0" src="../images/Nav logo.png" alt="">
+                <menu class="absolute flex mx-[35%] p-[4px] font-semibold text-[14px] ">
+
+                    <div class="flex justify-center">
+                        <div
+                            x-data="{
+                                open: false,
+                                toggle() {
+                                    if (this.open) {
+                                        return this.close()
+                                    }
+                    
+                                    this.$refs.button.focus()
+                    
+                                    this.open = true
+                                },
+                                close(focusAfter) {
+                                    if (! this.open) return
+                    
+                                    this.open = false
+                    
+                                    focusAfter && focusAfter.focus()
+                                }
+                            }"
+                            x-on:keydown.escape.prevent.stop="close($refs.button)"
+                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                            x-id="['dropdown-button']"
+                            class="relative"
+                        >
+                            <!-- Button -->
+                            <button
+                                x-ref="button"
+                                x-on:click="toggle()"
+                                :aria-expanded="open"
+                                :aria-controls="$id('dropdown-button')"
+                                type="button"
+                                class="flex items-center gap-2 px-5 pb-2.5"
+                            >
+                            Kelas                    
+                                <!-- Heroicon: chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                    
+                            <!-- Panel -->
+                            <div
+                                x-ref="panel"
+                                x-show="open"
+                                x-transition.origin.top.left
+                                x-on:click.outside="close($refs.button)"
+                                :id="$id('dropdown-button')"
+                                style="display: none;"
+                                class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter"
+                            >
+                                <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    Reguler
+                                </a>
+                    
+                                <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    Kelass
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div
+                            x-data="{
+                                open: false,
+                                toggle() {
+                                    if (this.open) {
+                                        return this.close()
+                                    }
+                    
+                                    this.$refs.button.focus()
+                    
+                                    this.open = true
+                                },
+                                close(focusAfter) {
+                                    if (! this.open) return
+                    
+                                    this.open = false
+                    
+                                    focusAfter && focusAfter.focus()
+                                }
+                            }"
+                            x-on:keydown.escape.prevent.stop="close($refs.button)"
+                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                            x-id="['dropdown-button']"
+                            class="relative"
+                        >
+                            <!-- Button -->
+                            <button
+                                x-ref="button"
+                                x-on:click="toggle()"
+                                :aria-expanded="open"
+                                :aria-controls="$id('dropdown-button')"
+                                type="button"
+                                class="flex items-center gap-2 px-5 pb-2.5"
+                            >
+                            Mentor
+                                <!-- Heroicon: chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                    
+                            <!-- Panel -->
+                            <div
+                                x-ref="panel"
+                                x-show="open"
+                                x-transition.origin.top.left
+                                x-on:click.outside="close($refs.button)"
+                                :id="$id('dropdown-button')"
+                                style="display: none;"
+                                class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter"
+                            >
+                                <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    Mentor
+                                </a>
+                    
+                                <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    Mentorr
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center">
+                        <div
+                            x-data="{
+                                open: false,
+                                toggle() {
+                                    if (this.open) {
+                                        return this.close()
+                                    }
+                    
+                                    this.$refs.button.focus()
+                    
+                                    this.open = true
+                                },
+                                close(focusAfter) {
+                                    if (! this.open) return
+                    
+                                    this.open = false
+                    
+                                    focusAfter && focusAfter.focus()
+                                }
+                            }"
+                            x-on:keydown.escape.prevent.stop="close($refs.button)"
+                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                            x-id="['dropdown-button']"
+                            class="relative"
+                        >
+                            <!-- Button -->
+                            <button
+                                x-ref="button"
+                                x-on:click="toggle()"
+                                :aria-expanded="open"
+                                :aria-controls="$id('dropdown-button')"
+                                type="button"
+                                class="flex items-center gap-2 px-5 pb-2.5"
+                            >
+                            Company                    
+                                <!-- Heroicon: chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                    
+                            <!-- Panel -->
+                            <div
+                                x-ref="panel"
+                                x-show="open"
+                                x-transition.origin.top.left
+                                x-on:click.outside="close($refs.button)"
+                                :id="$id('dropdown-button')"
+                                style="display: none;"
+                                class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter"
+                            >
+                                <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    Start-up
+                                </a>
+                    
+                                <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    Corporate
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </menu>
+                <menu class="absolute right-0 font-medium text-center text-[14px]">
+                    <button class="text-white bg-[#187cff] py-[9.5px] px-[20px] rounded-md mr-2 ">Login</button>
+                    <button class="text-white bg-[#187cff] py-[9.5px] px-[20px] rounded-md">Register</button>
+                </menu>
+            </div>
+        </nav>
+        <div class="absolute w-full h-[89px] left-0 right-0 top-0 bg-white bottom-[-11.25%] shadow-md "></div>
+    </div>
+    <!-- End of Navbar section -->
+
+    <!-- Main section -->
+    <section id="Hero" class="w-full h-[680px] mt-[80px] bg-[url('../images/reza-5.png')] bg-no-repeat ">
+        <div class="absolute mx-[15%] w-[70%] h-[680px] pt-[154px] top-0 left-0">
+            <div class="row w-fit h-fit">
+                <h1 class="font-bold w-[372px]  leading-[120%] text-[40px]">Pelatihan dan Penyaluran kerja.</h1>
+                <div class="flex-col w-[418px] h-[233px] mt-[65px]">
+                    <div class=" w-fit h-fit float-left mr-[14.27px]">
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] mb-[6px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">1</div>
+                            <div class="flex w-[37.73px] h-[50.38px] text-center py-[8.20276px 16.4055px] justify-center items-center"><div class="arrow"></div></div>
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] mb-[6px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">2</div>
+                            <div class="flex w-[37.73px] h-[50.38px] text-center py-[8.20276px 16.4055px] justify-center items-center"><div class="arrow"></div></div>
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">3</div>
+                    </div>
+                    <div class=" w-[418px] h-fit tracking-[0.01em]">
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Coba Daftar Gratis</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px] mb-[31px]">Mari bergabung dengan komunitas biro jodoh kami, dijamin dapat pasangan High Definition</p>
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Belajar Intensif</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px] mb-[30px]">Belajar urus diri sendiri, jangan jadi beban keluarga terus</p>
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Disalurkan kerja</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px]">Dapatkan gaji 10juta lebih</p>
+                    </div>
+                </div>
+                <h4 class="font-semibold mt-[40px] text-[16px] leading-6 tracking-[1%]">Mari bergabung !</h4>
+            </div>
+        </div>
+
+        <div class="absolute w-full h-[249px] mt-[15px] top-[617px]">
+            <button class="ml-[15%] px-[34px] py-[11px] rounded-[5px] font-medium text-[14px] bg-[#187cff] text-[#f6fcff] mr-[22px] ">Daftar</button>
+            <button class="px-[19px] py-[11px] rounded-[5px] font-medium text-[14px] bg-[#ffd200] ">Konsultasi Dulu</button>
+            <h4 class="absolute ml-[15%] mt-[29px] text-[16px] font-normal z-10" ><span class="font-bold">2,324</span> Students & <span class="font-bold">182</span> Mentors has joined!</h4>
+            <div class="absolute top-[40px] w-full h-[328.26px] z-[9]">
+                <div class="wave"></div>
+            </div>
+            <div class="absolute w-[80%] h-[137px] mx-[10%] mt-[91px] bg-white border border-white rounded-[10px] shadow-filter z-10">
+                <h4 class="mt-[1%] ml-[6%] font-semibold text-[16px] leading-[24px] tracking-[0.01em]">Cari menggunakan filter</h4>
+                <div class="flex flex-row p-0 mt-[17px] ml-[6%] mr-[6%] w-fit h-fit">
+                    <select class="py-[11px] pl-[16px] px-[49px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Kategori</option>
+                    </select>
+                    <select class="py-[11px] pl-[16px] px-[12px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Materi Kelas</option>
+                    </select>
+                    <select class="py-[11px] pl-[16px] px-[12px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Harga</option>
+                    </select>
+                    <select class="py-[11px] pl-[16px] px-[12px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Pembayaran</option>
+                    </select>
+                    <select class="py-[11px] pl-[16px] px-[12px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Lokasi</option>
+                    </select>
+                    <p class="py-[11px] pl-[16px] px-[12px] mr-[13px] font-bold color-[#6c6e71]">More</p>
+                    <button class="py-[11px] px-[64px] font-bold color-[#6c6e71] mr-[13px] bg-[#ffd200] rounded-[20px]">Cari</button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PARTNER -->
+    <section class="w-[90%] ml-[10%] h-[70px] mt-[171px] mb-[74px] p-5">
+        <h4 class="w-[177px] h-[70px] text-[24px] font-medium leading-[28.56px] mr-[74px] float-left"><span class="text-[36px] font-semibold text-[#187cff]">Our 100+ </span>Hiring Partner</h4>
+        <div class="flex overflow-x-auto mr-[61.05px]">
+            <div class="min-w-[110px] mr-[61.05px]"><img src=".././images/logo/1.jpg" alt=""></div>
+            <div class="min-w-[110px] mr-[61.05px]"><img src=".././images/logo/2.jpg" alt=""></div>
+            <div class="min-w-[110px] mr-[61.05px]"><img src=".././images/logo/3.jpg" alt=""></div>
+            <div class="min-w-[110px] mr-[61.05px]"><img src=".././images/logo/4.jpg" alt=""></div>
+            <div class="min-w-[110px] mr-[61.05px]"><img src=".././images/logo/5.jpg" alt=""></div>
+            <div class="min-w-[110px] mr-[61.05px]"><img src=".././images/logo/6.jpg" alt=""></div>
+            <div class="min-w-[110px] mr-[61.05px]"><img src=".././images/logo/7.jpg" alt=""></div>
+            <div class="min-w-[110px] mr-[61.05px]"><img src=".././images/logo/8.jpg" alt=""></div>
+        </div>
+    </section>
+    <!-- End of Partner -->
+
+    <!-- Categories -->
+    <section class="w-[70%] mx-[15%] h-[386px]  mb-[65px]">
+        <h4 class="text-center text-[#187cff] text-[20px] font-medium">Categories</h4>
+        <h4 class="px-[20%] text-[24px] font-semibold text-center leading-[36px] mt-[14.7px] mb-[40.3px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero excepturi quod iure.</h4>
+        <div class="flex flex-row w-full h-[242px] gap-[52px]">
+            <div class="w-[214.25px] h-full bg-white rounded-[10px] px-[30px] shadow-card">
+                <div class="w-[48px] h-[45px] mt-[17px] mb-[16px] bg-[#187cff] pt-[6.7px] px-[9px] bg-opacity-20 rounded-[5px]">
+                    <img src=".././images/icon/Writer female.png" alt="">
+                </div>
+                <p class="font-normal text-[12px] leading-[18px]">Penyaluran Kerja</p>
+                <h1 class="font-[600] text-[20px] leading-[30px] mb-[2px]">ISA</h1>
+                <p class="font-normal text-[12px] text-[#828282] leading-[15.6px]">Belajar dulu bayar setelah berpenghasilan</p>
+                <button class="w-full mt-[22px] py-[10px] bg-[#187cff] text-white text-[12px] rounded-[5px]">Lihat Kelas</button>
+            </div>
+
+            <div class="w-[214.25px] h-full bg-white rounded-[10px] px-[30px] shadow-card">
+                <div class="w-[48px] h-[45px] mt-[17px] mb-[16px] bg-[#FFCE4F] pt-[6.7px] px-[9px] bg-opacity-20 rounded-[5px]">
+                    <img src=".././images/icon/Coin Wallet.png" alt="">
+                </div>
+                <p class="font-normal text-[12px] leading-[18px]">Course</p>
+                <h1 class="font-[600] text-[20px] leading-[30px] mb-[2px]">Reguler</h1>
+                <p class="font-normal text-[12px] leading-[15.6px] text-[#828282]">Diskon 50% bisa dicicil 6 bulan</p>
+                <button class="w-full mt-[22px] py-[10px] bg-[#187cff] text-white text-[12px] rounded-[5px]">Lihat Kelas</button>
+            </div>
+
+            <div class="w-[214.25px] h-full bg-white rounded-[10px] px-[30px] shadow-card">
+                <div class="w-[48px] h-[45px] mt-[17px] mb-[16px] bg-[#00C264] pt-[6.7px] px-[9px] bg-opacity-20 rounded-[5px]">
+                    <img src=".././images/icon/Google Forms New Logo.png" alt="">
+                </div>
+                <p class="font-normal text-[12px] leading-[18px]">Minibootcamp</p>
+                <h1 class="font-[600] text-[20px] leading-[30px] mb-[2px]">&lt; Rp 500.000</h1>
+                <p class="font-normal text-[12px] leading-[15.6px] text-[#828282]">Belajar dasar selama 1 bulan</p>
+                <button class="w-full mt-[22px] py-[10px] bg-[#187cff] text-white text-[12px] rounded-[5px]">Lihat Kelas</button>
+            </div>
+
+            <div class="w-[214.25px] h-full bg-white rounded-[10px] px-[30px] shadow-card">
+                <div class="w-[48px] h-[45px] mt-[17px] mb-[16px] bg-[#FF5C00] pt-[6.7px] px-[9px] bg-opacity-20 rounded-[5px]">
+                    <img src=".././images/icon/Bookmark.png" alt="">
+                </div>
+                <p class="font-normal text-[12px] leading-[18px]">Gratis</p>
+                <h1 class="font-[600] text-[20px] leading-[30px] mb-[2px]">Webinar</h1>
+                <p class="font-normal text-[12px] leading-[15.6px] text-[#828282]">Belajar dasar selama 1 - 2 hari</p>
+                <button class="w-full mt-[22px] py-[10px] bg-[#187cff] text-white text-[12px] rounded-[5px]">Lihat Kelas</button>
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Categories -->
+
+    <!-- Thumbnails -->
+    <section class="w-[70%] h-fit mx-[15%] mb-[80px]">
+        <iframe class="w-full h-[498px] rounded-[20px] " src="https://www.youtube.com/embed/co-phhoeRBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <!-- End of Thumbnails -->
+
+    <!-- Program -->
+    <section class=" mb-[97.54px]">
+        <div class="w-[70%] h-fit mx-[15%]">
+            <h4 class=" text-[24px] font-semibold text-center leading-[36px]">Dapatkan akses gratis ke kelas utama</h4>
+        </div>
+
+        <div class="w-[90%] mr-[10%] h-[598.76px] bg-gradasi">
+            <div class="h-[557.18px] bg-[url('../images/bg-program.png')] bg-no-repeat rounded-r-[30px]">
+                <div class="absolute w-fit h-fit ml-[10%] mt-[48px]">
+                    <div class="flex flex-row w-fit h-fit gap-[30px]">
+                        <div class="w-[320px] h-[423.95px] bg-white rounded-[8px] shadow-card2"></div>
+                        <div class="w-[320px] h-[423.95px] bg-white rounded-[8px] shadow-card2"></div>
+                        <div class="w-[320px] h-[423.95px] bg-white rounded-[8px] shadow-card2"></div>
+                    </div>
+                    
+                    <button class="absolute flex flex-row items-start content-center ml-[45%] mt-[64.05px] rounded-[8px] font-semibold text-[14px] bg-[#ffe13e] px-[32.61px] py-[9.78px]">Lihat lainnya</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Program -->
+    <!-- End of Main section -->
+
+    <!-- Footer section -->
+    <!-- End of Footer section -->
+
+    <!-- JS -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="vue.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <title>EduWork - Testimoni Contributor</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+    <style>
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 34px;
+      }
+      .swiper-slider {
+        width: 900px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#f6fcff] text-[#404040] font-poppins">
+    <!-- Navabar -->
+    <nav class="z-50" id="navbar">
+      <div class="w-[90%] lg:w-[1016px] container mx-auto py-2 md:py-4">
+        <div
+          class="container flex flex-wrap items-center justify-between mx-auto"
+        >
+          <a href="index.html" class="flex items-center">
+            <img
+              class="h-6 sm:h-7"
+              src="./images/logo/favicon.png"
+              alt="Eduwork Logo"
+            />
+          </a>
+          <div class="flex gap-3 md:order-2">
+            <button
+              type="button"
+              class="text-white hidden md:block bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              class="text-white hidden md:block bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+            >
+              Register
+            </button>
+            <button
+              data-collapse-toggle="navbar-sticky"
+              type="button"
+              class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-sticky"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            id="navbar-sticky"
+          >
+            <ul
+              class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row gap-[10px] md:gap-[40px] md:mt-0 md:text-sm md:font-semibold md:border-0 md:bg-transparent"
+            >
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent"
+              >
+                Kelas
+                <svg
+                  class="w-5 h-5 ml-1"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44"
+              >
+                <ul
+                  class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Regular</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Kelas</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownMentor"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent"
+              >
+                Mentor
+                <svg
+                  class="w-5 h-5 ml-1"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="dropdownMentor"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44"
+              >
+                <ul
+                  class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Mentor</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Mentor</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownCompany"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent"
+              >
+                Company
+                <svg
+                  class="w-5 h-5 ml-1"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="dropdownCompany"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44 !mb-5"
+              >
+                <ul
+                  class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Partner</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Partner</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownEduplus"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent"
+              >
+                Eduplus
+                <svg
+                  class="w-5 h-5 ml-1"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="dropdownEduplus"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44 !mb-5"
+              >
+                <ul
+                  class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Partner</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Partner</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                class="text-white block md:hidden bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                class="text-white block md:hidden bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+              >
+                Register
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero -->
+    <div
+      class="relative w-[90%] lg:w-[1016px] flex flex-col md:flex-row container justify-between gap-5 items-center mx-auto z-40 mt-[100px] md:mt-[150px]"
+    >
+      <h1
+        class="text-[25px] font-montserrat md:text-[36px] text-[#737373] w-full md:w-[520px]"
+      >
+        See Them in Various Stories of
+        <span class="font-semibold text-black"
+          >Internship Experiences at Eduwork.</span
+        >
+      </h1>
+      <div class="w-full md:w-[347px]">
+        <p class="text-[#737373] text-[16px]">
+          Internship Eduwork as a step towards achieving a dream career. Join us
+          and get an interesting experience.
+        </p>
+        <button
+          class="flex bg-primary gap-[10px] mt-5 justify-center w-full md:w-[256px] py-[14px] px-[35px] rounded-[10px] text-[16px] font-medium text-white"
+        >
+          <img loading="lazy" src="./images/icon/Play.png" alt="play" />
+          Join Internship
+        </button>
+      </div>
+    </div>
+    <!-- Hero -->
+    <img
+      src="./images/contributor/bg-hero-contributor.png"
+      alt=""
+      class="w-full object-contain mt-[50px]"
+    />
+    <!-- Statistik -->
+    <div
+      class="w-[90%] lg:w-[1016px] container mx-auto mt-[50px] flex flex-col md:flex-row justify-between items-center gap-6"
+    >
+      <div>
+        <h1 class="font-semibold text-[35px] md:text-[50px] text-primary">
+          5000+
+        </h1>
+        <p>
+          Banyak yang mendapat pengalaman dan pemahaman baru di dunia kerja
+          secara nyata.
+        </p>
+      </div>
+      <div class="w-full md:w-[2px] h-[1px] md:h-[137px] bg-black/20"></div>
+      <div>
+        <h1 class="font-semibold text-[35px] md:text-[50px] text-primary">
+          4500+
+        </h1>
+        <p>
+          Peserta internship mendapatkan portofolio yang professional di Eduwork
+          dan Upscale.
+        </p>
+      </div>
+      <div class="w-full md:w-[2px] h-[1px] md:h-[137px] bg-black/20"></div>
+      <div>
+        <h1 class="font-semibold text-[35px] md:text-[50px] text-primary">
+          1500+
+        </h1>
+        <p>
+          Peserta Intership mengikuti Leadership Impact plus dan mendapatkan
+          case study program.
+        </p>
+      </div>
+    </div>
+    <!-- Contributor -->
+    <div
+      class="relative w-[90%] lg:w-[1016px] flex flex-col container mx-auto z-40 mt-[50px] md:mt-[100px]"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center mb-[50px] gap-6"
+      >
+        <div
+          class="flex gap-5 overflow-auto w-full items-center whitespace-nowrap"
+        >
+          <button
+            class="bg-primary px-5 py-2 text-white rounded-lg font-semibold"
+          >
+            All
+          </button>
+          <button
+            class="bg-[#E7F1FF] hover:bg-primary px-5 py-2 text-[#6C6E71] hover:text-white rounded-lg font-medium"
+          >
+            Admin
+          </button>
+          <button
+            class="bg-[#E7F1FF] hover:bg-primary px-5 py-2 text-[#6C6E71] hover:text-white rounded-lg font-medium"
+          >
+            Programmer
+          </button>
+          <button
+            class="bg-[#E7F1FF] hover:bg-primary px-5 py-2 text-[#6C6E71] hover:text-white rounded-lg font-medium"
+          >
+            Design
+          </button>
+        </div>
+        <div class="flex items-center gap-3 whitespace-nowrap">
+          <p>Latest Profile :</p>
+          <select
+            name="short"
+            id="short"
+            class="bg-[#E7F1FF] border-none focus:ring-0 rounded-lg font-medium text-[#6C6E71]"
+          >
+            <option value="newest">Lastest Project</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-1.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Salsabilla Putri</h1>
+          <p class="text-[#939393]">Internship Admin Sales</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-2.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Vania Amadilla</h1>
+          <p class="text-[#939393]">Internship Finance</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-3.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Ryan Suwarsono</h1>
+          <p class="text-[#939393]">Internship Programmer</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-4.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Karina Putri R</h1>
+          <p class="text-[#939393]">Internship Talent TikTok</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-5.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Fahmi Al Ayyubi</h1>
+          <p class="text-[#939393]">Internship UI/UX Designer</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-6.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Salsabilla Putri</h1>
+          <p class="text-[#939393]">Internship Programmer</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-7.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Ahmad Fadillah</h1>
+          <p class="text-[#939393]">Internship Graphic Designer</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-8.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Nadila Syafarina</h1>
+          <p class="text-[#939393]">Internship Content Creative</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-9.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Karina Putri R</h1>
+          <p class="text-[#939393]">Internship Admin HRD</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-10.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Farah Aqilahidah</h1>
+          <p class="text-[#939393]">Internship Asisten CMO</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-11.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Stephen wongso</h1>
+          <p class="text-[#939393]">Internship Debt Management</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-12.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Amanda Putriani</h1>
+          <p class="text-[#939393]">Internship Product Manager</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-13.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Syifa Septiani</h1>
+          <p class="text-[#939393]">Internship Digital Marketing</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-14.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Karisma Oktaviani</h1>
+          <p class="text-[#939393]">Internship General Affair</p>
+        </div>
+        <div class="flex flex-col">
+          <img
+            src="./images/contributor/contributor-15.png"
+            alt=""
+            class="rounded-[10px] mb-5 shadow-contrib"
+          />
+          <h1 class="text-lg font-semibold">Langit Fajar</h1>
+          <p class="text-[#939393]">Internship Video / Animator</p>
+        </div>
+      </div>
+    </div>
+    <!-- Contact -->
+    <div
+      class="relative bg-gradient-to-r from-white to-white/0 mt-[50px] md:mt-[100px] mb-12 md:mb-28"
+    >
+      <img
+        src="./images/alumni-stories/hubungi-admin.png"
+        alt=""
+        class="absolute right-0 hidden md:block"
+      />
+      <div
+        class="relative w-[90%] lg:w-[1016px] flex flex-col container mx-auto py-[50px] md:py-[100px]"
+      >
+        <h1 class="text-[36px] font-semibold mb-[30px] w-full md:w-1/2">
+          Ikuti jejak mereka dan bagikan cerita kalian disini
+        </h1>
+        <p class="text-[16px]">Hubungi tim admission kami</p>
+        <button
+          class="mt-4 px-6 py-3 w-[275px] justify-center rounded-[10px] bg-primary text-white text-[18px] font-medium flex gap-[5px]"
+        >
+          <img
+            loading="lazy"
+            class="w-[16px] h-[16px] mt-[5px]"
+            src="./images/svg/WhatsApp.svg"
+          />
+          Hubungi Admin
+        </button>
+      </div>
+    </div>
+    <!-- Testimoni -->
+    <div
+      class="w-[90%] lg:w-full flex flex-col md:flex-row mt-28 container mx-auto md:pl-[16rem] items-center gap-0 md:gap-11"
+    >
+      <div>
+        <p class="text-[24px] font-semibold text-primary">Testimoni</p>
+        <h1 class="text-[30px] font-semibold">
+          Cerita Peserta Penerima Beasiswa
+        </h1>
+        <div class="mt-5">
+          <button class="swiper-Button-prev">
+            <svg
+              class="fill-primary btn-prev"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.0359 25.9353C22.175 25.7966 22.2853 25.6317 22.3606 25.4503C22.4359 25.2688 22.4746 25.0743 22.4746 24.8778C22.4746 24.6814 22.4359 24.4869 22.3606 24.3054C22.2853 24.1239 22.175 23.9591 22.0359 23.8203L16.2159 18.0003L22.0359 12.1803C22.3164 11.8999 22.474 11.5195 22.474 11.1228C22.474 10.7262 22.3164 10.3458 22.0359 10.0653C21.7555 9.78487 21.3751 9.6273 20.9784 9.6273C20.5818 9.6273 20.2014 9.78487 19.9209 10.0653L13.0359 16.9503C12.8969 17.0891 12.7866 17.2539 12.7113 17.4354C12.636 17.6169 12.5973 17.8114 12.5973 18.0078C12.5973 18.2043 12.636 18.3988 12.7113 18.5803C12.7866 18.7617 12.8969 18.9266 13.0359 19.0653L19.9209 25.9503C20.4909 26.5203 21.4509 26.5203 22.0359 25.9353Z"
+              />
+            </svg>
+          </button>
+          <button class="swiper-Button-next">
+            <svg
+              class="fill-primary btn-next"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.9641 10.0647C13.825 10.2034 13.7147 10.3683 13.6394 10.5497C13.5641 10.7312 13.5254 10.9257 13.5254 11.1222C13.5254 11.3186 13.5641 11.5131 13.6394 11.6946C13.7147 11.8761 13.825 12.0409 13.9641 12.1797L19.7841 17.9997L13.9641 23.8197C13.6836 24.1001 13.526 24.4805 13.526 24.8772C13.526 25.2738 13.6836 25.6542 13.9641 25.9347C14.2445 26.2151 14.6249 26.3727 15.0216 26.3727C15.4182 26.3727 15.7986 26.2151 16.0791 25.9347L22.9641 19.0497C23.1031 18.9109 23.2134 18.7461 23.2887 18.5646C23.364 18.3831 23.4027 18.1886 23.4027 17.9922C23.4027 17.7957 23.364 17.6012 23.2887 17.4197C23.2134 17.2383 23.1031 17.0734 22.9641 16.9347L16.0791 10.0497C15.5091 9.47967 14.5491 9.47967 13.9641 10.0647Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper gap-5">
+          <div
+            class="swiper-slide bg-white rounded-xl p-[22px] flex flex-col gap-3"
+          >
+            <img
+              src="./images/contributor/quotes.png"
+              alt=""
+              class="w-[41px]"
+            />
+            <h1 class="text-[16px] text-[#6C6E71]">
+              Program Magang sangat membantu dalam banyak hal untuk memulai
+              karir saya di dunia kerja. Problem case yang sama dengan
+              perusahaan membantu saya unutk bisa menjawab setiap business
+              cases.
+            </h1>
+            <div class="h-[1px] w-full bg-black/20"></div>
+            <div class="flex gap-5">
+              <img
+                src="./images/contributor/testi-1.png"
+                alt=""
+                class="rounded-[10px] w-[63px] h-[61px]"
+              />
+              <div>
+                <h2 class="text-[24px] font-semibold">Natasha Amalia Putri</h2>
+                <p class="text-[16px] text-[#818181]">
+                  Peserta Internship Staff Admin
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide bg-white rounded-xl p-[22px] flex flex-col gap-3"
+          >
+            <img
+              src="./images/contributor/quotes.png"
+              alt=""
+              class="w-[41px]"
+            />
+            <h1 class="text-[16px] text-[#6C6E71]">
+              Program Magang sangat membantu dalam banyak hal untuk memulai
+              karir saya di dunia kerja. Problem case yang sama dengan
+              perusahaan membantu saya unutk bisa menjawab setiap business
+              cases.
+            </h1>
+            <div class="h-[1px] w-full bg-black/20"></div>
+            <div class="flex gap-5">
+              <img
+                src="./images/contributor/testi-1.png"
+                alt=""
+                class="rounded-[10px] w-[63px] h-[61px]"
+              />
+              <div>
+                <h2 class="text-[24px] font-semibold">Natasha Amalia Putri</h2>
+                <p class="text-[16px] text-[#818181]">
+                  Peserta Internship Staff Admin
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide bg-white rounded-xl p-[22px] flex flex-col gap-3"
+          >
+            <img
+              src="./images/contributor/quotes.png"
+              alt=""
+              class="w-[41px]"
+            />
+            <h1 class="text-[16px] text-[#6C6E71]">
+              Program Magang sangat membantu dalam banyak hal untuk memulai
+              karir saya di dunia kerja. Problem case yang sama dengan
+              perusahaan membantu saya unutk bisa menjawab setiap business
+              cases.
+            </h1>
+            <div class="h-[1px] w-full bg-black/20"></div>
+            <div class="flex gap-5">
+              <img
+                src="./images/contributor/testi-1.png"
+                alt=""
+                class="rounded-[10px] w-[63px] h-[61px]"
+              />
+              <div>
+                <h2 class="text-[24px] font-semibold">Natasha Amalia Putri</h2>
+                <p class="text-[16px] text-[#818181]">
+                  Peserta Internship Staff Admin
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide bg-white rounded-xl p-[22px] flex flex-col gap-3"
+          >
+            <img
+              src="./images/contributor/quotes.png"
+              alt=""
+              class="w-[41px]"
+            />
+            <h1 class="text-[16px] text-[#6C6E71]">
+              Program Magang sangat membantu dalam banyak hal untuk memulai
+              karir saya di dunia kerja. Problem case yang sama dengan
+              perusahaan membantu saya unutk bisa menjawab setiap business
+              cases.
+            </h1>
+            <div class="h-[1px] w-full bg-black/20"></div>
+            <div class="flex gap-5">
+              <img
+                src="./images/contributor/testi-1.png"
+                alt=""
+                class="rounded-[10px] w-[63px] h-[61px]"
+              />
+              <div>
+                <h2 class="text-[24px] font-semibold">Natasha Amalia Putri</h2>
+                <p class="text-[16px] text-[#818181]">
+                  Peserta Internship Staff Admin
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Download App -->
+    <div class="w-[90%] lg:w-[1016px] container mx-auto mt-12 md:mt-28">
+      <section
+        class="relative w-full rounded-[30px] bg-gradient-to-r from-primary/60 to-primary/5 px-5 md:px-[33px]"
+      >
+        <div class="relative flex flex-col-reverse gap-4 md:flex-row items-end">
+          <div class="w-full px-1 lg:w-1/2">
+            <div class="relative flex w-full items-end justify-end">
+              <div class="mr-0 w-full md:mr-4">
+                <img
+                  src="./images/alumni-connects/img-app-1.png"
+                  alt=""
+                  class="relative z-10"
+                />
+              </div>
+              <div class="-ml-10 w-full md:ml-0">
+                <img
+                  src="./images/alumni-connects/img-app-2.png"
+                  alt=""
+                  class="relative z-0"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-1 md:px-9 lg:w-1/2">
+            <div
+              class="flex max-w-[500px] flex-col gap-7 py-[40px] md:py-[90px]"
+            >
+              <h1 class="text-[36px] font-semibold leading-[45px]">
+                Download Aplikasi Upscale
+              </h1>
+              <div class="flex gap-[10px] md:gap-[30px]">
+                <a href="#">
+                  <img
+                    class="h-[45px] md:h-[47px]"
+                    src="./images/alumni-connects/btn-app-store.png"
+                    alt=""
+                  />
+                </a>
+                <a href="#">
+                  <img
+                    class="h-[45px] md:h-[47px]"
+                    src="./images/alumni-connects/btn-google-play.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Footer section -->
+    <section class="relative w-full h-[1270px] md:h-[1070px] pb-[20px] md:pb-0">
+      <div class="container mx-auto relative">
+        <div
+          class="absolute w-[80%] mx-auto left-1/2 -translate-x-1/2 h-fit lg:w-fit lg:h-[575px] md:pt-[86px] top-[267px]"
+        >
+          <div class="flex flex-col gap-[23px] md:flex-row text-[#ffffff]">
+            <div class="md:w-[237.51px]">
+              <img
+                loading="lazy"
+                class="w-[250px] h-[48.53px] lg:w-fit md:h-fit mx-auto md:mx-0"
+                src="./images/logo/favicon-white.svg"
+                alt=""
+                srcset=""
+              />
+              <p
+                class="text-[16px] md:text-[14px] mt-[37.56px] mb-[18px] text-center md:text-left"
+              >
+                When an unknown printer took a galley of type and make a type
+                specimen book.
+              </p>
+              <div class="flex flex-row mb-[60.08px]">
+                <div class="inline-flex gap-[22px] mx-auto md:mx-0">
+                  <img
+                    loading="lazy"
+                    src="./images/svg/white-instagram.svg"
+                    alt=""
+                    srcset=""
+                  />
+                  <img
+                    loading="lazy"
+                    src="./images/svg/white-twitter.svg"
+                    alt=""
+                    srcset=""
+                  />
+                  <img
+                    loading="lazy"
+                    src="./images/svg/white-youtube.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="columns-2 flex flex-row md:ml-[80.49px] justify-between"
+            >
+              <div class="flex flex-col gap-[41px] w-[159.78px] h-[375px]">
+                <div class="h-fit">
+                  <h1 class="font-[600] text-[18px] mb-[20px]">Explore Us</h1>
+                  <ul class="text-[14px] md:text-[12px]">
+                    <a href=""><li class="mb-[12px]">Kelas</li></a>
+                    <a href=""><li class="mb-[12px]">Our Mentors</li></a>
+                    <a href=""><li class="mb-[12px]">For Corporate</li></a>
+                    <a href=""><li>Community</li></a>
+                  </ul>
+                </div>
+
+                <div class="h-[167px]">
+                  <h1 class="font-[600] text-[18px] mb-[20px]">Our Services</h1>
+                  <ul class="text-[14px] md:text-[12px]">
+                    <a href=""><li class="mb-[12px]">Free Event</li></a>
+                    <a href=""><li class="mb-[12px]">Video Course</li></a>
+                    <a href=""><li class="mb-[12px]">Bootcamp</li></a>
+                    <a href=""><li>Private Mentoring</li></a>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="flex flex-col gap-[41px] w-fit md:w-[198px] h-[375px] text-left"
+              >
+                <div class="h-fit">
+                  <h1 class="font-[600] text-[18px] mb-[20px]">Category</h1>
+                  <ul class="text-[14px] md:text-[12px]">
+                    <a href=""><li class="mb-[12px]">Mobile Developer</li></a>
+                    <a href=""><li class="mb-[12px]">Website Developer</li></a>
+                    <a href=""><li class="mb-[12px]">UI/UX Designer</li></a>
+                    <a href=""><li>Graphic Designer</li></a>
+                  </ul>
+                </div>
+
+                <div class="h-[167px]">
+                  <h1 class="font-[600] text-[18px] mb-[20px]">Office</h1>
+                  <ul class="text-[14px] md:text-[12px]">
+                    <li class="mb-[12px]">PT Eduwork.id</li>
+                    <li class="mb-[12px]">Jl. Ring Road Utara No 24</li>
+                    <li class="mb-[12px]">Yogyakarta. Indonesia</li>
+                    <a href=""><li>team@eduwork.id</li></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h1
+                class="font-[600] text-[18px] mt-[60px] md:mt-0 mb-[10px] text-center md:text-left"
+              >
+                Promotions
+              </h1>
+              <ul class="text-[14px] md:text-[12px]">
+                <a href=""
+                  ><li class="mb-[12px] text-center md:text-left">
+                    Submit your email for new updates
+                  </li></a
+                >
+                <li class="flex flex-row">
+                  <input
+                    class="rounded-l-[5px] bg-[#f6fcff] w-full md:w-[190.01px] h-[55px] border border-white text-[#404040]"
+                    type="email"
+                    name=""
+                    id=""
+                  />
+                  <button
+                    class="w-[50.09px] rounded-r-[5px] h-[55px] mb-5 md:mb-0 bg-[#a1b0c7] border border-white px-[13px]"
+                  >
+                    <img
+                      loading="lazy"
+                      class="w-[28px] h-[28px]"
+                      src="./images/svg/mail.svg"
+                    />
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:absolute bottom-0 text-center md:text-left">
+            <p
+              class="text-[#ffffff] text-[14px] mt-[53px] md:mt-0 md:text-[12px]"
+            >
+              © EduWork 2020 - 2021 . All rights reserved.
+            </p>
+          </div>
+          <div
+            class="md:absolute md:right-0 md:bottom-0 md:float-right flex md:flex-row md:justify-between md:gap-[50px]"
+          >
+            <div class="mx-auto md:mx-0">
+              <p
+                class="text-[#ffffff] text-[14px] mt-[12px] md:mt-0 md:text-[12px]"
+              >
+                Privacy and policy
+              </p>
+            </div>
+            <div>
+              <p class="text-[#ffffff] md:flex hidden text-[12px]">Terms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wave-footer xl:min-w-[1340px]"></div>
+      <div
+        class="absolute bottom-0 w-full xl:min-w-[1340px] h-full md:h-[981px] bg-footer -z-50"
+      ></div>
+    </section>
+  </body>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script>
+    // Event Scroll
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-90px";
+      }
+      prevScrollpos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY >= 100) {
+        document.getElementById("navbar").style.backgroundColor = "#ffffff";
+        document.getElementById("navbar").style.boxShadow =
+          "0 0 10px rgba(0,0,0,0.1)";
+      } else {
+        document.getElementById("navbar").style.backgroundColor = "transparent";
+        document.getElementById("navbar").style.boxShadow = "none";
+      }
+    });
+  </script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "slide",
+      direction: "horizontal",
+      centerdSlides: true,
+      slideToClickedSlide: true,
+      autoplay: {
+        delay: 5000,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        520: {
+          slidesPerView: 1,
+        },
+        720: {
+          slidesPerView: 2,
+        },
+      },
+      grabCursor: true,
+      slidesPerGroup: 1,
+      navigation: {
+        nextEl: ".swiper-Button-next",
+        prevEl: ".swiper-Button-prev",
+      },
+    });
+    // var btnNext = document.querySelector(".btn-next");
+    // var btnPrev = document.querySelector(".btn-prev");
+    // btnPrev.classList.add("fill-gray-300");
+    // console.log(swiper.slides.length);
+    // swiper.on("slideChange", function () {
+    //   var realIndex = swiper.realIndex;
+    //   if (realIndex == 0) {
+    //     btnPrev.classList.add("fill-gray-300");
+    //   } else {
+    //     btnPrev.classList.remove("fill-gray-300");
+    //   }
+    //   if (realIndex == swiper.slides.length - 1) {
+    //     btnNext.classList.add("fill-gray-300");
+    //   } else {
+    //     btnNext.classList.remove("fill-gray-300");
+    //   }
+    // });
+  </script>
+</html>

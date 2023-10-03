@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Eduwork</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body class="relative box-border md:m-auto p-0  bg-[#F6FCFF] text-[#404040] font-['Poppins'] md:max-w-[1440px]">
+
+    <!-- Navbar section -->
+    <div class="absolute bg-transparent w-full h-[80px] left-0 top-0 z-40">
+        <nav
+        class="flex items-center justify-between flex-wrap mx-[10%] w-[80%] md:mx-[210px] md:w-[1020px] py-6 px-0 z-10 top-0">
+
+        <div class="flex items-center flex-shrink-0 w-[154px] h-[31px] mr-8">
+                <img src="../images/logo3.png" alt="Eduwork Logo">
+            </div>
+
+            <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 right-0 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+            <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul class="flex flex-col md:bg-transparent bg-white rounded-md font-semibold text-[14px] p-4 mt-[20px] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+                <li class="mb-1">
+                    <div
+                        x-data="{
+                            open: false,
+                            toggle() {
+                                if (this.open) {
+                                    return this.close()
+                                }
+                
+                                this.$refs.button.focus()
+                
+                                this.open = true
+                            },
+                            close(focusAfter) {
+                                if (! this.open) return
+                
+                                this.open = false
+                
+                                focusAfter && focusAfter.focus()
+                            }
+                        }"
+                        x-on:keydown.escape.prevent.stop="close($refs.button)"
+                        x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                        x-id="['dropdown-button']"
+                        class="relative text-[14px] font-[600]"
+                        >
+                        <!-- Button -->
+                        <button
+                            x-ref="button"
+                            x-on:click="toggle()"
+                            :aria-expanded="open"
+                            :aria-controls="$id('dropdown-button')"
+                            type="button"
+                            class="flex items-center gap-[5px] border-none"
+                        >
+                        Kelas                    
+                            <!-- Heroicon: chevron-down -->
+                            <svg xmlns="../images/arrow.svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                
+                        <!-- Panel -->
+                        <div
+                            x-ref="panel"
+                            x-show="open"
+                            x-transition.origin.top.left
+                            x-on:click.outside="close($refs.button)"
+                            :id="$id('dropdown-button')"
+                            style="display: none;"
+                            class="relative md:absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter"
+                        >
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Reguler
+                            </a>
+                
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Kelass
+                            </a>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <div
+                        x-data="{
+                            open: false,
+                            toggle() {
+                                if (this.open) {
+                                    return this.close()
+                                }
+                
+                                this.$refs.button.focus()
+                
+                                this.open = true
+                            },
+                            close(focusAfter) {
+                                if (! this.open) return
+                
+                                this.open = false
+                
+                                focusAfter && focusAfter.focus()
+                            }
+                        }"
+                        x-on:keydown.escape.prevent.stop="close($refs.button)"
+                        x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                        x-id="['dropdown-button']"
+                        class="relative font-[700] text-[#6C6E71]"
+                    >
+                        <!-- Button -->
+                        <button
+                            x-ref="button"
+                            x-on:click="toggle()"
+                            :aria-expanded="open"
+                            :aria-controls="$id('dropdown-button')"
+                            type="button"
+                            class="flex items-center gap-[5px]"
+                        >
+                        Mentor
+                            <!-- Heroicon: chevron-down -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                
+                        <!-- Panel -->
+                        <div
+                            x-ref="panel"
+                            x-show="open"
+                            x-transition.origin.top.left
+                            x-on:click.outside="close($refs.button)"
+                            :id="$id('dropdown-button')"
+                            style="display: none;"
+                            class="relative md:absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter"
+                        >
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Mentor
+                            </a>
+                
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Mentorr
+                            </a>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div
+                        x-data="{
+                            open: false,
+                            toggle() {
+                                if (this.open) {
+                                    return this.close()
+                                }
+                
+                                this.$refs.button.focus()
+                
+                                this.open = true
+                            },
+                            close(focusAfter) {
+                                if (! this.open) return
+                
+                                this.open = false
+                
+                                focusAfter && focusAfter.focus()
+                            }
+                        }"
+                        x-on:keydown.escape.prevent.stop="close($refs.button)"
+                        x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                        x-id="['dropdown-button']"
+                        class="relative font-[700] text-[#6C6E71]"
+                    >
+                        <!-- Button -->
+                        <button
+                            x-ref="button"
+                            x-on:click="toggle()"
+                            :aria-expanded="open"
+                            :aria-controls="$id('dropdown-button')"
+                            type="button"
+                            class="flex items-center gap-[5px]"
+                        >
+                        Company                    
+                            <!-- Heroicon: chevron-down -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                
+                        <!-- Panel -->
+                        <div
+                            x-ref="panel"
+                            x-show="open"
+                            x-transition.origin.top.left
+                            x-on:click.outside="close($refs.button)"
+                            :id="$id('dropdown-button')"
+                            style="display: none;"
+                            class="relative md:absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter"
+                        >
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Start-up
+                            </a>
+                
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Corporate
+                            </a>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <button class="md:hidden float-left text-white font-[500] bg-[#187cff] pt-[5px] pb-[8px] px-[20px] rounded-md mr-2 ">Login</button>
+                    <button class="md:hidden text-white font-[500] bg-[#187cff] pt-[5px] pb-[8px] px-[20px] rounded-md">Register</button>
+                </li>
+            </ul>
+            </div>
+            <div class="hidden float-left w-full md:flex md:w-auto md:order-2">
+              <button class="text-white font-[500] bg-[#187cff] pt-[5px] pb-[8px] px-[20px] rounded-md mr-2 ">Login</button>
+              <button class="text-white font-[500] bg-[#187cff] pt-[5px] pb-[8px] px-[20px] rounded-md">Register</button>
+            </div>
+        </nav>
+    </div>
+    <!-- End of Navbar section -->
+
+    <!-- Main section -->
+    <section id="Hero" class="w-full md:w-[1376px] bg-[cover] h-[730px] bg-[url('../images/bg-hero1.png')] bg-no-repeat "><div class="w-full h-[740px] bg-gradient-to-r from-white"></div>
+        <div class="absolute mx-[10%] md:mx-[214px] w-[418px] h-[680px] pt-[154px] top-0 left-0">
+            <div class="row w-fit h-fit">
+                <h1 class="font-bold w-[372px] leading-[120%] text-[40px]">Pelatihan dan Penyaluran kerja.</h1>
+                <div class="flex-col w-[418px] h-[233px] mt-[65px]">
+                    <div class=" w-fit h-fit float-left mr-[14.27px]">
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] mb-[6px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">1</div>
+                            <div class="flex w-[37.73px] h-[50.38px] text-center py-[8.20276px 16.4055px] justify-center items-center"><div class="arrow"></div></div>
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] mb-[6px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">2</div>
+                            <div class="flex w-[37.73px] h-[50.38px] text-center py-[8.20276px 16.4055px] justify-center items-center"><div class="arrow"></div></div>
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">3</div>
+                    </div>
+                    <div class=" md:w-[418px] h-fit tracking-[0.01em]">
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Coba Daftar Gratis</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px] mb-[31px] mr-[10%] md:mr-0">Mari bergabung dengan komunitas biro jodoh kami, dijamin dapat pasangan High Definition</p>
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Belajar Intensif</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px] mb-[30px] mr-[10%] md:mr-0">Belajar urus diri sendiri, jangan jadi beban keluarga terus</p>
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Disalurkan kerja</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px] mr-[10%] md:mr-0">Dapatkan gaji 10juta lebih</p>
+                    </div>
+                </div>
+                <h4 class="font-semibold mt-[40px] text-[16px] leading-6 tracking-[1%]">Mari bergabung !</h4>
+            </div>
+        </div>
+
+        <div class="absolute w-full h-fit top-[617px] bg-transparent">
+            <button class="ml-[10%] md:ml-[213px] px-[34px] py-[11px] rounded-[5px] font-medium text-[14px] bg-[#187cff] text-[#f6fcff] mr-[22px] ">Daftar</button>
+            <button class="px-[19px] py-[11px] rounded-[5px] font-medium text-[14px] bg-[#ffd200] ">Konsultasi Dulu</button>
+            <h4 class="absolute ml-[10%] md:ml-[214px] mt-[29px] text-[16px] font-normal z-10" ><span class="font-bold">2,324</span> Students & <span class="font-bold">182</span> Mentors has joined!</h4>
+            <div class="absolute top-[40px] w-[1376px] h-[328.26px] z-[9]">
+                <div class="wave"></div>
+            </div>
+            <div class="absolute w-fit sm:h-[137px] ml-[10%] md:mx-[213px] mt-[91px] pl-[49px] pr-[51.12px] bg-white border border-white rounded-[10px] shadow-filter z-10">
+                <h4 class="md:block mt-[1%] font-semibold text-[16px] leading-[24px] tracking-[0.01em] flex items-center justify-between">Cari menggunakan filter
+                    <button data-collapse-toggle="filter-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="filter-cta" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h4>
+                <div id="filter-cta" class="hidden sm:flex md:flex-row p-0 mt-[17px] gap-[13px] w-fit h-fit">
+
+                    <div
+                        x-data="{
+                            open: false,
+                            toggle() {
+                                if (this.open) {
+                                    return this.close()
+                                }
+                
+                                this.$refs.button.focus()
+                
+                                this.open = true
+                            },
+                            close(focusAfter) {
+                                if (! this.open) return
+                
+                                this.open = false
+                
+                                focusAfter && focusAfter.focus()
+                            }
+                        }"
+                        x-on:keydown.escape.prevent.stop="close($refs.button)"
+                        x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                        x-id="['dropdown-button']"
+                        class="relative w-fit h-fit mb-[17px] sm:mb-0 py-[11px] pl-[16px] font-[700] text-[#6C6E71] color-[#6c6e71] bg-white border border-[#a7a6ba] rounded-[20px] text-[12px]">
+                        <!-- Button -->
+                        <button
+                            x-ref="button"
+                            x-on:click="toggle()"
+                            :aria-expanded="open"
+                            :aria-controls="$id('dropdown-button')"
+                            type="button"
+                            class="flex items-center gap-[15px] "
+                        >
+                        Kategori
+                            <!-- Heroicon: chevron-down -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-[23px] mr-[10.41px]" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                
+                        <!-- Panel -->
+                        <div
+                            x-ref="panel"
+                            x-show="open"
+                            x-transition.origin.top.left
+                            x-on:click.outside="close($refs.button)"
+                            :id="$id('dropdown-button')"
+                            style="display: none;"
+                            class="absolute left-0 mt-2 w-40 rounded-md text-[12px] bg-white shadow-filter z-10"
+                        >
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Reguler
+                            </a>
+                
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Kelass
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div
+                    x-data="{
+                        open: false,
+                        toggle() {
+                            if (this.open) {
+                                return this.close()
+                            }
+            
+                            this.$refs.button.focus()
+            
+                            this.open = true
+                        },
+                        close(focusAfter) {
+                            if (! this.open) return
+            
+                            this.open = false
+            
+                            focusAfter && focusAfter.focus()
+                        }
+                    }"
+                    x-on:keydown.escape.prevent.stop="close($refs.button)"
+                    x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                    x-id="['dropdown-button']"
+                    class="relative w-fit h-fit mb-[17px] sm:mb-0 pt-[11px] pb-[7.67px] pl-[16px] color-[#6c6e71] text-[12px] bg-white border border-[#a7a6ba] rounded-[20px] font-[700] text-[#6C6E71]">
+                    <!-- Button -->
+                    <button
+                        x-ref="button"
+                        x-on:click="toggle()"
+                        :aria-expanded="open"
+                        :aria-controls="$id('dropdown-button')"
+                        type="button"
+                        class="flex items-center gap-[15px] "
+                    >
+                    Materikelas
+                        <!-- Heroicon: chevron-down -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-[3px] mr-[11px]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+            
+                    <!-- Panel -->
+                    <div
+                        x-ref="panel"
+                        x-show="open"
+                        x-transition.origin.top.left
+                        x-on:click.outside="close($refs.button)"
+                        :id="$id('dropdown-button')"
+                        style="display: none;"
+                        class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter z-10 text-[12px]"
+                    >
+                        <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                            Reguler
+                        </a>
+            
+                        <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                            Kelass
+                        </a>
+
+                    </div>
+                    </div>
+
+
+                    <div
+                        x-data="{
+                            open: false,
+                            toggle() {
+                                if (this.open) {
+                                    return this.close()
+                                }
+                
+                                this.$refs.button.focus()
+                
+                                this.open = true
+                            },
+                            close(focusAfter) {
+                                if (! this.open) return
+                
+                                this.open = false
+                
+                                focusAfter && focusAfter.focus()
+                            }
+                        }"
+                        x-on:keydown.escape.prevent.stop="close($refs.button)"
+                        x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                        x-id="['dropdown-button']"
+                        class="relative w-fit h-fit mb-[17px] sm:mb-0 py-[11px] pl-[16px] color-[#6c6e71] bg-white border border-[#a7a6ba] rounded-[20px] text-[12px] font-[700] text-[#6C6E71]">
+                        <!-- Button -->
+                        <button
+                            x-ref="button"
+                            x-on:click="toggle()"
+                            :aria-expanded="open"
+                            :aria-controls="$id('dropdown-button')"
+                            type="button"
+                            class="flex items-center gap-[13px] "
+                        >
+                        Harga
+                            <!-- Heroicon: chevron-down -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-[21px] mr-[11px]" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                
+                        <!-- Panel -->
+                        <div
+                            x-ref="panel"
+                            x-show="open"
+                            x-transition.origin.top.left
+                            x-on:click.outside="close($refs.button)"
+                            :id="$id('dropdown-button')"
+                            style="display: none;"
+                            class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter z-10"
+                        >
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Reguler
+                            </a>
+                
+                            <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                Kelass
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div
+                    x-data="{
+                        open: false,
+                        toggle() {
+                            if (this.open) {
+                                return this.close()
+                            }
+            
+                            this.$refs.button.focus()
+            
+                            this.open = true
+                        },
+                        close(focusAfter) {
+                            if (! this.open) return
+            
+                            this.open = false
+            
+                            focusAfter && focusAfter.focus()
+                        }
+                    }"
+                    x-on:keydown.escape.prevent.stop="close($refs.button)"
+                    x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                    x-id="['dropdown-button']"
+                    class="relative w-fit h-fit mb-[17px] sm:mb-0 py-[11px] pl-[16px] color-[#6c6e71] bg-white border text-[12px] border-[#a7a6ba] rounded-[20px] font-[700] text-[#6C6E71]">
+                    <!-- Button -->
+                    <button
+                        x-ref="button"
+                        x-on:click="toggle()"
+                        :aria-expanded="open"
+                        :aria-controls="$id('dropdown-button')"
+                        type="button"
+                        class="flex items-center gap-[13px] "
+                    >
+                    Pembayaran
+                        <!-- Heroicon: chevron-down -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-[11.83px] mr-[8.03px]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+            
+                    <!-- Panel -->
+                    <div
+                        x-ref="panel"
+                        x-show="open"
+                        x-transition.origin.top.left
+                        x-on:click.outside="close($refs.button)"
+                        :id="$id('dropdown-button')"
+                        style="display: none;"
+                        class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter z-10 text-[12px]"
+                    >
+                        <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                            Reguler
+                        </a>
+            
+                        <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                            Kelass
+                        </a>
+
+                    </div>
+                    </div>
+
+                    <div
+                    x-data="{
+                        open: false,
+                        toggle() {
+                            if (this.open) {
+                                return this.close()
+                            }
+            
+                            this.$refs.button.focus()
+            
+                            this.open = true
+                        },
+                        close(focusAfter) {
+                            if (! this.open) return
+            
+                            this.open = false
+            
+                            focusAfter && focusAfter.focus()
+                        }
+                    }"
+                    x-on:keydown.escape.prevent.stop="close($refs.button)"
+                    x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                    x-id="['dropdown-button']"
+                    class="relative w-fit h-fit mb-[17px] sm:mb-0 py-[11px] pl-[16px] color-[#6c6e71] text-[12px] bg-white border border-[#a7a6ba] rounded-[20px] font-[700] text-[#6C6E71]">
+                    <!-- Button -->
+                    <button
+                        x-ref="button"
+                        x-on:click="toggle()"
+                        :aria-expanded="open"
+                        :aria-controls="$id('dropdown-button')"
+                        type="button"
+                        class="flex items-center gap-[13px] "
+                    >
+                    Lokasi
+                        <!-- Heroicon: chevron-down -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-[34.77px] mr-[13.41px]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+            
+                    <!-- Panel -->
+                    <div
+                        x-ref="panel"
+                        x-show="open"
+                        x-transition.origin.top.left
+                        x-on:click.outside="close($refs.button)"
+                        :id="$id('dropdown-button')"
+                        style="display: none;"
+                        class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-filter text-[12px]"
+                    >
+                        <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                            Reguler
+                        </a>
+            
+                        <a href="#" class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                            Kelass
+                        </a>
+
+                    </div>
+                    </div>
+                    <p class="text-[12px] mb-[17px] sm:mb-0 py-[11px] pl-[16px] px-[12px] font-[700] text-[#6C6E71]">More</p>
+                    <button class="text-[12px] mb-[17px] w-[164.11px] h-fit sm:mb-0 py-[11px] px-[64px] font-[700]  color-[#6c6e71] mr-[13px] bg-[#ffd200] rounded-[20px]">Cari</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNER -->
+    <section class="w-[85%] ml-[15%] md:w-[1266px] md:ml-[212px] h-[70px] mt-[200px] pt-5 mb-[74px] mr-0">
+        <div class="z-10 -top-10">
+            <h4 class="w-[177px] h-[70px] text-[24px] font-medium leading-[28.56px] mr-[37px] md:mr-[74px] float-left"><span class="text-[36px] font-semibold text-[#187cff]">Our 100+ </span>Hiring Partner</h4>
+            <div class="slider">
+                <div class="slide-track">
+                    <div class="slide"><img src="../images/logo/1.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/2.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/3.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/4.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/5.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/6.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/7.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/8.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/9.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/10.jpg" height="100" width="100"></div>
+                    <div class="slide"><img src="../images/logo/11.jpg" height="100" width="100"></div>
+                </div>
+                </div>
+                    </div>
+    </section>
+    <!-- End of Partner -->
+
+    <!-- Categories -->
+    <section class=" w-[70%] mx-[15%] h-fit mb-[65px]">
+        <h4 class="text-center text-[#187cff] text-[20px] font-medium">Categories</h4>
+        <h4 class="px-1 md:px-[20%] text-[24px] font-semibold text-center leading-[36px] mt-[14.7px] mb-[40.3px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero excepturi quod iure.</h4>
+        <div class="grid grid-rows-1 items-center md:grid-cols-4 w-full h-fit gap-[52px]">
+            <div class="w-[214.25px] h-full bg-white rounded-[10px] px-[30px] pb-[29px] shadow-card">
+                <div class="w-[48px] h-[45px] mt-[17px] mb-[16px] bg-[#187cff] pt-[6.7px] px-[9px] bg-opacity-20 rounded-[5px]">
+                    <img src=".././images/icon/Writer female.png" alt="">
+                </div>
+                <p class="font-normal text-[12px] leading-[18px]">Penyaluran Kerja</p>
+                <h1 class="font-[600] text-[20px] leading-[30px] mb-[2px]">ISA</h1>
+                <p class="font-normal text-[12px] text-[#828282] leading-[15.6px]">Belajar dulu bayar setelah berpenghasilan</p>
+                <button class="w-full mt-[22px] py-[10px] bg-[#187cff] text-white text-[12px] rounded-[5px]">Lihat Kelas</button>
+            </div>
+
+            <div class="w-[214.25px] h-full bg-white rounded-[10px] px-[30px] pb-[29px] shadow-card">
+                <div class="w-[48px] h-[45px] mt-[17px] mb-[16px] bg-[#FFCE4F] pt-[6.7px] px-[9px] bg-opacity-20 rounded-[5px]">
+                    <img src=".././images/icon/Coin Wallet.png" alt="">
+                </div>
+                <p class="font-normal text-[12px] leading-[18px]">Course</p>
+                <h1 class="font-[600] text-[20px] leading-[30px] mb-[2px]">Reguler</h1>
+                <p class="font-normal text-[12px] leading-[15.6px] text-[#828282]">Diskon 50% bisa dicicil 6 bulan</p>
+                <button class="w-full mt-[22px] py-[10px] bg-[#187cff] text-white text-[12px] rounded-[5px]">Lihat Kelas</button>
+            </div>
+
+            <div class="w-[214.25px] h-full bg-white rounded-[10px] px-[30px] shadow-card pb-[29px]">
+                <div class="w-[48px] h-[45px] mt-[17px] mb-[16px] bg-[#00C264] pt-[6.7px] px-[9px] bg-opacity-20 rounded-[5px]">
+                    <img src=".././images/icon/Google Forms New Logo.png" alt="">
+                </div>
+                <p class="font-normal text-[12px] leading-[18px]">Minibootcamp</p>
+                <h1 class="font-[600] text-[20px] leading-[30px] mb-[2px]">&lt; Rp 500.000</h1>
+                <p class="font-normal text-[12px] leading-[15.6px] text-[#828282]">Belajar dasar selama 1 bulan</p>
+                <button class="w-full mt-[22px] py-[10px] bg-[#187cff] text-white text-[12px] rounded-[5px]">Lihat Kelas</button>
+            </div>
+
+            <div class="w-[214.25px] h-full bg-white rounded-[10px] px-[30px] shadow-card pb-[29px]">
+                <div class="w-[48px] h-[45px] mt-[17px] mb-[16px] bg-[#FF5C00] pt-[6.7px] px-[9px] bg-opacity-20 rounded-[5px]">
+                    <img src=".././images/icon/Bookmark.png" alt="">
+                </div>
+                <p class="font-normal text-[12px] leading-[18px]">Gratis</p>
+                <h1 class="font-[600] text-[20px] leading-[30px] mb-[2px]">Webinar</h1>
+                <p class="font-normal text-[12px] leading-[15.6px] text-[#828282]">Belajar dasar selama 1 - 2 hari</p>
+                <button class="w-full mt-[22px] py-[10px] bg-[#187cff] text-white text-[12px] rounded-[5px]">Lihat Kelas</button>
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Categories -->
+
+    <!-- Thumbnails -->
+    <section class="w-[1016px] h-fit mx-[212px] mb-[80px]">
+        <iframe class="w-full h-full md:h-[498px] rounded-[20px] " src="https://www.youtube.com/embed/co-phhoeRBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <!-- End of Thumbnails -->
+
+    <!-- Program -->
+    <section class="w-full h-fit mb-[97.54px]">
+        <div class="w-[70] h-fit mx-[15%]">
+            <h4 class=" text-[24px] font-semibold text-center leading-[36px]">Dapatkan akses gratis ke kelas utama</h4>
+        </div>
+
+        <div class="w-[90%] mr-[10%] h-fit bg-gradasi">
+            <div class="h-[557.18px] bg-[('bottom_center_0')] bg-[url('../images/bg-program.png')] bg-no-repeat rounded-r-[30px]">
+                <div class="absolute w-fit h-fit ml-[15%] mt-[48px]">
+                    <div class="grid grid-rows-1 items-center md:grid-cols-3 w-full h-fit gap-[30px]">
+                        <div class="relative w-[320px] h-[454.02px] bg-white rounded-[8px] shadow-card2">
+                            <div class="h-[165px] w-full pl-[19px] bg-[url('.././images/image-code.png')] text-white">
+                                <h4 class="pt-[88.18px] text-[20px] font-semibold">Front-end Developer</h4>
+                                <p>For Beginer</p>
+                            </div>
+                            <div class="absolute ml-[18px] top-[143.31px] w-[257px] h-[143.99px] ">
+                                <img class="w-[91px] h-[91px] mt-[5px] mr-[15px] rounded-[50%] float-left" src="../images/Kak sekar.png">
+                                <h4 class="mt-[28px] text-[18px] font-semibold text-[#454545]">Gabriellia Sekar</h4>
+                                <p class="mt-[2px] text-[12px] font-normal text-[#737373]">Front-end Developer</p>
+                                <div class="flex flex-row gap-[4px] ml-[106px] w-fit h-[23.53px] text-[#ffd84f]">
+                                    <img class="w-[17px] h-[16px]" src="../images/svg/Star.svg" alt="" srcset=""><span class="font-bold text-[12px] text-[#454545] mt-[5.56px]"> 4.5 </span><span class="font-normal text-[10px] text-[#737373] mt-[5.56px]">(154)</span>
+                                </div>
+                            </div>
+                            <div class="mt-24 mx-[18px] w-fit h-[91px] pt-[18.03px] border-y border-[#cccccc]">
+                                <div class="flex flex-row text-[16px] text-[#737373] font-normal gap-[10px]">
+                                    <img class="w-[17px] h-fit bottom-0" src="../images/icon/Users.png" ><span class="text-[#187cff] font-semibold">85</span> Siswa
+                                    <p> |</p>
+                                    <img class="w-[17px] h-fit" src="../images/icon/Class.png">Sisa Kuota: <span class="text-[#187cff] font-semibold">15</span>
+                                </div>
+                                <div class="w-full h-[30.7px] flex flex-row gap-[1px] mt-[8.34px] mb-[14.28px]">
+                                    <div class="w-[92px] h-full bg-[#ffd200] p-[10px] rounded-l-[20px] font-[400] text-[10px] px-[14.5px] py-[6.03px]">ISA Program</div>
+                                    <div class="w-[92px] h-full bg-[#187cff] p-[10px] font-[400] text-[10px] text-white px-[17px] py-[6.03px] flex flex-row gap-[5px]"><img class="mt-[2px] w-[10px] h-[8px]" src="../images/svg/Check.svg" alt="" srcset="">Reguler</div>
+                                    <div class="w-[92px] h-full bg-[#187cff] p-[10px] rounded-r-[20px] font-[400] text-[10px] text-white px-[15px] py-[6.03px] flex flex-row gap-[5px]"><img class="mt-[2px] w-[10px] h-[8px]" src="../images/svg/Check.svg" alt="" srcset="">Penyaluran</div>
+                                </div>
+                            </div>
+                            <div class="mt-[15.79px] mx-[18px] h-fit">
+                                <button class="float-right px-[10px] py-[8.5px] bg-[#187cff] rounded-[8px] text-white text-[12px] font-medium">Daftar kelas</button>    
+                                <p class="text-[#6c6e71] text-[12px] font-normal">Start from</p>
+                                <h1 class="text-[#454545] text-[18px] font-medium">Rp 250.000</h1>
+                            </div>
+                        </div>
+
+                        <div class="relative w-[320px] h-[454.02px] bg-white rounded-[8px] shadow-card2">
+                            <div class="h-[165px] w-full pl-[19px] bg-[url('.././images/image-device.png')] text-white">
+                                <h4 class="pt-[88.18px] text-[20px] font-semibold">Laravel Developer</h4>
+                                <p>For Beginer</p>
+                            </div>
+                            <div class="absolute ml-[18px] top-[143.31px] w-[257px] h-[143.99px] ">
+                                <img class="w-[91px] h-[91px] mt-[5px] mr-[15px] rounded-[50%] float-left" src="../images/Kak sekar.png">
+                                <h4 class="mt-[28px] text-[18px] font-semibold text-[#454545]">Gabriellia Sekar</h4>
+                                <p class="mt-[2px] text-[12px] font-normal text-[#737373]">Laravel Developer</p>
+                                <div class="flex flex-row gap-[4px] ml-[106px] w-fit h-[23.53px] text-[#ffd84f]">
+                                    <img class="w-[17px] h-[16px]" src="../images/svg/Star.svg" alt="" srcset=""><span class="font-bold text-[12px] text-[#454545] mt-[5.56px]"> 4.5 </span><span class="font-normal text-[10px] text-[#737373] mt-[5.56px]">(154)</span>
+                                </div>
+                            </div>
+                            <div class="mt-24 mx-[18px] w-fit h-[91px] pt-[18.03px] border-y border-[#cccccc]">
+                                <div class="flex flex-row text-[16px] text-[#737373] font-normal gap-[10px]">
+                                    <img class="w-[17px] h-fit bottom-0" src="../images/icon/Users.png" ><span class="text-[#187cff] font-semibold">85</span> Siswa
+                                    <p> |</p>
+                                    <img class="w-[17px] h-fit" src="../images/icon/Class.png">Sisa Kuota: <span class="text-[#187cff] font-semibold">15</span>
+                                </div>
+                                <div class="w-full h-[30.7px] flex flex-row gap-[1px] mt-[8.34px] mb-[14.28px]">
+                                    <div class="w-[92px] h-full bg-[#ffd200] p-[10px] rounded-l-[20px] font-[400] text-[10px] px-[14.5px] py-[6.03px]">ISA Program</div>
+                                    <div class="w-[92px] h-full bg-[#187cff] p-[10px] font-[400] text-[10px] text-white px-[17px] py-[6.03px] flex flex-row gap-[5px]"><img class="mt-[2px] w-[10px] h-[8px]" src="../images/svg/Check.svg" alt="" srcset="">Reguler</div>
+                                    <div class="w-[92px] h-full bg-[#187cff] p-[10px] rounded-r-[20px] font-[400] text-[10px] text-white px-[15px] py-[6.03px] flex flex-row gap-[5px]"><img class="mt-[2px] w-[10px] h-[8px]" src="../images/svg/Check.svg" alt="" srcset="">Penyaluran</div>
+                                </div>
+                            </div>
+                            <div class="mt-[15.79px] mx-[18px] h-fit">
+                                <button class="float-right px-[10px] py-[8.5px] bg-[#187cff] rounded-[8px] text-white text-[12px] font-medium">Daftar kelas</button>    
+                                <p class="text-[#6c6e71] text-[12px] font-normal">Start from</p>
+                                <h1 class="text-[#454545] text-[18px] font-medium">Rp 250.000</h1>
+                            </div>
+                        </div>
+
+                        <div class="relative w-[320px] h-[454.02px] bg-white rounded-[8px] shadow-card2">
+                            <div class="h-[165px] w-full pl-[19px] bg-[url('.././images/image-digital.png')] text-white">
+                                <h4 class="pt-[88.18px] text-[20px] font-semibold">Digital Marketing</h4>
+                                <p>For Beginer</p>
+                            </div>
+                            <div class="absolute ml-[18px] top-[143.31px] w-[257px] h-[143.99px] ">
+                                <img class="w-[91px] h-[91px] mt-[5px] mr-[15px] rounded-[50%] float-left" src="../images/Kak sekar.png">
+                                <h4 class="mt-[28px] text-[18px] font-semibold text-[#454545]">Gabriellia Sekar</h4>
+                                <p class="mt-[2px] text-[12px] font-normal text-[#737373]">Digital Marketing</p>
+                                <div class="flex flex-row gap-[4px] ml-[106px] w-fit h-[23.53px] text-[#ffd84f]">
+                                    <img class="w-[17px] h-[16px]" src="../images/svg/Star.svg" alt="" srcset=""><span class="font-bold text-[12px] text-[#454545] mt-[5.56px]"> 4.5 </span><span class="font-normal text-[10px] text-[#737373] mt-[5.56px]">(154)</span>
+                                </div>
+                            </div>
+                            <div class="mt-24 pb-[14.28px] mx-[18px] w-fit h-[91px] pt-[18.03px] border-y border-[#cccccc]">
+                                <div class="flex flex-row text-[16px] text-[#737373] font-normal gap-[10px]">
+                                    <img class="w-[17px] h-fit bottom-0" src="../images/icon/Users.png" ><span class="text-[#187cff] font-semibold">85</span> Siswa
+                                    <p> |</p>
+                                    <img class="w-[17px] h-fit" src="../images/icon/Class.png">Sisa Kuota: <span class="text-[#187cff] font-semibold">15</span>
+                                </div>
+                                <div class="w-full h-[30.7px] flex flex-row gap-[1px] mt-[8.34px] mb-[14.28px]">
+                                    <div class="w-[92px] h-full bg-[#ffd200] p-[10px] rounded-l-[20px] font-[400] text-[10px] px-[14.5px] py-[6.03px]">ISA Program</div>
+                                    <div class="w-[92px] h-full bg-[#187cff] p-[10px] font-[400] text-[10px] text-white px-[17px] py-[6.03px] flex flex-row gap-[5px]"><img class="mt-[2px] w-[10px] h-[8px]" src="../images/svg/Check.svg" alt="" srcset="">Reguler</div>
+                                    <div class="w-[92px] h-full bg-[#187cff] p-[10px] rounded-r-[20px] font-[400] text-[10px] text-white px-[15px] py-[6.03px] flex flex-row gap-[5px]"><img class="mt-[2px] w-[10px] h-[8px]" src="../images/svg/Check.svg" alt="" srcset="">Penyaluran</div>
+                                </div>
+                            </div>
+                            <div class="mt-[15.79px] mx-[18px] h-fit">
+                                <button class="float-right px-[10px] py-[8.5px] bg-[#187cff] rounded-[8px] text-white text-[12px] font-medium">Daftar kelas</button>    
+                                <p class="text-[#6c6e71] text-[12px] font-normal">Start from</p>
+                                <h1 class="text-[#454545] text-[18px] font-medium">Rp 250.000</h1>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="absolute left-1/2 -translate-x-1/2 mt-[40.05px] rounded-[8px] font-semibold text-[14px] bg-[#ffe13e] px-[32.61px] py-[9.78px]">Lihat lainnya</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Program -->
+
+    <!-- Benefit-->
+    <section class="w-[1016px] mx-[212px] h-[484.46px] mb-[144.7px]">
+        <h4 class="text-[20px] text-[#187cff] font-[500] mb-[15px]">Benefit</h4>
+        <div class="flex flex-row gap-[72px]">
+            <div class="w-[472px] h-[72px]">
+                <h4 class="text-[24px] font-semibold mb-[33px]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo ducimus vitae velit!</h4>
+                <div class="w-fit h-fit flex flex-row">
+                    <ul class="ok pl-[17px] columns-2 mr-[10px] w-[505px] text-[16px] font-reguler font-[400] h-[346px]">
+                        <li class="mb-[17px]">10.000++ hiring partner</li>
+                        <li class="mb-[17px]">Expert tutor</li>
+                        <li class="mb-[17px]">Portfolio real project</li>
+                        <li class="mb-[17px]">Live mentoring</li>
+                        <li class="mb-[17px]">Live class zoom</li>
+                        <li class="mb-[17px]">Pendampingan diawal kerja</li>
+                        <li class="mb-[17px]">Cicilan setelah bekerja</li>
+                        <li class="mb-[17px]">Tutorial video</li>
+                        <li class="mb-[17px]">Profesional Networking</li>
+                        <li class="mb-[17px]">Grup diskusi WhatsApp</li>
+                        <li class="mb-[17px]">Praktek real project</li>
+                        <li class="mb-[17px]">Video materi</li>
+                        <li class="mb-[17px]">Belajar sampai bisa</li>
+                        <li class="mb-[17px]">Dapat dicicil 6-12 kali</li>
+                        <li class="mb-[17px]">Disalurkan kerja</li>
+                        <li class="mb-[17px]">Sertifikat</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative w-[368.87px] h-[368.54px]">
+                <img class="rounded-[20px] benefit-shade-img" src="../images/benefit.png" alt="" srcset="">
+                <img class="absolute left-[170px] top-[35.54px] -z-10" src="../images/benefit-shade.png" alt="" srcset="">
+            </div>
+        </div>
+    </section>
+    <!-- End of Benefit -->
+
+    <!-- Inf0 -->
+    <section class="w-[1018px] mx-[212px] h-[227px] flex flex-row gap-[70px] mb-[129.3px]">
+        <h4 class="w-[204px] text-[20px] font-[500] py-[20px] ">Platform Pelatihan & Penyaluran kerja. Kamu bisa belajar dari 0 sampai bisa dan dapat kerja, dijamin!</h4>
+        <div class="flex flex-row gap-0">
+            <div class="w-[774px] h-[277px] bg-[#4a99ff] rounded-l-[33px] pt-[33px] pl-[32px] ">
+                <div class="w-[46px] h-[45px] bg-white pt-[8px] pl-[11px] rounded-[8px]"><img src="../images/svg/Read Online.svg" alt="" srcset=""></div>
+                <h4 class="mt-[12px] text-[18px] font-[600] text-white w-[124px] ">Dibimbing Sampai Bisa!</h4>
+                <p class="mt-[6px] text-[12px] font-[400] text-white w-[206px] ">Walaupun kamu tidak memiliki latar belakang skill digital. Kamu masih bisa belajar karena materi di sesuaikan untuk pemula. Dan akan dibimbing oleh mentor/praktisi.</p>
+            </div>
+            <div class="absolute w-[278px] h-[277px] left-[732px] rounded-l-[20px] bg-[#187cff] pt-[33px] pl-[32px]">
+                <div class="w-[46px] h-[45px] bg-white pt-[8px] pl-[11px] rounded-[8px]"><img src="../images/svg/Scholarship.svg" alt="" srcset=""></div>
+                <h4 class="mt-[12px] text-[18px] font-[600] text-white w-[107px] ">Murah, Bisa dicicil!</h4>
+                <p class="mt-[6px] text-[12px] font-[400] text-white w-[206px] ">Bisa mulai dari 1jt, pelunasan bisa dicicil sampai 6 bulan. Dengan gaji sampai dengan 10jt lebih, 1x gaji sudah balik modal untuk menutup total biaya!</p>
+            </div>
+            <div class="absolute w-[248px] h-[277px] left-[980px] rounded-l-[20px] bg-[#005ad0] pt-[33px] pl-[32px]">
+                <div class="w-[46px] h-[45px] bg-white pt-[8px] pl-[11px] rounded-[8px]"><img src="../images/svg/Identification Documents.png" alt="" srcset=""></div>
+                <h4 class="mt-[12px] text-[18px] font-[600] text-white w-[139px] ">Disalurkan Kerja, Dijamin!</h4>
+                <p class="mt-[6px] text-[12px] font-[400] text-white w-[206px] ">Selain kalian akan dibimbing sampai bisa. Kamu juga akan dicarikan kerja sampai dapat loh, Ayo tunggu apalagi mumpung program ini masih ada</p>
+            </div>
+        </div>
+    </section>
+    <!-- End of Info -->
+
+    <!-- ISA -->
+    <section class="w-[1231px] mr-[210px] h-[468px] mb-[130px]">
+        <div class="flex flex-row gap-[41px] w-full h-[387px] bg-[#187cff] rounded-tr-[100px] pt-[48.7px] pl-[213px]">
+            <div class="w-[329px] h-[419px]">
+                <img class="ISA-img" src="../images/ISA.png" alt="" srcset="">
+            </div>
+            <div class="mt-0">
+                <h1 class="font-[700] text-[48px] text-[#ffffff]">Belum Punya Uang?</h1>
+                <h2 class="w-[536px] font-[600] text-[30px] text-[#ffffff]">tenang dengan Metode ISA kamu bisa belajar tanpa modal (Rp. 0,-)</h2>
+                <p class="w-[589px] font-[400] text-[20px] mt-[18px] text-[#ffffff]">Dengan program Income Sharing Agreement, kamu bisa fokus belajar dulu, bayarnya nanti setelah mendapatkan kerja / penghasilan.</p>
+                <div class="absolute w-fit h-[151px] mt-[23.3px] flex flex-row gap-[13px]">
+                    <div class="w-fit rounded-[10px] bg-[#ffffff] ISA-card">
+                        <h4 class="pt-[11.7px] pl-[28px] font-[600] text-[20px] mb-[5px]">Keunggulan Program ISA</h4>
+                        <ul class="star pl-[53px] pr-[29px] text-[18px] font-[400] text-[#737373] mb-[6px]">
+                            <li>Fokus belajar pada pengembangan</li>
+                            <li>Sistem pembayaran flexsible</li>
+                            <li>dapat semua benefit dari Eduwork</li>
+                        </ul>
+                    </div>
+                    <div class="w-fit rounded-[10px] bg-[#ffffff] ISA-card">
+                        <h4 class="pt-[11.7px] pl-[28px] font-[600] text-[20px] mb-[5px]">Syarat Program ISA</h4>
+                        <ul class="star pl-[53px] pr-[29px] text-[18px] font-[400] text-[#737373] mb-[6px]">
+                            <li>Usia 17-29 Tahun</li>
+                            <li>Siap disalurkan bekerja</li>
+                            <li>Ada komitmen jaminan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of ISA -->
+
+    <!-- komunitas -->
+    <section class="w-[1016px] mx-[212px] h-[777.76px] mb-[50px]">
+        <h4 class="text-center font-[500] text-[24px] text-[#187cff]">Metode Belajar</h4>
+        <div class="w-fit h-fit">
+            <img class="absolute w-[1020.33px] h-[415px]" src="../images/komunitas-bg.png">
+            <img class="w-[1014px] h-[400.8px] mt-[33.24px] mb-[73.36px]" src="../images/indo-map.png" alt="">    
+        </div>
+        <div class=" w-full h-[67.59] flex flex-row gap-[36.31px] justify-center">
+            <img class="w-[64.21px] h-[64.21px] icon-shade" src="../images/logo/sosial/zoom.png" alt="" srcset="">
+            <img class="w-[64.21px] h-[64.21px] icon-shade" src="../images/logo/sosial/slack.png" alt="" srcset="">
+            <img class="w-[64.21px] h-[64.21px] icon-shade" src="../images/logo/sosial/sykpe.png" alt="" srcset="">
+            <img class="w-[66.4px] h-[54.63px] icon-shade" src="../images/logo/sosial/gmeet.png" alt="" srcset="">
+            <img class="w-[64.21px] h-[64.21px] icon-shade" src="../images/logo/sosial/whatsapp.png" alt="" srcset="">
+            <img class="w-[64.21px] h-[64.21px] icon-shade" src="../images/logo/sosial/telegram.png" alt="" srcset="">
+        </div>
+            <h1 class="font-[700] mt-[45.41px] text-center text-[36px] mb-[13.76px] ">Belajar Bersama Komunitas</h1>
+            <p class="font-[400] text-[16px] ml-[100px] text-center text-[#737373] w-[760px] ">Do amet mollit ea et duis magna cupidatat adipisicing commodo elit id. Exercitation dolore nisi culpa irure magna et aliqua exercitation sunt fugiat amet. Aute ipsum nisi et aliquip .</p>
+
+    </section>
+    <!-- End of komunitas -->
+
+    <!-- Fasilitas -->
+    <section class="w-[1016px] mx-[212px] h-[253px] mb-[111.94px]">
+        <h1 class="font-[600] text-center text-[30px] mb-[33px] ">Dapatkan Fasilitas Dan Bonus Menarik</h1>
+        <div class="w-fit h-fit flex flex-row gap-[24px]">
+            <div class="w-[236px] h-[167px] rounded-[10px] bg-[#ffffff] fasilitas-card-shade">
+                <img class="mt-[9px] ml-[13px]" src="../images/icon/Chat.png" alt="" srcset="">
+                <h1 class=" font-[600] text-[16px] ml-[20px]">Bebas Konsultasi</h1>
+                <p class="font-[400] text-[14px] ml-[20px]">Bebas konsultasi dengan mentor secara private 1 on 1</p>
+            </div>
+            <div class="w-[236px] h-[167px] rounded-[10px] bg-[#ffffff] fasilitas-card-shade">
+                <img class="mt-[9px] ml-[13px] mb-[15px]" src="../images/icon/WhatsApp.png" alt="" srcset="">
+                <h1 class=" font-[600] text-[16px] ml-[20px]">Group WhatsApp</h1>
+                <p class="font-[400] text-[14px] ml-[20px] mr-[13px]">Networking dan diskusi dengan siswa lainnya</p>
+            </div>
+            <div class="w-[236px] h-[167px] rounded-[10px] bg-[#ffffff] fasilitas-card-shade">
+                <img class="mt-[9px] ml-[13px] mb-[15px]" src="../images/icon/Video Call.png" alt="" srcset="">
+                <h1 class=" font-[600] text-[16px] ml-[20px]">Video Materi</h1>
+                <p class="font-[400] text-[14px] ml-[20px]">Pelajari materi dimana saja dan kapan saja</p>
+            </div>
+            <div class="w-[236px] h-[167px] rounded-[10px] bg-[#ffffff] fasilitas-card-shade">
+                <img class="mt-[9px] ml-[13px] mb-[15px]" src="../images/icon/Flipboard.png" alt="" srcset="">
+                <h1 class=" font-[600] text-[16px] ml-[20px]">Tugas Praktek</h1>
+                <p class="font-[400] text-[14px] ml-[20px]">Pemberian tugas praktek di tiap materi</p>
+            </div>
+        </div>
+    </section>
+    <!-- End of Fasilitas -->
+
+    <!-- Biaya -->
+    <section class="w-[1016px] mx-[212px] h-[774px] mb-[133.3px]">
+        <div class="flex flex-row gap-[35px]">
+            <div class="w-fit h-fit pt-[202px] ">
+                <h4 class="font-[500] text-[24px] text-[#187cff]">Pembayaran</h4>
+                <h4 class="w-[204px] text-[20px] font-[700]">Pilih Dan Tentukan Program Yang Menentukan Masa Depanmu!</h4>
+                <p class="font-[400] text-[20px] text-[#737373] mt-[6px] ">Daftar Program Reguler Bulan ini Dan Dapatkan Potongan Harga Langsung!!!</p>
+                <button class="px-[30px] pt-[11px] pb-[12px] rounded-[10px] mt-[22px] bg-[#00c264] text-[#ffffff] text-[18px] font-[500] flex flex-row gap-[5px]"><img class="w-[16px] h-[16px] mt-[5px]" src="../images/svg/WhatsApp.svg"> Konsul Dulu</button>
+            </div>
+            <div class="flex gap-[22px] mt-[16px]">
+                <div class="relative w-[333px] h-[758px] rounded-[30px] bg-[#ffffff] pt-[61px] biaya-shade">
+                    <div class=" w-[92px] h-[78px] bg-[#ffce4f] rounded-[10px] absolute -top-[16px] left-1/2 -translate-x-1/2 biaya-shade py-[13px] px-[20px]"><img src="../images/svg/Class.svg" alt="" srcset=""></div>
+                    <h4 class="text-center text-[30px] font-[600] mb-[15px]">ISA</h4>
+                    <p class="text-center text-[16px] font-[500] mb-[11px]">Modal Mulai</p>
+                    <h4 class="relative text-center font-[600] text-[24px] mb-[13px] "><div class="absolute left-1/2 -translate-x-1/2 top-1/3 w-[214.39px] h-[4px] rounded-[15px] -rotate-[2.06deg] bg-[#ff0000]"></div>Rp.8.000.000,-.</h4>
+                    <h3 class="text-center font-[600] text-[40px] text-[#187cff] mb-[10px]">Rp. 1Jt</h3>
+                    <div class="absolute left-1/2 -translate-x-1/2">
+                        <div class="w-[285px] h-[37px] px-[19px] pt-[13px] bg-[#ffce4f] rounded-[10px] font-[500] text-[10px] mb-[11px]">Total 12jt, Cicilan 12 bulan dibayar setelah kerja</div>
+                        <div class="w-[285px] h-[128px] pt-[15px] px-[20px] rounded-[15px] text-white text-[12px] font-[600] bg-[#187cff]">ISA ( Income Sharing Agreement ), untuk kamu yang belum berpenghasilan / punya dana, cicilan dibayar setelah kamu kami salurkan kerja, Penyaluran kerja dijamin!</div>
+                        <ul class="checkmark-1 mt-[21px] mb-[10px] px-10 ">
+                            <li class="text-[14px]">Dapat Semua Fasilitas Program Reguler</li>
+                            <li class="text-[14px]">Bisa Mulai Dari Rp. 0,-</li>
+                        </ul>
+                        <div class="w-[267px] h-[125px] border-y border-[#cecece] mb-[20px]">
+                            <ul class="list-disc text-[12px] text-[#737373] leading-[24px] pl-10 pt-[13px]">
+                                <li>Bayar Setelah Disalurkan Bekerja</li>
+                                <li>Total Biaya Jadi 12 Juta</li>
+                                <li>Total Cicilan Jadi 12x</li>
+                                <li>Ada Tahap Seleksi</li>
+                            </ul>
+                        </div>
+                        <button class="mx-[20%] w-[160px] h-[50px] pt-[11px] pb-[12px] px-[51px] rounded-[10px] bg-[#187cff] text-[#ffffff]">Daftar</button>
+                    </div>
+                </div>
+                <div class="relative w-[333px] h-[758px] rounded-[30px] bg-[#ffffff] pt-[61px] biaya-shade">
+                    <div class=" w-[92px] h-[78px] bg-[#00c264] rounded-[10px] absolute -top-[16px] left-1/2 -translate-x-1/2 py-[13px] px-[20px]"><img src="../images/svg/Class.svg" alt="" srcset=""></div>
+                    <h4 class="text-center text-[30px] font-[600] mb-[15px]">Reguler</h4>
+                    <p class="text-center text-[16px] font-[500] mb-[11px]">Modal Mulai</p>
+                    <h4 class="relative text-center font-[600] text-[24px] mb-[13px] "><div class="absolute left-1/2 -translate-x-1/2 top-1/3 w-[214.39px] h-[4px] rounded-[15px] -rotate-[2.06deg] bg-[#ff0000]"></div>Rp.6.000.000,-.</h4>
+                    <h3 class="text-center font-[600] text-[40px] text-[#187cff] mb-[10px]">Rp. 0,-</h3>
+                    <div class="absolute left-1/2 -translate-x-1/2">
+                        <div class="w-[285px] h-[37px] px-[19px] pt-[13px] bg-[#ffce4f] rounded-[10px] font-[500] text-[10px] text-center mb-[11px]">Total 6jt , Cicilan 1jt/ bulan x 6 bulan</div>
+                        <div class="w-[267px] h-fit border-y border-[#cecece] mb-[27px]">
+                            <ul class="checkmark-1 max-w-[190px] text-[14px] text-[#737373] leading-[20px] pl-10 pt-[13px] pb-[29px]">
+                                <li>Mentoring 1 on 1</li>
+                                <li>Live Group Mentoring Seminggu 1x</li>
+                                <li>32 Video Materi + Bonus 45 Video</li>
+                                <li>Pendampingan Kerja</li>
+                                <li>Cicilan Hingga 6x</li>
+                                <li>Sertifikat</li>
+                                <li>Tanpa Seleksi</li>
+                                <li>Lebih Terjangkau dan Program ISA</li>
+                                <li>Penyaluran Kerja</li>
+                            </ul>
+                        </div>
+                        <button class="mx-[20%] w-[160px] h-[50px] pt-[11px] pb-[12px] px-[51px] rounded-[10px] bg-[#187cff] text-[#ffffff]">Daftar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Biaya -->
+
+    <!-- Testimoni -->
+    <section class=" w-[1403px] ml-[127px] h-[480px] mb-[80px]">
+        <div class="w-[1313px] h-[480px] bg-[#187CFF] rounded-tl-[104px] ">
+            <div class="flex flex-row">
+                <div class="pt-[163px] ml-[129px] text-white mr-[57px]">
+                    <h4 class="text-[24px] font-[500]  ">Testimonials</h4>
+                    <h2 class="text-[30px] font-[600] w-[249px] leading-[40px] mb-[15px]">People Say About Courses</h2>
+                    <div class="flex flex-row gap-[5px]">
+                        <img src="../images/svg/X-Arrow.svg" alt="" srcset="">
+                        <img class="rotate-180" src="../images/svg/X-Arrow.svg" alt="" srcset="">
+                    </div>
+                </div>
+
+                <div class="mt-[34px] flex flex-row gap-[30px]">
+                    <div class="w-[317px] h-[401px] rounded-[20px] pl-[26.98px] pr-[26.02px] pt-[22px] bg-[#ffffff]">
+                        <img src="../images/svg/Quote Left.svg" alt="">
+                        <p class="mt-[32px] mb-[49px] font-[500] text-[18px] font-['Raleway'] text-[#000000] ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <div class=" border border-x-0 pt-[16px] border-b-0 border-t-[#b7b7b7] w-full h-fit">
+                            <img class="float-left mr-[10.33px]" src="../images/profile-salma.png" alt="">
+                            <div class="font-[400] text-[14px] font-['Raleway'] text-[#737373]">
+                                <h1 class="font-[600] text-[18px] font-['Raleway'] text-[#000000]">Salma Valeria Latief</h1>
+                                <p>Programmer Astra</p>
+                                <img class="w-[14px] h-[14px] float-left mr-[7px]" src="../images/svg/Star.svg" alt="" srcset=""><span>4.5</span>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[187px] h-[401px] rounded-[20px] pl-[16px] pr-[19px] pt-[22px] bg-[#ffffff]">
+                        <img src="../images/svg/Quote Left.svg" alt="">
+                        <p class="hidden mt-[32px] mb-[49px] font-[500] text-[18px] font-['Raleway'] text-[#000000] ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <div class=" border border-x-0 pt-[16px] border-b-0 text-center border-t-[#b7b7b7] w-full h-fit">
+                            <img class="float-left mr-[10.33px]" src="../images/profile-ahmad.png" alt="">
+                            <div class="font-[400] text-[14px] font-['Raleway'] text-[#737373]">
+                                <h1 class="font-[600] text-[18px] font-['Raleway'] text-[#000000]">Ahmad Khoerudin</h1>
+                                <p>Programmer Gojek</p>
+                                <img class="w-[14px] h-[14px] float-left mr-[7px]" src="../images/svg/Star.svg" alt="" srcset=""><span>4.5</span>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[187px] h-[401px] rounded-[20px] pl-[22px] pr-[19px] pt-[22px] bg-[#ffffff]">
+                        <img src="../images/svg/Quote Left.svg" alt="">
+                        <p class="hidden mt-[32px] mb-[49px] font-[500] text-[18px] font-['Raleway'] text-[#000000] ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <div class=" border border-x-0 pt-[16px] border-b-0 text-center border-t-[#b7b7b7] w-full h-fit">
+                            <img class="float-left mr-[10.33px]" src="../images/profile-lian.png" alt="">
+                            <div class="font-[400] text-[14px] font-['Raleway'] text-[#737373]">
+                                <h1 class="font-[600] text-[18px] font-['Raleway'] text-[#000000]">Lian Gallanger</h1>
+                                <p>Laravel Developer</p>
+                                <img class="w-[14px] h-[14px] justify-center float-left mr-[7px]" src="../images/svg/Star.svg" alt="" srcset=""><span>4.5</span>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative w-[187px] h-[401px] rounded-[20px] pl-[22px] pr-[19px] pt-[22px] bg-[#ffffff]">
+                        <img src="../images/svg/Quote Left.svg" alt="">
+                        <p class="hidden mt-[32px] mb-[49px] font-[500] text-[18px] font-['Raleway'] text-[#000000] ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <div class=" border border-x-0 pt-[16px] border-b-0 text-center border-t-[#b7b7b7] w-full h-fit">
+                            <img class="float-left mr-[10.33px]" src="../images/profile-nikita.png" alt="">
+                            <div class="font-[400] text-[14px] font-['Raleway'] text-[#737373]">
+                                <h1 class="font-[600] text-[18px] font-['Raleway'] text-[#000000]">Nikita Romeb</h1>
+                                <p>Digital Marketing</p>
+                                <img class="w-[14px] h-[14px] float-left mr-[7px]" src="../images/svg/Star.svg" alt="" srcset=""><span>4.5</span>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
+            </div>
+        </div>
+    </section>
+    <!-- End of Testimoni -->
+
+    <!-- FAQ -->
+    <section class="relative w-[1016px] mx-[212px] h-[581px] mb-[106.54px] z-10">
+        <h4 class="text-center text-[24px] font-[700] text-[#0059A0] mb-[27px]">FAQ</h4>
+        <h2 class="font-[600] text-center mx-[111px] text-[30px] text-[#202020] mb-[56px]">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>
+            <div class="columns-2">
+                <div class="acc w-fit h-fit text-[#202020] overflow-hidden acc-shade rounded-[15px] mb-[27px] cursor-pointer">
+                    <div class="label w-[488px] h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] text-[20px] font-[600] pl-[14px] flex flex-row gap-[22px]"><img class="w-[46px] h-[46px] mt-[18px] p-[8px] bg-[#187cff] rounded-[50%]" src="../images/svg/Enter.svg" alt=""><h2 class="mt-[25px]">Panduan Pendaftaran</h2></div>
+                    <div class="content bg-slate-100 overflow-hidden overflow-y-auto h-0 relative transition-all">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>
+                <div class="acc w-fit h-fit text-[#202020] overflow-hidden acc-shade mb-[27px] rounded-[15px] cursor-pointer">
+                    <div class="label w-[488px] h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] text-[20px] font-[600] pl-[14px] flex flex-row gap-[22px]"><img class="w-[46px] h-[46px] mt-[18px] p-[8px] bg-[#187cff] rounded-[50%]" src="../images/svg/Cheque.svg" alt=""><h2 class="mt-[25px]">Apakah ada Persyaratan?</h2></div>
+                    <div class="content bg-slate-100 overflow-hidden overflow-y-auto h-0 relative transition-all">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>
+                <div class="acc w-fit h-fit text-[#202020] overflow-hidden acc-shade mb-[27px] rounded-[15px] cursor-pointer">
+                    <div class="label w-[488px] h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] text-[20px] font-[600] pl-[14px] flex flex-row gap-[22px]"><img class="w-[46px] h-[46px] mt-[18px] p-[8px] bg-[#187cff] rounded-[50%]" src="../images/svg/Class.svg" alt=""><h2 class="mt-[25px]">Apa itu ISA</h2></div>
+                    <div class="content bg-slate-100 overflow-hidden overflow-y-auto h-0 relative transition-all">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>
+                <div class="acc w-fit h-fit text-[#202020] overflow-hidden acc-shade rounded-[15px] cursor-pointer">
+                    <div class="label w-[488px] h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] text-[20px] font-[600] pl-[14px] flex flex-row gap-[22px]"><img class="w-[46px] h-[46px] mt-[18px] p-[8px] bg-[#187cff] rounded-[50%]" src="../images/svg/Multiple Choice.svg" alt=""><h2 class="mt-[25px]">Proses Seleksinya Pendaftaran</h2></div>
+                    <div class="content bg-slate-100 overflow-hidden overflow-y-auto h-0 relative transition-all">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>
+                <div class="acc w-fit h-fit text-[#202020] overflow-hidden acc-shade mb-[27px] rounded-[15px] cursor-pointer">
+                    <div class="label w-[488px] h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] text-[20px] font-[600] pl-[14px] flex flex-row gap-[22px]"><img class="w-[46px] h-[46px] mt-[18px] p-[8px] bg-[#187cff] rounded-[50%]" src="../images/svg/Book.svg" alt=""><h2 class="mt-[25px]">Bagaimana Proses Belajarnya</h2></div>
+                    <div class="content bg-slate-100 overflow-hidden overflow-y-auto h-0 relative transition-all">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>    
+                <div class="acc w-fit h-fit text-[#202020] overflow-hidden acc-shade mb-[27px] rounded-[15px] cursor-pointer">
+                    <div class="label w-[488px] h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] text-[20px] font-[600] pl-[14px] flex flex-row gap-[22px]"><img class="w-[46px] h-[46px] mt-[18px] p-[8px] bg-[#187cff] rounded-[50%]" src="../images/svg/Static View Level2.svg" alt=""><h2 class="mt-[25px]">Bagaimana Penyalurannya</h2></div>
+                    <div class="content bg-slate-100 overflow-hidden overflow-y-auto h-0 relative transition-all">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>    
+                <div class="acc w-fit h-fit text-[#202020] overflow-hidden acc-shade mb-[27px] rounded-[15px] cursor-pointer">
+                    <div class="label w-[488px] h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] text-[20px] font-[600] pl-[14px] flex flex-row gap-[22px]"><img class="w-[46px] h-[46px] mt-[18px] p-[8px] bg-[#187cff] rounded-[50%]" src="../images/svg/Briefcase.svg" alt=""><h2 class="mt-[25px]">Bagaimana Setelah Bekerja</h2></div>
+                    <div class="content bg-slate-100 overflow-hidden overflow-y-auto h-0 relative transition-all">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>    
+                <div class="acc w-fit h-fit text-[#202020] overflow-hidden acc-shade rounded-[15px] cursor-pointer">
+                    <div class="label w-[488px] h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] text-[20px] font-[600] pl-[14px] flex flex-row gap-[22px]"><img class="w-[46px] h-[46px] mt-[18px] p-[8px] bg-[#187cff] rounded-[50%]" src="../images/svg/Tags.svg" alt=""><h2 class="mt-[25px]">Berapa Total Langganan</h2></div>
+                    <div class="content bg-slate-100 overflow-hidden overflow-y-auto h-0 relative transition-all">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>    
+            </div>
+    </section>
+    <!-- End of FAQ -->
+    <!-- End of Main section -->
+
+    <!-- Footer section -->
+    <section class="relative w-full h-[1046px]">
+        <div class="absolute w-[1095px] h-[575px] ml-[136px] pt-[86px] pl-[79px] top-[267px]">
+            <div class="flex flex-row text-[#ffffff]">
+                <div class="w-[237.51px]">
+                    <img src="../images/eduwork-white.png" alt="" srcset="">
+                    <p class="text-[14px] mt-[37.56px] mb-[18px] ">When an unknown printer took a galley of type and make a type specimen book.</p>        
+                    <div class="flex flex-row gap-[22px]">
+                        <img src="../images/svg/white-instagram.svg" alt="" srcset="">
+                        <img src="../images/svg/white-twitter.svg" alt="" srcset="">
+                        <img src="../images/svg/white-youtube.svg" alt="" srcset="">
+                    </div>
+                </div>
+
+                <div class="columns-2 ml-[105.49px] mr-[23px]">
+                    <div class="flex flex-col gap-[41px] w-[171px] h-[375px]">
+                        <div class="h-fit">
+                            <h1 class="font-[600] text-[18px] mb-[20px]">Explore Us</h1>
+                            <ul class="text-[12px]">
+                                <a href=""><li class="mb-[12px]">Kelas</li></a>
+                                <a href=""><li class="mb-[12px]">Our Mentors</li></a>
+                                <a href=""><li class="mb-[12px]">For Corporate</li></a>
+                                <a href=""><li>Community</li></a>
+                            </ul>    
+                        </div>
+
+                        <div class="h-[167px]">
+                            <h1 class="font-[600] text-[18px] mb-[20px]">Our Services</h1>
+                            <ul class="text-[12px]">
+                                <a href=""><li class="mb-[12px]">Free Event</li></a>
+                                <a href=""><li class="mb-[12px]">Video Course</li></a>
+                                <a href=""><li class="mb-[12px]">Bootcamp</li></a>
+                                <a href=""><li>Private Mentoring</li></a>
+                            </ul>    
+                        </div>
+
+                    </div>
+                    <div class="flex flex-col gap-[41px] w-[198px] h-[375px]">
+                        <div class="h-fit">
+                            <h1 class="font-[600] text-[18px] mb-[20px]">Category</h1>
+                            <ul class="text-[12px]">
+                                <a href=""><li class="mb-[12px]">Mobile Developer</li></a>
+                                <a href=""><li class="mb-[12px]">Website Developer</li></a>
+                                <a href=""><li class="mb-[12px]">UI/UX Designer</li></a>
+                                <a href=""><li>Graphic Designer</li></a>
+                            </ul>    
+                        </div>
+
+                        <div class="h-[167px]">
+                            <h1 class="font-[600] text-[18px] mb-[20px]">Office</h1>
+                            <ul class="text-[12px]">
+                                <li class="mb-[12px]">PT Eduwork.id</li>
+                                <li class="mb-[12px]">Jl. Ring Road Utara No 24</li>
+                                <li class="mb-[12px]">Yogyakarta. Indonesia</li>
+                                <a href=""><li>team@eduwork.id</li></a>
+                            </ul>    
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <h1 class="font-[600] text-[18px] mb-[20px]">Promotions</h1>
+                    <ul class="text-[12px]">
+                        <a href=""><li class="mb-[12px]">Submit your email for new updates</li></a>
+                        <li class="flex flex-row">
+                            <input class="rounded-l-[5px] bg-[#f6fcff] w-[190.01px] h-[55px] border border-white text-[#404040]" type="email" name="" id="">
+                            <button class="w-[50.09px] rounded-r-[5px] h-[55px] bg-[#a1b0c7] border border-white pl-[13px]"><img class="w-[28px] h-[28px]" src="../images/svg/mail.svg"></button>    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="absolute bottom-0">
+                <p class="text-[#ffffff] text-[12px]">© EduWork 2020 - 2021 . All rights reserved.</p>
+            </div>
+            <div class="absolute right-0 bottom-0 float-right inline-flex gap-[50px]">
+                <p class="text-[#ffffff] text-[12px]">Privacy and policy</p>
+                <p class="text-[#ffffff] text-[12px]">Terms</p>    
+            </div>    
+        </div>
+
+        <div class="wave-footer"></div>
+        <div class="absolute bottom-0 w-full h-[931px] bg-footer -z-50"></div>
+    </section>
+    <!-- End of Footer section -->
+
+    <!-- JS -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <script src="vue.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

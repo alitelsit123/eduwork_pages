@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <title>EduWork - Platform Mentoring & Penyaluran Kerja</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 34px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f6fcff] text-[#404040] font-poppins">
+    <!-- Navabar -->
+    <nav class="z-50" id="navbar">
+        <div class="w-[90%] lg:w-[1016px] container mx-auto py-2 md:py-4">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="index.html" class="flex items-center">
+                    <img class="h-6 sm:h-7" src="./images/logo/favicon.png" alt="Eduwork Logo" />
+                </a>
+                <div class="flex gap-3 md:order-2">
+                    <button type="button"
+                        class="text-white hidden md:block bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                        Login
+                    </button>
+                    <button type="button"
+                        class="text-white hidden md:block bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                        Register
+                    </button>
+                    <button data-collapse-toggle="navbar-sticky" type="button"
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-sticky" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                    <ul
+                        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row gap-[10px] md:gap-[40px] md:mt-0 md:text-sm md:font-semibold md:border-0 md:bg-transparent">
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent">
+                            Kelas
+                            <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="dropdownNavbar"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Regular</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kelas</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownMentor"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent">
+                            Mentor
+                            <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="dropdownMentor"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mentor</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mentor</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownCompany"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent">
+                            Company
+                            <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="dropdownCompany"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44 !mb-5">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Partner</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Partner</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button"
+                            class="text-white block md:hidden bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                            Login
+                        </button>
+                        <button type="button"
+                            class="text-white block md:hidden bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                            Register
+                        </button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="absolute -z-10 top-[200px] w-full h-[328.26px]">
+        <div class="wave"></div>
+    </div>
+    <div class="absolute top-0 w-full -z-30">
+        <div class="bg-gradient-to-r from-white via-white to-white/60 w-full h-full absolute"></div>
+        <img class="w-full object-cover h-[200px] md:h-fit" src="./images/profile-mentor/bg-hero-mentor.png" alt="" />
+    </div>
+    <!-- Content -->
+    <div class="z-50">
+        <nav class="menuChange w-[90%] hidden md:block md:w-full lg:w-[1138px] mt-36 container mx-auto z-50"
+            id="navProf">
+            <ul
+                class="w-full flex flex-col md:flex-row text-[#888888] justify-between bg-white shadow-s2 py-6 px-10 rounded-[10px]">
+                <li class="tentang text-[16px]">
+                    <a href="#tentang">Tentang</a>
+                </li>
+                <li class="skill text-[16px]"><a href="#skill">Skill</a></li>
+                <li class="portofolio text-[16px]">
+                    <a href="#portofolio">Portofolio</a>
+                </li>
+                <li class="daftarmurid text-[16px]">
+                    <a href="#daftarmurid">Daftar murid</a>
+                </li>
+                <li class="review text-[16px]"><a href="#review">Review</a></li>
+                <li class="perusahaan text-[16px]">
+                    <a href="#perusahaan">Perusahaan</a>
+                </li>
+                <li class="kelas text-[16px]"><a href="#kelas">Kelas</a></li>
+                <li class="faq text-[16px]"><a href="#faq">FAQ</a></li>
+                <li class="rekomendasi text-[16px]">
+                    <a href="#rekomendasi">Rekomendasi</a>
+                </li>
+            </ul>
+        </nav>
+        <div
+            class="w-[90%] mt-[100px] md:mt-[50px] lg:w-[1016px] container mx-auto flex flex-col md:flex-row gap-8 items-start">
+            <div class="w-full md:w-1/3 flex flex-col" id="ppMentor">
+                <!-- Profile -->
+                <div class="bg-white flex flex-col p-[20px] rounded-[20px] gap-3 shadow-s2">
+                    <div class="w-full relative rounded-[15px] overflow-hidden">
+                        <div class="absolute bg-gradient-to-t from-black/50 to-black/0 w-full h-full"></div>
+                        <img loading="lazy" src="./images/profile-mentor/pp-pelita.png" alt=""
+                            class="object-cover w-full" />
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <h1 class="text-[18px] font-semibold">Pelita Nur Najmina</h1>
+                        <p class="text-[#828282] text-[14px]">CTO Eduwork</p>
+                    </div>
+                    <div class="h-[1px] w-full bg-[#D9D9D9]"></div>
+                    <div class="flex flex-col gap-[1px] text-[#828282] text-[14px]">
+                        <div class="flex gap-2 items-center">
+                            <img loading="lazy" src="./images/profile-mentor/Internship.png" alt="" />
+                            <p>8 Years Experience</p>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img loading="lazy" src="./images/profile-mentor/Pennant.png" alt="" />
+                            <p>5 Award</p>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img loading="lazy" src="./images/profile-mentor/Certificate.png" alt="" />
+                            <p>10 Certificate</p>
+                        </div>
+                    </div>
+                    <div class="h-[1px] w-full bg-[#D9D9D9]"></div>
+                    <div class="flex flex-col gap-[1px] text-[#828282] text-[14px]">
+                        <p class="text-[#252525] font-medium">Total Income</p>
+                        <div class="flex gap-2 items-center">
+                            <img loading="lazy" src="./images/profile-mentor/CardWallet.png" alt="" />
+                            <p>Rp. 800.000,-</p>
+                        </div>
+                        <p class="text-[#252525] font-medium">Total Murid Tersalurkan</p>
+                        <div class="flex gap-2 items-center">
+                            <img loading="lazy" src="./images/profile-mentor/Users.png" alt="" />
+                            <p>100 Orang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full">
+                <!-- Tentang -->
+                <section id="tentang" class="tentang flex flex-col gap-3">
+                    <h1 class="text-primary text-[20px] font-semibold">Tentang</h1>
+                    <p class="text-[16px]">
+                        It is a long established fact that a reader will be distracted by
+                        the readable content of a page when looking at its layout. The
+                        point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here,
+                        content here', making it look like readable English.
+                    </p>
+                </section>
+
+                <!-- Skill -->
+                <section id="skill" class="skill mt-[50px] flex flex-col gap-6">
+                    <h1 class="text-primary text-[20px] font-semibold">Skill</h1>
+                    <div class="flex flex-wrap flex-row gap-3">
+                        <div
+                            class="bg-gradient-to-r from-[#EBEEFE] to-[#D7ECFF] rounded-3xl p-3 flex flex-row items-center gap-2">
+                            <img loading="lazy" src="./images/community/detail-mentor/skills/laravel.png" alt=""
+                                class="w-7 h-7 rounded-full object-cover" />
+                            <span class="font-medium text-[#252525]">Laravel</span>
+                            <img src="./images/community/detail-mentor/skills/verified.svg" alt="" class="w-6 h-6">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-[#EBEEFE] to-[#D7ECFF] rounded-3xl p-3 flex flex-row items-center gap-2">
+                            <img loading="lazy" src="./images/community/detail-mentor/skills/css.png" alt=""
+                                class="w-7 h-7 rounded-full object-cover" />
+                            <span class="font-medium text-[#252525]">CSS</span>
+                            <img src="./images/community/detail-mentor/skills/verified.svg" alt="" class="w-6 h-6">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-[#EBEEFE] to-[#D7ECFF] rounded-3xl p-3 flex flex-row items-center gap-2">
+                            <img loading="lazy" src="./images/community/detail-mentor/skills/figma.png" alt=""
+                                class="w-7 h-7 rounded-full object-cover" />
+                            <span class="font-medium text-[#252525]">Figma</span>
+                            <img src="./images/community/detail-mentor/skills/verified.svg" alt="" class="w-6 h-6">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-[#EBEEFE] to-[#D7ECFF] rounded-3xl p-3 flex flex-row items-center gap-2">
+                            <img loading="lazy" src="./images/community/detail-mentor/skills/html.png" alt=""
+                                class="w-7 h-7 rounded-full object-cover" />
+                            <span class="font-medium text-[#252525]">HTML</span>
+                            <img src="./images/community/detail-mentor/skills/verified.svg" alt=""
+                                class="w-6 h-6 hidden">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-[#EBEEFE] to-[#D7ECFF] rounded-3xl p-3 flex flex-row items-center gap-2">
+                            <img loading="lazy" src="./images/community/detail-mentor/skills/react.png" alt=""
+                                class="w-7 h-7 rounded-full object-cover" />
+                            <span class="font-medium text-[#252525]">React JS</span>
+                            <img src="./images/community/detail-mentor/skills/verified.svg" alt=""
+                                class="w-6 h-6 hidden">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-[#EBEEFE] to-[#D7ECFF] rounded-3xl p-3 flex flex-row items-center gap-2">
+                            <img loading="lazy" src="./images/community/detail-mentor/skills/javascript.png" alt=""
+                                class="w-7 h-7 rounded-full object-cover" />
+                            <span class="font-medium text-[#252525]">Javascript</span>
+                            <img src="./images/community/detail-mentor/skills/verified.svg" alt=""
+                                class="w-6 h-6 hidden">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-[#EBEEFE] to-[#D7ECFF] rounded-3xl p-3 flex flex-row items-center gap-2">
+                            <img loading="lazy" src="./images/community/detail-mentor/skills/trello.png" alt=""
+                                class="w-7 h-7 rounded-full object-cover" />
+                            <span class="font-medium text-[#252525]">Trello</span>
+                            <img src="./images/community/detail-mentor/skills/verified.svg" alt=""
+                                class="w-6 h-6 hidden">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-[#EBEEFE] to-[#D7ECFF] rounded-3xl p-3 flex flex-row items-center gap-2">
+                            <img loading="lazy" src="./images/community/detail-mentor/skills/ai.png" alt=""
+                                class="w-7 h-7 rounded-full object-cover" />
+                            <span class="font-medium text-[#252525]">Adobe Illustrator</span>
+                            <img src="./images/community/detail-mentor/skills/verified.svg" alt=""
+                                class="w-6 h-6 hidden">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sertifikat -->
+                <section id="sertifikat" class="mt-[50px] flex flex-col">
+                    <h1 class="text-primary text-[20px] font-semibold">Sertifikat</h1>
+                    <div class="swiper mySwiper flex flex-col max-w-[730px] px-5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col shadow-xl rounded-[10px] overflow-hidden">
+                                <div class="relative">
+                                    <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                    <img loading="lazy" src="./images/community/detail-mentor/sertifikat/sertif-1.png"
+                                        alt="" class="w-full object-cover" />
+                                </div>
+                                <div
+                                    class="bg-white relative p-[10px] flex flex-col rounded-[10px] -mt-8 items-center text-center">
+                                    <h1 class="text-[16px] font-semibold text-eduwork-text-heading">
+                                        Software Developer
+                                    </h1>
+                                    <p class="mt-[2px] text-[14px] font-medium text-eduwork-text-paragraph">
+                                        Eduwork
+                                    </p>
+                                    <p class="mt-[4px] text-[14px] text-eduwork-text-paragraph">
+                                        Diterbitkan September 2023
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide flex flex-col shadow-xl rounded-[10px] overflow-hidden">
+                                <div class="relative">
+                                    <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                    <img loading="lazy" src="./images/community/detail-mentor/sertifikat/sertif-2.png"
+                                        alt="" class="w-full object-cover" />
+                                </div>
+                                <div
+                                    class="bg-white relative p-[10px] flex flex-col rounded-[10px] -mt-8 items-center text-center">
+                                    <h1 class="text-[16px] font-semibold text-eduwork-text-heading">
+                                        Head Product Manager
+                                    </h1>
+                                    <p class="mt-[2px] text-[14px] font-medium text-eduwork-text-paragraph">
+                                        Eduwork
+                                    </p>
+                                    <p class="mt-[4px] text-[14px] text-eduwork-text-paragraph">
+                                        Diterbitkan September 2023
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide flex flex-col shadow-xl rounded-[10px] overflow-hidden">
+                                <div class="relative">
+                                    <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                    <img loading="lazy" src="./images/community/detail-mentor/sertifikat/sertif-3.png"
+                                        alt="" class="w-full object-cover" />
+                                </div>
+                                <div
+                                    class="bg-white relative p-[10px] flex flex-col rounded-[10px] -mt-8 items-center text-center">
+                                    <h1 class="text-[16px] font-semibold text-eduwork-text-heading">
+                                        Front-end Developer
+                                    </h1>
+                                    <p class="mt-[2px] text-[14px] font-medium text-eduwork-text-paragraph">
+                                        Eduwork
+                                    </p>
+                                    <p class="mt-[4px] text-[14px] text-eduwork-text-paragraph">
+                                        Diterbitkan September 2023
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide flex flex-col shadow-xl rounded-[10px] overflow-hidden">
+                                <div class="relative">
+                                    <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                    <img loading="lazy" src="./images/community/detail-mentor/sertifikat/sertif-1.png"
+                                        alt="" class="w-full object-cover" />
+                                </div>
+                                <div
+                                    class="bg-white relative p-[10px] flex flex-col rounded-[10px] -mt-8 items-center text-center">
+                                    <h1 class="text-[16px] font-semibold text-eduwork-text-heading">
+                                        Software Developer
+                                    </h1>
+                                    <p class="mt-[2px] text-[14px] font-medium text-eduwork-text-paragraph">
+                                        Eduwork
+                                    </p>
+                                    <p class="mt-[4px] text-[14px] text-eduwork-text-paragraph">
+                                        Diterbitkan September 2023
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row items-center justify-between mt-3">
+                            <button class="swiper-Button-prev text-eduwork-main text-2xl"><i
+                                    class="bi bi-chevron-left"></i></button>
+                            <div class="swiper-pagination"></div>
+                            <button class="swiper-Button-next text-eduwork-main text-2xl"><i
+                                    class="bi bi-chevron-right"></i></button>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Portofolio -->
+                <section id="portofolio" class="portofolio mt-[50px] flex flex-col gap-5">
+                    <h1 class="text-primary text-[20px] font-semibold">Portofolio</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+                            <div class="relative">
+                                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                <img loading="lazy" src="./images/community/detail-mentor/portfolios/porto-1.png" alt=""
+                                    class="w-full object-cover" />
+                            </div>
+                            <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                                <h1 class="text-[16px] font-semibold text-primary">
+                                    Dashboard Starbucks
+                                </h1>
+                                <p class="mt-[8px] text-[14px] font-medium">
+                                    Pelita Nur Najmina
+                                </p>
+                                <p class="text-[12px]">Web & mobile app</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+                            <div class="relative">
+                                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                <img loading="lazy" src="./images/community/detail-mentor/portfolios/porto-2.png" alt=""
+                                    class="w-full object-cover" />
+                            </div>
+                            <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                                <h1 class="text-[16px] font-semibold text-primary">
+                                    Dashboard Shopping
+                                </h1>
+                                <p class="mt-[8px] text-[14px] font-medium">
+                                    Pelita Nur Najmina
+                                </p>
+                                <p class="text-[12px]">Web & mobile app</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+                            <div class="relative">
+                                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                <img loading="lazy" src="./images/community/detail-mentor/portfolios/porto-3.png" alt=""
+                                    class="w-full object-cover" />
+                            </div>
+                            <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                                <h1 class="text-[16px] font-semibold text-primary">
+                                    Website E - Wallet
+                                </h1>
+                                <p class="mt-[8px] text-[14px] font-medium">
+                                    Pelita Nur Najmina
+                                </p>
+                                <p class="text-[12px]">Web & mobile app</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+                            <div class="relative">
+                                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                <img loading="lazy" src="./images/community/detail-mentor/portfolios/porto-4.png" alt=""
+                                    class="w-full object-cover" />
+                            </div>
+                            <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                                <h1 class="text-[16px] font-semibold text-primary">
+                                    Crypto Application
+                                </h1>
+                                <p class="mt-[8px] text-[14px] font-medium">
+                                    Pelita Nur Najmina
+                                </p>
+                                <p class="text-[12px]">Web & mobile app</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+                            <div class="relative">
+                                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                <img loading="lazy" src="./images/community/detail-mentor/portfolios/porto-5.png" alt=""
+                                    class="w-full object-cover" />
+                            </div>
+                            <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                                <h1 class="text-[16px] font-semibold text-primary">
+                                    Labora Website
+                                </h1>
+                                <p class="mt-[8px] text-[14px] font-medium">
+                                    Pelita Nur Najmina
+                                </p>
+                                <p class="text-[12px]">Web & mobile app</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+                            <div class="relative">
+                                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                                <img loading="lazy" src="./images/community/detail-mentor/portfolios/porto-6.png" alt=""
+                                    class="w-full object-cover" />
+                            </div>
+                            <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                                <h1 class="text-[16px] font-semibold text-primary">
+                                    FInancial Website
+                                </h1>
+                                <p class="mt-[8px] text-[14px] font-medium">
+                                    Pelita Nur Najmina
+                                </p>
+                                <p class="text-[12px]">Web & mobile app</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Achievements -->
+                <section id="achievements" class="mt-[50px] flex flex-col gap-5">
+                    <h1 class="text-primary text-[20px] font-semibold">Achievements</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div></div>
+                    </div>
+                </section>
+
+                <!-- Kelas -->
+                <section id="kelas" class="kelas mt-[50px] flex flex-col gap-3">
+                    <h1 class="text-primary text-[20px] font-semibold">Kelas yang sedang diikuti</h1>
+                    <div class="flex flex-col gap-5">
+                        <div class="flex flex-col md:flex-row gap-6 bg-white p-6 shadow-s2 rounded-lg">
+                            <img src="./images/community/detail-mentor/kelas/kelas-1.png" alt="kelas" loading="lazy"
+                                class="rounded-[10px] h-[150px] md:h-fit object-cover" />
+                            <div class="flex flex-col justify-between gap-4">
+                                <h1 class="text-[20px] font-semibold">React Js & Node Js</h1>
+                                <p class="text-[14px]">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                                    faucibus ut sit est in pharetra nunc vel cras. Pharetra,
+                                    nibh in amet vestibulum pharetra..
+                                </p>
+                                <div class="h-[1px] w-full bg-[#D9D9D9]"></div>
+                                <div class="flex flex-col md:flex-row gap-3 justify-between items-center">
+                                    <div class="flex gap-6">
+                                        <div class="flex flex-row items-center">
+                                            <img loading="lazy" class="w-[14px] float-left h-[14px] mr-[7px]"
+                                                src="./images/svg/Star.svg" alt="" srcset="" />
+                                            <span class="text-[14px] text-[#A9A9A9]">4.5</span>
+                                        </div>
+                                        <div class="flex flex-row items-center gap-2">
+                                            <img src="./images/profile-mentor/ic-students.png" alt="" />
+                                            <span class="text-[14px] text-[#A9A9A9]">100 Orang</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full md:w-[201px] py-2 bg-primary rounded-md text-white">
+                                        Lihat Kelas
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6 bg-white p-6 shadow-s2 rounded-lg">
+                            <img src="./images/community/detail-mentor/kelas/kelas-2.png" alt="kelas" loading="lazy"
+                                class="rounded-[10px] h-[150px] md:h-fit object-cover" />
+                            <div class="flex flex-col justify-between gap-4">
+                                <h1 class="text-[20px] font-semibold">QA Engineer</h1>
+                                <p class="text-[14px]">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                                    faucibus ut sit est in pharetra nunc vel cras. Pharetra,
+                                    nibh in amet vestibulum pharetra..
+                                </p>
+                                <div class="h-[1px] w-full bg-[#D9D9D9]"></div>
+                                <div class="flex flex-col md:flex-row gap-3 justify-between items-center">
+                                    <div class="flex gap-6">
+                                        <div class="flex flex-row items-center">
+                                            <img loading="lazy" class="w-[14px] float-left h-[14px] mr-[7px]"
+                                                src="./images/svg/Star.svg" alt="" srcset="" />
+                                            <span class="text-[14px] text-[#A9A9A9]">4.5</span>
+                                        </div>
+                                        <div class="flex flex-row items-center gap-2">
+                                            <img src="./images/profile-mentor/ic-students.png" alt="" />
+                                            <span class="text-[14px] text-[#A9A9A9]">100 Orang</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full md:w-[201px] py-2 bg-primary rounded-md text-white">
+                                        Lihat Kelas
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6 bg-white p-6 shadow-s2 rounded-lg">
+                            <img src="./images/community/detail-mentor/kelas/kelas-3.png" alt="kelas" loading="lazy"
+                                class="rounded-[10px] h-[150px] md:h-fit object-cover" />
+                            <div class="flex flex-col justify-between gap-4">
+                                <h1 class="text-[20px] font-semibold">Golang Developer</h1>
+                                <p class="text-[14px]">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                                    faucibus ut sit est in pharetra nunc vel cras. Pharetra,
+                                    nibh in amet vestibulum pharetra..
+                                </p>
+                                <div class="h-[1px] w-full bg-[#D9D9D9]"></div>
+                                <div class="flex flex-col md:flex-row gap-3 justify-between items-center">
+                                    <div class="flex gap-6">
+                                        <div class="flex flex-row items-center">
+                                            <img loading="lazy" class="w-[14px] float-left h-[14px] mr-[7px]"
+                                                src="./images/svg/Star.svg" alt="" srcset="" />
+                                            <span class="text-[14px] text-[#A9A9A9]">4.5</span>
+                                        </div>
+                                        <div class="flex flex-row items-center gap-2">
+                                            <img src="./images/profile-mentor/ic-students.png" alt="" />
+                                            <span class="text-[14px] text-[#A9A9A9]">100 Orang</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full md:w-[201px] py-2 bg-primary rounded-md text-white">
+                                        Lihat Kelas
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Review -->
+                <section id="review" class="review mt-[50px] flex flex-col gap-8">
+                    <h1 class="text-primary text-[20px] font-semibold">Testimoni Murid dan Mentor</h1>
+                    <div class="flex flex-col gap-10 md:gap-5">
+                        <div class="flex rounded-[10px] p-4 flex-col md:flex-row gap-6">
+                            <img src="./images/profile-mentor/testi-1.png" alt="Nikita Rombe" loading="lazy"
+                                class="rounded-full md:rounded-lg w-[200px] self-center md:w-full object-cover" />
+                            <div class="flex flex-col justify-between">
+                                <div class="flex gap-2 flex-col">
+                                    <img loading="lazy" class="w-[36px] h-[36px] mb-2" src="./images/svg/Quote Left.svg"
+                                        alt="" />
+                                    <p class="text-[16px]">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Nam faucibus ut sit est in pharetra nunc vel cras.
+                                        Pharetra, nibh in amet vestibulum pharetra.
+                                    </p>
+                                </div>
+                                <div class="flex flex-col mt-5">
+                                    <h1 class="text-[20px] font-semibold">Nikita Rombe</h1>
+                                    <div class="flex items-center gap-4">
+                                        <p class="text-[16px] text-[#737373]">
+                                            Programmer PT. Amanah Abadi Sejahtera
+                                        </p>
+                                        <div class="flex flex-row items-center">
+                                            <img loading="lazy" class="w-[14px] float-left h-[14px] mr-[7px]"
+                                                src="./images/svg/Star.svg" alt="" srcset="" />
+                                            <span>4.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex rounded-[10px] p-4 flex-col md:flex-row gap-6">
+                            <img src="./images/profile-mentor/testi-2.png" alt="Nikita Rombe" loading="lazy"
+                                class="rounded-full md:rounded-lg w-[200px] self-center md:w-full object-cover" />
+                            <div class="flex flex-col justify-between">
+                                <div class="flex gap-2 flex-col">
+                                    <img loading="lazy" class="w-[36px] h-[36px] mb-2" src="./images/svg/Quote Left.svg"
+                                        alt="" />
+                                    <p class="text-[16px]">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Nam faucibus ut sit est in pharetra nunc vel cras.
+                                        Pharetra, nibh in amet vestibulum pharetra.
+                                    </p>
+                                </div>
+                                <div class="flex flex-col mt-5">
+                                    <h1 class="text-[20px] font-semibold">Fahmi Azwarin</h1>
+                                    <div class="flex items-center gap-4">
+                                        <p class="text-[16px] text-[#737373]">
+                                            QA Engineer PT. Marriots Coffee Farm
+                                        </p>
+                                        <div class="flex flex-row items-center">
+                                            <img loading="lazy" class="w-[14px] float-left h-[14px] mr-[7px]"
+                                                src="./images/svg/Star.svg" alt="" srcset="" />
+                                            <span>4.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex rounded-[10px] p-4 flex-col md:flex-row gap-6">
+                            <img src="./images/profile-mentor/testi-3.png" alt="Nikita Rombe" loading="lazy"
+                                class="rounded-full md:rounded-lg w-[200px] self-center md:w-full object-cover" />
+                            <div class="flex flex-col justify-between">
+                                <div class="flex gap-2 flex-col">
+                                    <img loading="lazy" class="w-[36px] h-[36px] mb-2" src="./images/svg/Quote Left.svg"
+                                        alt="" />
+                                    <p class="text-[16px]">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Nam faucibus ut sit est in pharetra nunc vel cras.
+                                        Pharetra, nibh in amet vestibulum pharetra.
+                                    </p>
+                                </div>
+                                <div class="flex flex-col mt-5">
+                                    <h1 class="text-[20px] font-semibold">Helen Silvia</h1>
+                                    <div class="flex items-center gap-4">
+                                        <p class="text-[16px] text-[#737373]">
+                                            Frontend PT. Tokopedia Indonesia
+                                        </p>
+                                        <div class="flex flex-row items-center">
+                                            <img loading="lazy" class="w-[14px] float-left h-[14px] mr-[7px]"
+                                                src="./images/svg/Star.svg" alt="" srcset="" />
+                                            <span>4.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Footer section -->
+    <section class="relative w-full h-[1270px] md:h-[1070px] pb-[20px] md:pb-0 -z-30">
+        <div class="container mx-auto">
+            <div
+                class="absolute w-[80%] mx-auto left-1/2 -translate-x-1/2 h-fit lg:w-fit lg:h-[575px] md:pt-[86px] top-[267px]">
+                <div class="flex flex-col gap-[23px] md:flex-row text-[#ffffff]">
+                    <div class="md:w-[237.51px]">
+                        <img loading="lazy" class="w-[250px] h-[48.53px] lg:w-fit md:h-fit mx-auto md:mx-0"
+                            src="./images/logo/favicon-white.svg" alt="" srcset="" />
+                        <p class="text-[16px] md:text-[14px] mt-[37.56px] mb-[18px] text-center md:text-left">
+                            When an unknown printer took a galley of type and make a type
+                            specimen book.
+                        </p>
+                        <div class="flex flex-row mb-[60.08px]">
+                            <div class="inline-flex gap-[22px] mx-auto md:mx-0">
+                                <img loading="lazy" src="./images/svg/white-instagram.svg" alt="" srcset="" />
+                                <img loading="lazy" src="./images/svg/white-twitter.svg" alt="" srcset="" />
+                                <img loading="lazy" src="./images/svg/white-youtube.svg" alt="" srcset="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns-2 flex flex-row md:ml-[80.49px] justify-between">
+                        <div class="flex flex-col gap-[41px] w-[159.78px] h-[375px]">
+                            <div class="h-fit">
+                                <h1 class="font-[600] text-[18px] mb-[20px]">Explore Us</h1>
+                                <ul class="text-[14px] md:text-[12px]">
+                                    <a href="">
+                                        <li class="mb-[12px]">Kelas</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">Our Mentors</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">For Corporate</li>
+                                    </a>
+                                    <a href="">
+                                        <li>Community</li>
+                                    </a>
+                                </ul>
+                            </div>
+
+                            <div class="h-[167px]">
+                                <h1 class="font-[600] text-[18px] mb-[20px]">Our Services</h1>
+                                <ul class="text-[14px] md:text-[12px]">
+                                    <a href="">
+                                        <li class="mb-[12px]">Free Event</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">Video Course</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">Bootcamp</li>
+                                    </a>
+                                    <a href="">
+                                        <li>Private Mentoring</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-[41px] w-fit md:w-[198px] h-[375px] text-left">
+                            <div class="h-fit">
+                                <h1 class="font-[600] text-[18px] mb-[20px]">Category</h1>
+                                <ul class="text-[14px] md:text-[12px]">
+                                    <a href="">
+                                        <li class="mb-[12px]">Mobile Developer</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">Website Developer</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">UI/UX Designer</li>
+                                    </a>
+                                    <a href="">
+                                        <li>Graphic Designer</li>
+                                    </a>
+                                </ul>
+                            </div>
+
+                            <div class="h-[167px]">
+                                <h1 class="font-[600] text-[18px] mb-[20px]">Office</h1>
+                                <ul class="text-[14px] md:text-[12px]">
+                                    <li class="mb-[12px]">PT Eduwork.id</li>
+                                    <li class="mb-[12px]">Jl. Ring Road Utara No 24</li>
+                                    <li class="mb-[12px]">Yogyakarta. Indonesia</li>
+                                    <a href="">
+                                        <li>team@eduwork.id</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1 class="font-[600] text-[18px] mt-[60px] md:mt-0 mb-[10px] text-center md:text-left">
+                            Promotions
+                        </h1>
+                        <ul class="text-[14px] md:text-[12px]">
+                            <a href="">
+                                <li class="mb-[12px] text-center md:text-left">
+                                    Submit your email for new updates
+                                </li>
+                            </a>
+                            <li class="flex flex-row">
+                                <input
+                                    class="rounded-l-[5px] bg-[#f6fcff] w-full md:w-[190.01px] h-[55px] border border-white text-[#404040]"
+                                    type="email" name="" id="" />
+                                <button
+                                    class="w-[50.09px] rounded-r-[5px] h-[55px] mb-5 md:mb-0 bg-[#a1b0c7] border border-white px-[13px]">
+                                    <img loading="lazy" class="w-[28px] h-[28px]" src="./images/svg/mail.svg" />
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:absolute bottom-0 text-center md:text-left">
+                    <p class="text-[#ffffff] text-[14px] mt-[53px] md:mt-0 md:text-[12px]">
+                        © EduWork 2020 - 2021 . All rights reserved.
+                    </p>
+                </div>
+                <div
+                    class="md:absolute md:right-0 md:bottom-0 md:float-right flex md:flex-row md:justify-between md:gap-[50px]">
+                    <div class="mx-auto md:mx-0">
+                        <p class="text-[#ffffff] text-[14px] mt-[12px] md:mt-0 md:text-[12px]">
+                            Privacy and policy
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-[#ffffff] md:flex hidden text-[12px]">Terms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave-footer xl:min-w-[1340px]"></div>
+        <div class="absolute bottom-0 w-full xl:min-w-[1340px] h-full md:h-[981px] bg-footer -z-50"></div>
+    </section>
+</body>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="./main.js" type="module"></script>
+<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+<script>
+    // Event Scroll
+    var prevScrollpos = window.pageYOffset;
+    const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll(".menuChange ul li");
+
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        var current = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLi.forEach((li) => {
+            li.classList.remove("activeMenu");
+            if (li.classList.contains(current)) {
+                li.classList.add("activeMenu");
+            }
+        });
+
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+            document.getElementById("navProf").style.top = "100px";
+            if (!window.matchMedia("(max-width: 700px)").matches) {
+                document.getElementById("ppMentor").style.top = "200px";
+            }
+        } else {
+            document.getElementById("navbar").style.top = "-90px";
+            document.getElementById("navProf").style.top = "20px";
+            if (!window.matchMedia("(max-width: 700px)").matches) {
+                document.getElementById("ppMentor").style.top = "120px";
+            }
+        }
+        prevScrollpos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY >= 100) {
+            document.getElementById("navbar").style.backgroundColor = "#ffffff";
+            document.getElementById("navbar").style.boxShadow =
+                "0 0 10px rgba(0,0,0,0.1)";
+        } else {
+            document.getElementById("navbar").style.backgroundColor = "transparent";
+            document.getElementById("navbar").style.boxShadow = "none";
+        }
+    });
+    let ok = document.querySelectorAll(".acc");
+
+    ok.forEach((e) => {
+        e.addEventListener("click", () => {
+            removeClass();
+            e.classList.toggle("active");
+        });
+    });
+
+    function removeClass() {
+        ok.forEach((e) => {
+            e.classList.remove("active");
+        });
+    }
+</script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "slide",
+        direction: "horizontal",
+        centerdSlides: true,
+        slideToClickedSlide: true,
+        autoplay: {
+            delay: 5000,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            800: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+        },
+        grabCursor: true,
+        // slidesPerGroup: 1,
+        navigation: {
+            nextEl: ".swiper-Button-next",
+            prevEl: ".swiper-Button-prev",
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+    });
+</script>
+
+</html>

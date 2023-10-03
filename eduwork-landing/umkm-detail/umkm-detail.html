@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <title>EduWork - Platform Mentoring & Penyaluran Kerja</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <style>
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-pagination {
+        position: relative !important;
+        margin-top: 2em;
+      }
+      .swiper-pagination-bullet {
+        width: 13px;
+        height: 13px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#f6fcff] text-[#404040] font-poppins">
+    <!-- Navabar -->
+    <div class="w-full z-[99]" id="navbar">
+      <nav class="flex justify-between items-center w-[90%] lg:w-[1016px] container mx-auto py-2 md:py-5">
+        <a href="/" class="w-[154px] h-[31px]">
+          <img loading="lazy" class="" src="./images/logo/favicon.png" alt="Eduwork Logo" />
+        </a>
+        <button
+          data-collapse-toggle="navbar-cta"
+          type="button"
+          class="navbar-toggle z-10 inline-flex p-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 right-0 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-cta"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-[37px] h-[37px]" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <ul class="hidden md:flex gap-[40px]">
+          <li>
+            <div
+              x-data="{
+              open: false,
+              toggle() {
+                  if (this.open) {
+                      return this.close()
+                  }
+  
+                  this.$refs.button.focus()
+  
+                  this.open = true
+              },
+              close(focusAfter) {
+                  if (! this.open) return
+  
+                  this.open = false
+  
+                  focusAfter && focusAfter.focus()
+              }
+          }"
+              x-on:keydown.escape.prevent.stop="close($refs.button)"
+              x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+              x-id="['dropdown-button']"
+              class="relative text-sm font-semibold"
+            >
+              <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')" type="button" class="flex gap-[5px] border-none">
+                Kelas
+                <svg xmlns="../images/arrow.svg" class="absolute right-0 md:relative md:right-auto md:h-5 md:w-5 h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div
+                x-ref="panel"
+                x-show="open"
+                x-transition.origin.top.left
+                x-on:click.outside="close($refs.button)"
+                :id="$id('dropdown-button')"
+                style="display: none"
+                class="relative md:absolute left-0 mt-[25px] w-full md:w-40 rounded-md bg-white shadow-filter"
+              >
+                <a href="kelas.html" class="flex gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-[22px] md:text-sm hover:bg-gray-50 disabled:text-gray-500">Regular</a>
+                <a href="" class="flex gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-[22px] md:text-sm hover:bg-gray-50 disabled:text-gray-500">Kelas</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div
+              x-data="{
+              open: false,
+              toggle() {
+                  if (this.open) {
+                      return this.close()
+                  }
+  
+                  this.$refs.button.focus()
+  
+                  this.open = true
+              },
+              close(focusAfter) {
+                  if (! this.open) return
+  
+                  this.open = false
+  
+                  focusAfter && focusAfter.focus()
+              }
+          }"
+              x-on:keydown.escape.prevent.stop="close($refs.button)"
+              x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+              x-id="['dropdown-button']"
+              class="relative text-sm font-semibold"
+            >
+              <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')" type="button" class="flex gap-[5px] border-none">
+                Mentor
+                <svg xmlns="../images/arrow.svg" class="absolute right-0 md:relative md:right-auto md:h-5 md:w-5 h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div
+                x-ref="panel"
+                x-show="open"
+                x-transition.origin.top.left
+                x-on:click.outside="close($refs.button)"
+                :id="$id('dropdown-button')"
+                style="display: none"
+                class="relative md:absolute left-0 mt-[25px] w-full md:w-40 rounded-md bg-white shadow-filter"
+              >
+                <a href="" class="flex gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-[22px] md:text-sm hover:bg-gray-50 disabled:text-gray-500">Mentor</a>
+                <a href="" class="flex gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-[22px] md:text-sm hover:bg-gray-50 disabled:text-gray-500">Mentor</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div
+              x-data="{
+              open: false,
+              toggle() {
+                  if (this.open) {
+                      return this.close()
+                  }
+  
+                  this.$refs.button.focus()
+  
+                  this.open = true
+              },
+              close(focusAfter) {
+                  if (! this.open) return
+  
+                  this.open = false
+  
+                  focusAfter && focusAfter.focus()
+              }
+          }"
+              x-on:keydown.escape.prevent.stop="close($refs.button)"
+              x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+              x-id="['dropdown-button']"
+              class="relative text-sm font-semibold"
+            >
+              <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')" type="button" class="flex gap-[5px] border-none items-center">
+                Company
+                <svg xmlns="../images/arrow.svg" class="absolute right-0 md:relative md:right-auto md:h-5 md:w-5 h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div
+                x-ref="panel"
+                x-show="open"
+                x-transition.origin.top.left
+                x-on:click.outside="close($refs.button)"
+                :id="$id('dropdown-button')"
+                style="display: none"
+                class="relative md:absolute left-0 mt-[25px] w-full md:w-40 rounded-md bg-white shadow-filter"
+              >
+                <a href="" class="flex gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-[22px] md:text-sm hover:bg-gray-50 disabled:text-gray-500">Start-up</a>
+                <a href="" class="flex gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-[22px] md:text-sm hover:bg-gray-50 disabled:text-gray-500">Corporate</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="hidden w-full lg:flex gap-2 md:w-auto h-fit">
+          <button class="text-white font-[500] bg-primary text-[14px] py-[9.5px] px-[20px] rounded-md" type="button">Login</button>
+          <button class="text-white font-[500] bg-primary text-[14px] py-[9.5px] px-[20px] rounded-md" type="button">Register</button>
+        </div>
+      </nav>
+    </div>
+    <!-- End Navbar -->
+    <!-- Hero -->
+    <div class="relative w-full bg-[url('./images/gjk-bg.png')] bg-cover bg-center lg:rounded-bl-[280px] h-[570px] lg:mb-0 mb-[200px]">
+      <div class="bg-gradient-to-l from-white via-white/60 to-white/80 w-full h-full absolute"></div>
+      <div class="container mx-auto mt-[-40px]">
+        <div class="flex md:flex-row w-[95%] md:w-full mx-auto h-fit lg:w-[1016px]">
+          <div class="relative w-[90%] lg:w-[1016px] container mx-auto pt-32 md:pt-40 pb-24 md:pb-32 flex flex-col gap-[30px] z-10">
+            <div class="flex items-center gap-2">
+              <div class="w-[48px] h-[48px] bg-cover bg-no-repeat bg-slate-200 rounded-full" style="background-image: url('images/gjkicon.png')"></div>
+              <p class="text-[20px] font-[500]">Gojek</p>
+            </div>
+            <h1 class="text-[32px] md:text-[45px] font-bold w-full md:w-[500px]">Gojek Project: Aplikasi dan Landing Page Website Gopay</h1>
+
+            <div class="flex justify-center items-center lg:justify-start lg:items-start">
+              <a href="" class="p-3 bg-none bg-primary text-white w-[258px] rounded-[16px] text-center">Daftar Sekarang</a>
+            </div>
+          </div>
+          <div class="absolute lg:relative pt-[510px] mr-4 md:pt-40 pb-24 md:pb-32 z-50">
+            <div id="player" class="z-50 lg:max-w-[500px] lg:max-h-[500px] max-w-[95%] max-h-[250px] rounded-[30px]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- EndHero -->
+    <!-- <img loading="lazy" src="./images/bg-detail-kelas-2.png" alt="bg" class="w-full absolute top-[1408px] -z-30" /> -->
+    <!-- Contenet -->
+    <div class="w-[90%] md:w-full lg:w-[1016px] container mx-auto flex items-start py-[50px] flex-col md:flex-row z-30 gap-[50px]">
+      <div class="w-full md:w-1/2" id="menuCourse">
+        <nav class="menuChange bg-white py-6 px-5 shadow-xl text-[#8C8C8C] rounded-[10px] flex flex-col gap-4">
+          <div class="flex justify-between items-center">
+            <h1 class="font-semibold text-[20px] text-[#404040]">Project Detail</h1>
+            <button data-collapse-toggle="filter-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg lg:hidden" aria-controls="filter-cta" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <ul id="filter-cta" class="text-[#8C8C8C] flex flex-col gap-4">
+            <div class="h-[1px] bg-slate-300"></div>
+            <a href="#tentang" class="tentang text-[16px]"> Tentang Projek </a>
+            <a href="#posisi" class="posisi text-[16px]"> Posisi Tersedia </a>
+            <a href="#skill" class="skill text-[16px]"> Skill Dibutuhkan </a>
+            <a href="#detail" class="detail text-[16px]"> Detail Project </a>
+
+            <a href="#portofolio" class="portofolio text-[16px]"> Portofolio </a>
+            <a href="#testimoni" class="testimoni text-[16px]"> Testimoni </a>
+            <a href="#faq" class="faq text-[16px]"> FAQ </a>
+
+            <button class="bg-primary py-4 rounded-[8px] text-white">Daftar sekarang</button>
+          </ul>
+        </nav>
+      </div>
+      <div class="w-full md:w-[734px]">
+        <!-- Tentang Program -->
+        <section id="tentang" class="mt-[10px]">
+          <p class="text-[18px] text-justify font-semibold text-primary mb-[10px]">Tentang Projek</p>
+          <p class="mb-[10px] text-justify">
+            Proyek ambisius Gojek berpusat pada pengembangan aplikasi seluler mutakhir dan Landing Page situs web untuk GoPay sebagai solusi pembayaran digital inovatif yang memberdayakan jutaan pengguna di seluruh Asia Tenggara.
+          </p>
+          <p class="text-justify mb-20px">
+            Di luar tantangan teknis dan kreatif, proyek ini menawarkan peluang untuk berkontribusi pada salah satu ekosistem keuangan terbesar. Bergabunglah bersama Gojek, dan bersama-sama, kita akan membentuk masa depan teknologi
+            finansial di Indonesia hingga mendunia.
+          </p>
+          <div class="flex gap-3">
+            <div class="p-4 bg-[#EBEEFE] rounded-full text-primary">Unpaid</div>
+            <div class="p-4 bg-[#EBEEFE] rounded-full text-primary">4-5 Minggu</div>
+          </div>
+        </section>
+        <!-- Jadwal kelas -->
+        <section id="posisi" class="mt-[70px] w-full">
+          <p class="text-[18px] font-semibold text-primary mb-[17px]">Posisi dan Kemampuan yang Dibutuhkan</p>
+          <div class="flex flex-col gap-5">
+            <div class="flex lg:flex-row flex-col gap-5">
+              <div class="bg-white h-max w-[364px] flex flex-row pb-5 rounded-[20px]" style="box-shadow: 4px 4px 24px 0px rgba(24, 124, 255, 0.12)">
+                <div class="max-h-[25px]">
+                  <img src="images/bedev.png" alt="" class="rounded-full" />
+                </div>
+                <div>
+                  <p class="mt-[20px] mb-[12px] font-[600] text-[20px]">Back-End Developer</p>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> JavaScript</div>
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> PHP, HTML, CSS</div>
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> Web Development</div>
+                  </div>
+                  <div class="w-full mt-[14px] mb-[14px] h-[1px] bg-gray-300"></div>
+                  <div class="flex flex-row justify-between">
+                    <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">2 Kuota</div>
+                    <div class="bg-primary text-white rounded-[12px] font-[500] text-[13px] py-[10px] px-[15px]"><a href="">Daftar</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white h-max w-[364px] flex flex-row pb-5 rounded-[20px]" style="box-shadow: 4px 4px 24px 0px rgba(24, 124, 255, 0.12)">
+                <div class="max-h-[25px]">
+                  <img src="images/bedev.png" alt="" class="rounded-full" />
+                </div>
+                <div>
+                  <p class="mt-[20px] mb-[12px] font-[600] text-[20px]">Back-End Developer</p>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> JavaScript</div>
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> PHP, HTML, CSS</div>
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> Web Development</div>
+                  </div>
+                  <div class="w-full mt-[14px] mb-[14px] h-[1px] bg-gray-300"></div>
+                  <div class="flex flex-row justify-between">
+                    <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">2 Kuota</div>
+                    <div class="bg-primary text-white rounded-[12px] font-[500] text-[13px] py-[10px] px-[15px]"><a href="">Daftar</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex lg:flex-row flex-col gap-5">
+              <div class="bg-white h-max w-[364px] flex flex-row pb-5 rounded-[20px]" style="box-shadow: 4px 4px 24px 0px rgba(24, 124, 255, 0.12)">
+                <div class="max-h-[25px]">
+                  <img src="images/bedev.png" alt="" class="rounded-full" />
+                </div>
+                <div>
+                  <p class="mt-[20px] mb-[12px] font-[600] text-[20px]">Back-End Developer</p>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> JavaScript</div>
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> PHP, HTML, CSS</div>
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> Web Development</div>
+                  </div>
+                  <div class="w-full mt-[14px] mb-[14px] h-[1px] bg-gray-300"></div>
+                  <div class="flex flex-row justify-between">
+                    <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">2 Kuota</div>
+                    <div class="bg-primary text-white rounded-[12px] font-[500] text-[13px] py-[10px] px-[15px]"><a href="">Daftar</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white h-max w-[364px] flex flex-row pb-5 rounded-[20px]" style="box-shadow: 4px 4px 24px 0px rgba(24, 124, 255, 0.12)">
+                <div class="max-h-[25px]">
+                  <img src="images/bedev.png" alt="" class="rounded-full" />
+                </div>
+                <div>
+                  <p class="mt-[20px] mb-[12px] font-[600] text-[20px]">Back-End Developer</p>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> JavaScript</div>
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> PHP, HTML, CSS</div>
+                    <div class="flex flex-row gap-2 items-center text-slate-400 text-[14px]"><i class="fa-solid fa-circle-check" style="color: #005eff"></i> Web Development</div>
+                  </div>
+                  <div class="w-full mt-[14px] mb-[14px] h-[1px] bg-gray-300"></div>
+                  <div class="flex flex-row justify-between">
+                    <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">2 Kuota</div>
+                    <div class="bg-primary text-white rounded-[12px] font-[500] text-[13px] py-[10px] px-[15px]"><a href="">Daftar</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skill -->
+        <section id="skill" class="mt-[70px] w-full">
+          <p class="text-[18px] font-semibold text-primary mb-[17px]">Skill yang Dibutuhkan</p>
+          <div class="flex gap-5">
+            <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">Python</div>
+            <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">React JS</div>
+            <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">SQL</div>
+          </div>
+        </section>
+
+        <!-- Detail Project -->
+        <section id="detail" class="mt-[70px] w-full">
+          <p class="text-[18px] font-semibold text-primary mb-[17px]">Detail Project</p>
+          <!-- <div class="flex gap-5">
+            <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">Python</div>
+            <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">React JS</div>
+            <div class="bg-[#EBEEFE] text-primary rounded-[12px] font-[500] text-[13px] p-[10px]">SQL</div>
+          </div> -->
+        </section>
+
+        <!-- Portofolio -->
+        <section id="portofolio" class="portofolio mt-[50px] flex flex-col gap-5">
+          <h1 class="text-primary text-[20px] font-semibold">Portofolio</h1>
+          <div class="flex justify-between lg:flex-row flex-col gap-2 lg:gap-0">
+            <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+              <div class="relative">
+                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                <img loading="lazy" src="./images/profile-mentor/porto-1.png" alt="" class="w-full object-cover" />
+              </div>
+              <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                <h1 class="text-[16px] font-semibold text-primary">Dashboard Starbucks</h1>
+                <p class="mt-[8px] text-[14px] font-medium">Pelita Nur Najmina</p>
+                <p class="text-[12px]">Web & mobile app</p>
+              </div>
+            </div>
+            <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+              <div class="relative">
+                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                <img loading="lazy" src="./images/profile-mentor/porto-2.png" alt="" class="w-full object-cover" />
+              </div>
+              <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                <h1 class="text-[16px] font-semibold text-primary">Dashboard Shopping</h1>
+                <p class="mt-[8px] text-[14px] font-medium">Pelita Nur Najmina</p>
+                <p class="text-[12px]">Web & mobile app</p>
+              </div>
+            </div>
+            <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+              <div class="relative">
+                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                <img loading="lazy" src="./images/profile-mentor/porto-3.png" alt="" class="w-full object-cover" />
+              </div>
+              <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                <h1 class="text-[16px] font-semibold text-primary">Website E - Wallet</h1>
+                <p class="mt-[8px] text-[14px] font-medium">Pelita Nur Najmina</p>
+                <p class="text-[12px]">Web & mobile app</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-between lg:flex-row flex-col gap-2 lg:gap-0">
+            <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+              <div class="relative">
+                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                <img loading="lazy" src="./images/profile-mentor/porto-1.png" alt="" class="w-full object-cover" />
+              </div>
+              <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                <h1 class="text-[16px] font-semibold text-primary">Dashboard Starbucks</h1>
+                <p class="mt-[8px] text-[14px] font-medium">Pelita Nur Najmina</p>
+                <p class="text-[12px]">Web & mobile app</p>
+              </div>
+            </div>
+            <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+              <div class="relative">
+                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                <img loading="lazy" src="./images/profile-mentor/porto-2.png" alt="" class="w-full object-cover" />
+              </div>
+              <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                <h1 class="text-[16px] font-semibold text-primary">Dashboard Shopping</h1>
+                <p class="mt-[8px] text-[14px] font-medium">Pelita Nur Najmina</p>
+                <p class="text-[12px]">Web & mobile app</p>
+              </div>
+            </div>
+            <div class="flex flex-col shadow-2xl rounded-[10px] overflow-hidden">
+              <div class="relative">
+                <div class="absolute bg-gradient-to-t from-black/10 to-black/0 w-full h-full"></div>
+                <img loading="lazy" src="./images/profile-mentor/porto-3.png" alt="" class="w-full object-cover" />
+              </div>
+              <div class="bg-white relative p-[22px] flex flex-col rounded-[10px] -mt-8">
+                <h1 class="text-[16px] font-semibold text-primary">Website E - Wallet</h1>
+                <p class="mt-[8px] text-[14px] font-medium">Pelita Nur Najmina</p>
+                <p class="text-[12px]">Web & mobile app</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimoni -->
+        <section id="testimoni" class="mt-[70px] w-full">
+          <p class="text-[18px] font-semibold text-primary">Testimoni</p>
+          <h1 class="text-[24px] font-semibold mb-[30px]">Apa Kata Mereka Para Alumni dari Eduwork</h1>
+          <div>
+            <div>
+              <div class="flex flex-col md:flex-row gap-[36px]">
+                <img loading="lazy" src="./images/testimoni/testimoni1.png" alt="nikita" class="rounded-[5px]" />
+                <div>
+                  <img loading="lazy" class="w-[36px] h-[36px] mb-2" src="./images/svg/Quote Left.svg" alt="" />
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus ut sit est in pharetra nunc vel cras. Pharetra, nibh in amet vestibulum pharetra. Congue dolor at eu odio elit vestibulum. In lacinia tincidunt
+                    commodo elementum, egestas tempus non consectetur vulputate.
+                  </p>
+                  <div class="mt-[16px] w-full h-fit">
+                    <div class="text-[12px] font-['Raleway'] text-[#737373]">
+                      <h1 class="w-full font-semibold text-[16px] font-['Raleway'] text-[#000000]">Nikita Rombe</h1>
+                      <div class="flex items-center gap-2">
+                        <p>Programmer PT. Amanah Abadi</p>
+                        <div class="flex flex-row items-center">
+                          <img loading="lazy" class="w-[14px] float-left h-[14px] mr-[7px]" src="./images/svg/Star.svg" alt="" srcset="" />
+                          <span>4.5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="mt-[70px] md:mt-[150px] w-full">
+          <p class="text-[18px] font-semibold text-primary">FAQ</p>
+          <h1 class="text-[24px] font-semibold mb-[30px]">Informasi yang sering ditanyakan</h1>
+          <div class="columns-1 md:columns-2 gap-[42px]">
+            <div class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+              <div class="labels w-[100%] text-[14px] lg:w-[344px] py-4 justify-between px-4 font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[14px] font-[600] pl-[14px] flex flex-row items-center gap-[22px]">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src="./images/info-icon.png" alt="" />
+                  <h2>Panduan Pendaftaran</h2>
+                </div>
+              </div>
+              <div class="content">
+                <p class="">Lorem ipsum dolor sit amet consec tetur orem ipsum dolor sit amet consec tetur.Lorem ipsum</p>
+              </div>
+            </div>
+            <div class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+              <div class="labels w-[100%] text-[14px] lg:w-[344px] py-4 justify-between px-4 font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[14px] font-[600] pl-[14px] flex flex-row items-center gap-[22px]">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src="./images/info-icon.png" alt="" />
+                  <h2>Panduan Pendaftaran</h2>
+                </div>
+              </div>
+              <div class="content">
+                <p class="">Lorem ipsum dolor sit amet consec tetur orem ipsum dolor sit amet consec tetur.Lorem ipsum</p>
+              </div>
+            </div>
+            <div class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+              <div class="labels w-[100%] text-[14px] lg:w-[344px] py-4 justify-between px-4 font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[14px] font-[600] pl-[14px] flex flex-row items-center gap-[22px]">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src="./images/info-icon.png" alt="" />
+                  <h2>Panduan Pendaftaran</h2>
+                </div>
+              </div>
+              <div class="content">
+                <p class="">Lorem ipsum dolor sit amet consec tetur orem ipsum dolor sit amet consec tetur.Lorem ipsum</p>
+              </div>
+            </div>
+            <div class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+              <div class="labels w-[100%] text-[14px] lg:w-[344px] py-4 justify-between px-4 font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[14px] font-[600] pl-[14px] flex flex-row items-center gap-[22px]">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src="./images/info-icon.png" alt="" />
+                  <h2>Panduan Pendaftaran</h2>
+                </div>
+              </div>
+              <div class="content">
+                <p class="">Lorem ipsum dolor sit amet consec tetur orem ipsum dolor sit amet consec tetur.Lorem ipsum</p>
+              </div>
+            </div>
+            <div class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+              <div class="labels w-[100%] text-[14px] lg:w-[344px] py-4 justify-between px-4 font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[14px] font-[600] pl-[14px] flex flex-row items-center gap-[22px]">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src="./images/info-icon.png" alt="" />
+                  <h2>Panduan Pendaftaran</h2>
+                </div>
+              </div>
+              <div class="content">
+                <p class="">Lorem ipsum dolor sit amet consec tetur orem ipsum dolor sit amet consec tetur.Lorem ipsum</p>
+              </div>
+            </div>
+            <div class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+              <div class="labels w-[100%] text-[14px] lg:w-[344px] py-4 justify-between px-4 font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[14px] font-[600] pl-[14px] flex flex-row items-center gap-[22px]">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src="./images/info-icon.png" alt="" />
+                  <h2>Panduan Pendaftaran</h2>
+                </div>
+              </div>
+              <div class="content">
+                <p class="">Lorem ipsum dolor sit amet consec tetur orem ipsum dolor sit amet consec tetur.Lorem ipsum</p>
+              </div>
+            </div>
+            <div class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+              <div class="labels w-[100%] text-[14px] lg:w-[344px] py-4 justify-between px-4 font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[14px] font-[600] pl-[14px] flex flex-row items-center gap-[22px]">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src="./images/info-icon.png" alt="" />
+                  <h2>Panduan Pendaftaran</h2>
+                </div>
+              </div>
+              <div class="content">
+                <p class="">Lorem ipsum dolor sit amet consec tetur orem ipsum dolor sit amet consec tetur.Lorem ipsum</p>
+              </div>
+            </div>
+            <div class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+              <div class="labels w-[100%] text-[14px] lg:w-[344px] py-4 justify-between px-4 font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[14px] font-[600] pl-[14px] flex flex-row items-center gap-[22px]">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src="./images/info-icon.png" alt="" />
+                  <h2>Panduan Pendaftaran</h2>
+                </div>
+              </div>
+              <div class="content">
+                <p class="">Lorem ipsum dolor sit amet consec tetur orem ipsum dolor sit amet consec tetur.Lorem ipsum</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Contenet -->
+
+    <!-- Footer section -->
+    <section class="relative w-full h-[1270px] md:h-[1070px] pb-[20px] md:pb-0 -z-30">
+      <div class="container mx-auto">
+        <div class="absolute w-[80%] mx-auto left-1/2 -translate-x-1/2 h-fit lg:w-fit lg:h-[575px] md:pt-[86px] top-[267px]">
+          <div class="flex flex-col gap-[23px] md:flex-row text-[#ffffff]">
+            <div class="md:w-[237.51px]">
+              <img loading="lazy" class="w-[250px] h-[48.53px] lg:w-fit md:h-fit mx-auto md:mx-0" src="./images/logo/favicon-white.svg" alt="" srcset="" />
+              <p class="text-[16px] md:text-[14px] mt-[37.56px] mb-[18px] text-center md:text-left">When an unknown printer took a galley of type and make a type specimen book.</p>
+              <div class="flex flex-row mb-[60.08px]">
+                <div class="inline-flex gap-[22px] mx-auto md:mx-0">
+                  <img loading="lazy" src="./images/svg/white-instagram.svg" alt="" srcset="" />
+                  <img loading="lazy" src="./images/svg/white-twitter.svg" alt="" srcset="" />
+                  <img loading="lazy" src="./images/svg/white-youtube.svg" alt="" srcset="" />
+                </div>
+              </div>
+            </div>
+
+            <div class="columns-2 flex flex-row md:ml-[80.49px] justify-between">
+              <div class="flex flex-col gap-[41px] w-[159.78px] h-[375px]">
+                <div class="h-fit">
+                  <h1 class="font-[600] text-[18px] mb-[20px]">Explore Us</h1>
+                  <ul class="text-[14px] md:text-[12px]">
+                    <a href=""><li class="mb-[12px]">Kelas</li></a>
+                    <a href=""><li class="mb-[12px]">Our Mentors</li></a>
+                    <a href=""><li class="mb-[12px]">For Corporate</li></a>
+                    <a href=""><li>Community</li></a>
+                  </ul>
+                </div>
+
+                <div class="h-[167px]">
+                  <h1 class="font-[600] text-[18px] mb-[20px]">Our Services</h1>
+                  <ul class="text-[14px] md:text-[12px]">
+                    <a href=""><li class="mb-[12px]">Free Event</li></a>
+                    <a href=""><li class="mb-[12px]">Video Course</li></a>
+                    <a href=""><li class="mb-[12px]">Bootcamp</li></a>
+                    <a href=""><li>Private Mentoring</li></a>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-col gap-[41px] w-fit md:w-[198px] h-[375px] text-left">
+                <div class="h-fit">
+                  <h1 class="font-[600] text-[18px] mb-[20px]">Category</h1>
+                  <ul class="text-[14px] md:text-[12px]">
+                    <a href=""><li class="mb-[12px]">Mobile Developer</li></a>
+                    <a href=""><li class="mb-[12px]">Website Developer</li></a>
+                    <a href=""><li class="mb-[12px]">UI/UX Designer</li></a>
+                    <a href=""><li>Graphic Designer</li></a>
+                  </ul>
+                </div>
+
+                <div class="h-[167px]">
+                  <h1 class="font-[600] text-[18px] mb-[20px]">Office</h1>
+                  <ul class="text-[14px] md:text-[12px]">
+                    <li class="mb-[12px]">PT Eduwork.id</li>
+                    <li class="mb-[12px]">Jl. Ring Road Utara No 24</li>
+                    <li class="mb-[12px]">Yogyakarta. Indonesia</li>
+                    <a href=""><li>team@eduwork.id</li></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h1 class="font-[600] text-[18px] mt-[60px] md:mt-0 mb-[10px] text-center md:text-left">Promotions</h1>
+              <ul class="text-[14px] md:text-[12px]">
+                <a href=""><li class="mb-[12px] text-center md:text-left">Submit your email for new updates</li></a>
+                <li class="flex flex-row">
+                  <input class="rounded-l-[5px] bg-[#f6fcff] w-full md:w-[190.01px] h-[55px] border border-white text-[#404040]" type="email" name="" id="" />
+                  <button class="w-[50.09px] rounded-r-[5px] h-[55px] mb-5 md:mb-0 bg-[#a1b0c7] border border-white px-[13px]">
+                    <img loading="lazy" class="w-[28px] h-[28px]" src="./images/svg/mail.svg" />
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:absolute bottom-0 text-center md:text-left">
+            <p class="text-[#ffffff] text-[14px] mt-[53px] md:mt-0 md:text-[12px]">© EduWork 2020 - 2021 . All rights reserved.</p>
+          </div>
+          <div class="md:absolute md:right-0 md:bottom-0 md:float-right flex md:flex-row md:justify-between md:gap-[50px]">
+            <div class="mx-auto md:mx-0">
+              <p class="text-[#ffffff] text-[14px] mt-[12px] md:mt-0 md:text-[12px]">Privacy and policy</p>
+            </div>
+            <div>
+              <p class="text-[#ffffff] md:flex hidden text-[12px]">Terms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wave-footer xl:min-w-[1340px]"></div>
+      <div class="absolute bottom-0 w-full xl:min-w-[1340px] h-full md:h-[981px] bg-footer -z-50"></div>
+    </section>
+    <!-- End of Footer section -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      // Event Scroll
+      var prevScrollpos = window.pageYOffset;
+      const sections = document.querySelectorAll("section");
+      const navLi = document.querySelectorAll(".menuChange ul a");
+
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+
+        var current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 60) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLi.forEach((li) => {
+          li.classList.remove("activeMenu");
+          if (li.classList.contains(current)) {
+            li.classList.add("activeMenu");
+          }
+        });
+
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("navbar").style.top = "0";
+          document.getElementById("menuCourse").style.top = "115px";
+        } else {
+          document.getElementById("navbar").style.top = "-80px";
+          document.getElementById("menuCourse").style.top = "50px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY >= 100) {
+          document.getElementById("navbar").style.backgroundColor = "#ffffff";
+          document.getElementById("navbar").style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
+        } else {
+          document.getElementById("navbar").style.backgroundColor = "transparent";
+          document.getElementById("navbar").style.boxShadow = "none";
+        }
+      });
+
+      let ok = document.querySelectorAll(".acc");
+
+      ok.forEach((e) => {
+        e.addEventListener("click", () => {
+          removeClass();
+          e.classList.toggle("active");
+        });
+      });
+
+      function removeClass() {
+        ok.forEach((e) => {
+          e.classList.remove("active");
+        });
+      }
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "slide",
+        direction: "horizontal",
+        centerdSlides: true,
+        loop: true,
+        slideToClickedSlide: true,
+        autoplay: {
+          delay: 5000,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 2,
+          },
+          520: {
+            slidesPerView: 2,
+          },
+          720: {
+            slidesPerView: 4,
+          },
+        },
+        grabCursor: true,
+        slidesPerGroup: 1,
+        navigation: {
+          nextEl: ".swiper-Button-next",
+          prevEl: ".swiper-Button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+
+      var player;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("player", {
+          videoId: "kgMkDnQmV_Q", // Replace with the actual YouTube video ID
+          playerVars: {
+            autoplay: 0, // Set to 1 for autoplay
+            controls: 1, // Set to 0 to hide controls
+            showinfo: 1, // Set to 1 to show video title and uploader info
+            rel: 0, // Set to 0 to disable related videos after playback
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

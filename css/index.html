@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Eduwork</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-[#f8f9fa] text-[#404040] font-reguler">
+
+    <!-- Navbar section -->
+    <div class="fixed bg-white w-full h-[80px] left-0 top-0 z-10">
+        <nav class="absolute mx-[15%] w-[70%] h-[80px] ml-3/6 top-0 z-20">
+            <div class="absolute w-full my-[10px] left-0 top-[20px]">
+                <img class="absolute float-left w-[154px] h-[31px] left-0" src="../images/Nav logo.png" alt="">
+                <menu class="absolute flex mx-[35%] p-[4px] font-semibold ">
+                    <div class="mr-5" x-data="{ open: false }">
+                        <button @click="open = ! open">Kelas</button>
+                     
+                        <div x-show="open" @click.outside="open = false">Contents...</div>
+                    </div>
+                    <div class="mr-5" x-data="{ open: false }">
+                        <button @click="open = ! open">Mentor</button>
+                     
+                        <div x-show="open" @click.outside="open = false">Contents...</div>
+                    </div>
+                    <div class="mr-5" x-data="{ open: false }">
+                        <button @click="open = ! open">Company</button>
+                     
+                        <div x-show="open" @click.outside="open = false">Contents...</div>
+                    </div>
+                    
+                </menu>
+                <menu class="absolute right-0 font-medium text-center text-[14px]">
+                    <button class="text-white bg-[#187cff] py-[9.5px] px-[20px] rounded-md mr-2 ">Login</button>
+                    <button class="text-white bg-[#187cff] py-[9.5px] px-[20px] rounded-md">Register</button>
+                </menu>
+            </div>
+        </nav>
+        <div class="absolute w-full h-[89px] left-0 right-0 top-0 bg-white bottom-[-11.25%] shadow-md "></div>
+    </div>
+    <!-- End of Navbar section -->
+
+    <!-- Main section -->
+    <section id="Hero" class="w-full h-[680px] mt-[80px] bg-[url('../images/reza-5.png')] bg-no-repeat ">
+        <div class="absolute mx-[15%] w-[70%] h-[680px] pt-[154px] top-0 left-0">
+            <div class="row w-fit h-fit">
+                <h1 class="font-bold w-[372px]  leading-[120%] text-[40px]">Pelatihan dan Penyaluran kerja.</h1>
+                <div class="flex-col w-[418px] h-[233px] mt-[65px]">
+                    <div class=" w-fit h-fit float-left mr-[14.27px]">
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] mb-[6px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">1</div>
+                            <div class="flex w-[37.73px] h-[50.38px] text-center py-[8.20276px 16.4055px] justify-center items-center"><div class="arrow"></div></div>
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] mb-[6px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">2</div>
+                            <div class="flex w-[37.73px] h-[50.38px] text-center py-[8.20276px 16.4055px] justify-center items-center"><div class="arrow"></div></div>
+                        <div class="dot flex w-[37.73px] h-[36.09px] bg-[#187CFF] border-[4.10138px] border-[#e7f7ff] rounded-[82.0276px] shadow-dot text-white text-center py-[8.20276px 16.4055px] justify-center items-center gap-[8.2px]">3</div>
+                    </div>
+                    <div class=" w-[418px] h-fit tracking-[0.01em]">
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Coba Daftar Gratis</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px] mb-[31px]">Mari bergabung dengan komunitas biro jodoh kami, dijamin dapat pasangan High Definition</p>
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Belajar Intensif</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px] mb-[30px]">Belajar urus diri sendiri, jangan jadi beban keluarga terus</p>
+                        <h4 class="leading-[24px] font-[16px] font-semibold">Disalurkan kerja</h4>
+                        <p class="text-[#4E5053] text-[14px] font-normal leading-[21px]">Dapatkan gaji 10juta lebih</p>
+                    </div>
+                </div>
+                <h4 class="font-semibold mt-[40px] text-[16px] leading-6 tracking-[1%]">Mari bergabung !</h4>
+            </div>
+        </div>
+        <div class="absolute w-full h-[249px] mt-[15px] top-[617px]">
+            <button class="ml-[15%] px-[34px] py-[11px] rounded-[5px] font-medium text-[14px] bg-[#187cff] text-[#f6fcff] mr-[22px] ">Daftar</button>
+            <button class="px-[19px] py-[11px] rounded-[5px] font-medium text-[14px] bg-[#ffd200] ">Konsultasi Dulu</button>
+            <h4 class="absolute ml-[15%] mt-[29px] text-[16px] font-normal z-10" ><span class="font-bold">2,324</span> Students & <span class="font-bold">182</span> Mentors has joined!</h4>
+            <div class="absolute top-[40px] w-full h-[328.26px] z-[9]">
+                <div class="wave"></div>
+            </div>
+            <div class="absolute w-[80%] h-[137px] mx-[10%] mt-[91px] bg-white border border-white rounded-[10px] shadow-filter z-10">
+                <h4 class="mt-[1%] ml-[6%] font-semibold text-[16px] leading-[24px] tracking-[0.01em]">Cari menggunakan filter</h4>
+                <div class="flex flex-row p-0 mt-[17px] ml-[6%] mr-[6%] w-fit h-fit">
+                    <select class="py-[11px] pl-[16px] px-[49px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Kategori</option>
+                    </select>
+                    <select class="py-[11px] pl-[16px] px-[12px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Materi Kelas</option>
+                    </select>
+                    <select class="py-[11px] pl-[16px] px-[12px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Harga</option>
+                    </select>
+                    <select class="py-[11px] pl-[16px] px-[12px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Pembayaran</option>
+                    </select>
+                    <select class="py-[11px] pl-[16px] px-[12px] font-bold color-[#6c6e71] mr-[13px] bg-white border border-[#a1b07c] rounded-[20px]" name="" id="">
+                        <option value="">Lokasi</option>
+                    </select>
+                    <p class="py-[11px] pl-[16px] px-[12px] mr-[13px] font-bold color-[#6c6e71]">More</p>
+                    <button class="py-[11px] px-[64px] font-bold color-[#6c6e71] mr-[13px] bg-[#ffd200] rounded-[20px]">Cari</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Main section -->
+
+    <!-- Footer section -->
+    <!-- End of Footer section -->
+
+    <!-- JS -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="vue.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <title>EduWork - Community Contributor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 34px;
+        }
+
+        .swiper-slider {
+            width: 900px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f6fcff] text-[#404040] font-poppins">
+    <!-- Navabar -->
+    <nav class="z-50" id="navbar">
+        <div class="w-[90%] lg:w-[1016px] container mx-auto py-2 md:py-4">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="index.html" class="flex items-center">
+                    <img class="h-6 sm:h-7" src="./images/logo/favicon.png" alt="Eduwork Logo" />
+                </a>
+                <div class="flex gap-3 md:order-2">
+                    <button type="button"
+                        class="text-white hidden md:block bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                        Login
+                    </button>
+                    <button type="button"
+                        class="text-white hidden md:block bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                        Register
+                    </button>
+                    <button data-collapse-toggle="navbar-sticky" type="button"
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-sticky" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                    <ul
+                        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row gap-[10px] md:gap-[40px] md:mt-0 md:text-sm md:font-semibold md:border-0 md:bg-transparent">
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent">
+                            Kelas
+                            <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="dropdownNavbar"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Regular</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kelas</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownMentor"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent">
+                            Mentor
+                            <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="dropdownMentor"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mentor</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mentor</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownCompany"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent">
+                            Company
+                            <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="dropdownCompany"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44 !mb-5">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Partner</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Partner</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownEduplus"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent">
+                            Eduplus
+                            <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="dropdownEduplus"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-full md:w-44 !mb-5">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Partner</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Partner</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button"
+                            class="text-white block md:hidden bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                            Login
+                        </button>
+                        <button type="button"
+                            class="text-white block md:hidden bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                            Register
+                        </button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div
+        class="relative w-[90%] lg:w-[1016px] flex flex-col md:flex-row container justify-between gap-5 items-center mx-auto z-40 mt-[100px] md:mt-[150px]">
+        <div class="w-full md:w-[520px] flex flex-col gap-3 font-montserrat">
+            <div class="flex items-start gap-2">
+                <img src="./images/internship/ic-start.png" alt="" class="w-[27px]" />
+                <p class="font-semibold text-[18px] md:text-[24px]">
+                    Raih Karir Impianmu melalui
+                </p>
+            </div>
+            <h1 class="text-[25px] md:text-[40px] text-primary font-semibold">
+                Komunitas Kontributor Eduwork
+            </h1>
+        </div>
+        <div class="w-full md:w-[436px]">
+            <p class="text-[#737373] text-[16px]">
+                Program Internship yang menawarkan kesepakatan untuk membangun visi Eduwork sekaligus membantu
+                kontributor memulai karir dari nol.
+            </p>
+            <button
+                class="flex bg-primary gap-[10px] mt-5 justify-center w-full md:w-[256px] py-[14px] px-[35px] rounded-[10px] text-[16px] font-medium text-white">
+                <img loading="lazy" src="./images/icon/Play.png" alt="play" />
+                Gabung Sekarang
+            </button>
+        </div>
+    </div>
+    <!-- Hero -->
+    <img src="./images/contributor/lp/hero-img.jpg" alt="" class="w-full object-contain mt-[50px]" />
+
+    <!-- PARTNER -->
+    <div class="container mx-auto">
+        <section class="w-[90%] mx-auto lg:w-[1016px] h-fit md:h-[70px] mt-[50px] pt-5 mb-[74px] lg:mb-[74px]">
+            <div class="z-10 flex flex-col lg:flex-row">
+                <div>
+                    <h4
+                        class="w-full lg:w-[170px] h-[70px] text-center text-[24px] font-medium leading-[28.56px] mr-[37px] md:mr-[74px]">
+                        <span class="text-[36px] font-[600] text-[#187cff]">Our 100+ </span>Hiring Partner
+                    </h4>
+                </div>
+                <div class="slider w-full overflow-hidden">
+                    <div class="slide-track flex gap-[20px] md:gap-[61.05px] items-center h-full">
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/1.png" />
+                        </div>
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/2.png" />
+                        </div>
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/3.png" />
+                        </div>
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/4.png" />
+                        </div>
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/5.png" />
+                        </div>
+                    </div>
+
+                    <div class="slide-track flex gap-[20px] md:gap-[61.05px] ml-[110px] md:ml-[65.05px] items-center">
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/1.png" />
+                        </div>
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/2.png" />
+                        </div>
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/3.png" />
+                        </div>
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/4.png" />
+                        </div>
+                        <div class="slide">
+                            <img loading="lazy" src="./images/partner/5.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End of Partner -->
+
+    <!-- Statistics -->
+    <section class="bg-white py-16">
+        <div
+            class="container mx-auto px-10 md:px-20 lg:px-48 2xl:px-60 flex flex-col md:flex-row md:items-stretch gap-5 2xl:gap-12 mb-20">
+            <div class="flex flex-col gap-2">
+                <span class="text-eduwork-main font-semibold text-5xl">4500+</span>
+                <span class="text-eduwork-text-base">Proyek sukses dikerjakan oleh kontributor untuk Eduwork dan
+                    Bussiness
+                    Partner.</span>
+            </div>
+            <div class="w-[1px] bg-black/[.2] hidden md:block"></div>
+            <div class="flex flex-col gap-2">
+                <span class="text-eduwork-main font-semibold text-5xl">1500+</span>
+                <span class="text-eduwork-text-base">Kontributor berbekal Leadership
+                    Impact plus dan case
+                    study program.</span>
+            </div>
+            <div class="w-[1px] bg-black/[.2] hidden md:block"></div>
+            <div class="flex flex-col gap-2">
+                <span class="text-eduwork-main font-semibold text-5xl">100+</span>
+                <span class="text-eduwork-text-base">Banyak yang mendapat pengalaman baru di dunia kerja secara
+                    nyata.</span>
+            </div>
+            <div class="w-[1px] bg-black/[.2] hidden md:block"></div>
+            <div class="flex flex-col gap-2">
+                <span class="text-eduwork-main font-semibold text-5xl">50+</span>
+                <span class="text-eduwork-text-base">Banyak bidang yang bisa dipilih kontributor Eduwork.</span>
+            </div>
+        </div>
+        <!-- ISA -->
+        <div class="container mx-auto">
+            <section class="w-[90%] h-fit mx-auto lg:w-[1016px] lg:h-[468px] mb-14">
+                <div
+                    class="hidden lg:block absolute left-0 w-[60%] h-fit lg:h-[387px] bg-[#187cff] rounded-[33px] lg:rounded-none lg:rounded-tr-[100px] p-[10%] lg:pb-0 lg:pr-0 lg:pt-[48.7px] lg:pl-[213px]">
+                </div>
+                <div
+                    class="flex flex-col gap-3 lg:flex-row lg:gap-[41px] w-full lg:w-[1030px] h-fit lg:h-[387px] bg-[#187cff] rounded-[20px] lg:rounded-none lg:rounded-tr-[100px] py-[35px] px-[25px] lg:pb-0 lg:pr-0 lg:pt-[48.7px] lg:px-auto">
+                    <div class="mx-auto lg:mx-0 w-full lg:w-[400px] h-[419px]">
+                        <!-- <img loading="lazy" class="ISA-img" src="./images/ISA.png" alt="" srcset="" /> -->
+                        <div class="bg-right bg-cover w-full h-full ISA-img rounded-2xl"
+                            style="background-image: url('./images/contributor/lp/img1.jpg');"></div>
+                    </div>
+                    <div class="mt-0 z-10 relative">
+                        <h1 class="font-[700] text-[40px] lg:text-[48px] text-center lg:text-left text-[#ffffff]">
+                            Mau Gabung Komunitas Kontributor?
+                        </h1>
+                        <p
+                            class="w-full lg:w-[589px] font-[400] text-[16px] text-center lg:text-left lg:text-[20px] mt-[18px] text-[#ffffff]">
+                            Komunitas Kontributor adalah program praktik kerja dari Eduwork. Kami memanggil siapa saja
+                            yang
+                            ingin memulai karir di dunia Tech tanpa seleksi ribet, tanpa minimal pengalaman.
+                        </p>
+                        <div
+                            class="lg:absolute w-full h-fit lg:h-[151px] mt-[23.3px] flex flex-col lg:flex-row gap-[13px]">
+                            <div
+                                class="w-full lg:w-fit p-[12px] rounded-[10px] bg-[#ffffff] ISA-card flex flex-row gap-5">
+                                <img src="./images/contributor/lp/img2.jpeg" alt=""
+                                    class="w-1/3 lg:w-1/2 aspect-square rounded-lg object-cover">
+                                <p>Berkesempatan magang di startup+ mentoring</p>
+                            </div>
+                            <div
+                                class="w-full lg:w-fit rounded-[10px] p-[12px] bg-[#ffffff] ISA-card flex flex-row gap-5">
+                                <img src="./images/contributor/lp/img3.jpg" alt=""
+                                    class="w-1/3 lg:w-1/2 aspect-square rounded-lg object-cover">
+                                <p>5+ Portfolio real project di minat spesialisasi kamu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End of ISA -->
+    </section>
+    <!-- End of Statistics -->
+
+    <!-- Skills -->
+    <section class="relative bg-white pb-16">
+        <img src="./images/contributor/lp/blur-bg.svg" alt=""
+            class="absolute top-0 left-0 w-4/5 -z-10 -translate-y-[700px] -translate-x-96">
+        <div class="container mx-auto px-5 lg:px-20 xl:px-48 2xl:px-60 flex flex-col gap-7 text-center items-center">
+            <h2 class="text-eduwork-main font-semibold text-3xl">Pelajari Keahlian Yang Kamu Minati</h2>
+            <p class="text-eduwork-text-paragraph md:w-2/3">Kami menghargai kontribusi dan tujuan kamu. Kami juga
+                memberi
+                bimbingan untuk upgrade skill di bidang yang kamu banget!</p>
+            <div class="flex flex-row flex-wrap gap-5 items-center justify-center pb-14">
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full bg-eduwork-main text-white border border-eduwork-main px-5 py-2">All</button>
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full text-eduwork-main border border-eduwork-main px-5 py-2">Product</button>
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full text-eduwork-main border border-eduwork-main px-5 py-2">Marketing</button>
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full text-eduwork-main border border-eduwork-main px-5 py-2">Business</button>
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full text-eduwork-main border border-eduwork-main px-5 py-2">Human
+                    Resource</button>
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full text-eduwork-main border border-eduwork-main px-5 py-2">Programming</button>
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full text-eduwork-main border border-eduwork-main px-5 py-2">UI/UX
+                    Design</button>
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full text-eduwork-main border border-eduwork-main px-5 py-2">Quality
+                    Assurance</button>
+                <button
+                    class="skill-btn transition-all hover:bg-eduwork-main hover:text-white rounded-full text-eduwork-main border border-eduwork-main px-5 py-2">Sales</button>
+            </div>
+            <div id="skills" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-white">
+                <div class="bg-center bg-cover rounded-2xl"
+                    style="background-image: url('./images/contributor/lp/skills/pm.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Product Management</h4>
+                        <p>Melakukan ideation, market research, wireframing, prototyping, hingga menyusun user stories.
+                        </p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+                <div class="bg-center bg-cover rounded-2xl"
+                    style="background-image: url('./images/contributor/lp/skills/marketing.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Marketing</h4>
+                        <p>Merancang campaign & strategi konten, melakukan market research, dan mengelola media sosial.
+                        </p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+                <div class="bg-center bg-cover rounded-2xl"
+                    style="background-image: url('./images/contributor/lp/skills/business.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Business</h4>
+                        <p>Meliputi audit keuangan, melakukan riset kompetitor, serta mengelola purchasing dan legal.
+                        </p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+                <div class="bg-center bg-cover rounded-2xl"
+                    style="background-image: url('./images/contributor/lp/skills/hr.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Human Resources</h4>
+                        <p>Meliputi rekrutmen dengan end-to-end process, mengelola dokumen administrasi, dan monitoring.
+                        </p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+                <div class="bg-center bg-cover rounded-2xl"
+                    style="background-image: url('./images/contributor/lp/skills/frontend.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Front-End Developer</h4>
+                        <p>Membuat dan bertanggungjawab dalam web programmer Laravel, React JS, dan lain-lain.</p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+                <div class="bg-center bg-cover rounded-2xl"
+                    style="background-image: url('./images/contributor/lp/skills/designer.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Designer</h4>
+                        <p>Meliputi desain konten harian dan campaign dan terlibat dalam design sprint untuk UI produk.
+                        </p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+                <div class="bg-center bg-cover rounded-2xl hidden"
+                    style="background-image: url('./images/contributor/lp/skills/qa.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Quality Assurance</h4>
+                        <p>Meliputi melakukan improvement Quality Assurance secara teknikal dan teoritis.</p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+                <div class="bg-center bg-cover rounded-2xl hidden"
+                    style="background-image: url('./images/contributor/lp/skills/sales.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Sales</h4>
+                        <p>Meliputi mengelola data siswa Bootcamp dan berkomunikasi langsung dengan siswa da mentor.</p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+                <div class="bg-center bg-cover rounded-2xl hidden"
+                    style="background-image: url('./images/contributor/lp/skills/backend.jpg');">
+                    <div
+                        class="rounded-2xl flex flex-col items-center gap-4 bg-gradient-to-t from-black to-transparent px-12 py-8 pt-24 2xl:pt-44 h-full justify-end">
+                        <h4 class="font-bold text-4xl">Back-End Developer</h4>
+                        <p>Meliputi menciptakan, mengintegrasikan, dan mengelola database. Melaporkan analisis dan
+                            statistik
+                            produk.</p>
+                        <a href="#" class="rounded-3xl bg-eduwork-main px-7 py-2 font-medium">Daftar</a>
+                    </div>
+                </div>
+            </div>
+            <button id="open-all-skills-btn" onclick="openAllSkills()"
+                class="bg-eduwork-main text-white rounded-lg px-5 py-2 mt-5 z-20">Buka
+                Semua</button>
+        </div>
+        <div id="skills-overlay"
+            class="w-full absolute bottom-28 h-24 bg-gradient-to-t from-white from-90% to-transparent z-10"></div>
+    </section>
+    <!-- End of Skills -->
+
+    <!-- Industri Leader -->
+    <div
+        class="w-[90%] lg:w-[1016px] flex gap-10 flex-col md:flex-row container mx-auto z-40 mt-[50px] md:mt-[100px] pb-20">
+        <div class="flex flex-col gap-4">
+            <h1 class="text-[30px] text-primary font-semibold">
+                Benefit Community Contributor
+            </h1>
+            <p class="text-[#606060]">
+                Sekali kamu join, semua fasilitas berikut dapat kamu manfaatkan untuk pengembangan personal sebagai
+                Community Contributor.
+            </p>
+            <div class="flex flex-col gap-5">
+                <div class="flex gap-2 items-start">
+                    <img src="./images/internship/ic-stundet-leader.png" alt="" />
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-lg font-semibold">Live Mentoring dengan C-level</h1>
+                        <p class="text-[#606060]">
+                            Dengan melakukan apa yang benar daripada yang mudah, Anda mengembangkan kepemimpinan yang
+                            menunjukkan integritas.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-2 items-start">
+                    <img src="./images/internship/ic-stundet-leader.png" alt="" />
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-lg font-semibold">Project berbasis Case-Study</h1>
+                        <p class="text-[#606060]">
+                            Dengan melakukan apa yang benar daripada yang mudah, Anda
+                            mengembangkan kepemimpinan yang menunjukkan integritas.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-2 items-start">
+                    <img src="./images/internship/ic-stundet-leader.png" alt="" />
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-lg font-semibold">Pegalaman Magang Remote</h1>
+                        <p class="text-[#606060]">
+                            Dengan melakukan apa yang benar daripada yang mudah, Anda
+                            mengembangkan kepemimpinan yang menunjukkan integritas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./images/contributor/lp/img4.png" alt="Industri Leader" class="w-[493px]" />
+    </div>
+
+    <!-- Claim -->
+    <div class="bg-white py-16">
+        <section class="container mx-auto px-5 md:px-20 xl:px-48 2xl:px-60 flex flex-col gap-16">
+            <h2 class="text-eduwork-main font-semibold text-3xl md:text-5xl text-center lg:20 xl:px-40">Yang Bisa Kamu
+                Klaim di
+                Akhir Program
+            </h2>
+            <div class="flex flex-col gap-16 lg:gap-0">
+                <div class="flex flex-col-reverse lg:flex-row lg:items-center gap-16">
+                    <div class="flex flex-col gap-7 w-full">
+                        <h3 class="font-bold text-3xl md:text-5xl text-eduwork-neutral-100">Portofolio berkualitas!</h3>
+                        <p class="text-lg text-eduwork-text-paragraph">Bangun portofolio tanpa repot kerja on-site hanya
+                            dalam 3 bulan. CV kamu akan dipenuhi dengan project berbasis KPI & OKR nyata juga terukur.
+                        </p>
+                    </div>
+                    <div class="w-full bg-center bg-cover aspect-[20/21] rounded-2xl shadow-2xl"
+                        style="background-image: url('./images/contributor/lp/claim/img1.jpg');"></div>
+                </div>
+                <div class="flex flex-col-reverse lg:flex-row-reverse lg:items-center gap-16">
+                    <div class="flex flex-col gap-7 w-full lg:text-end">
+                        <h3 class="font-bold text-3xl md:text-5xl text-eduwork-neutral-100">Siap masuk kerja!</h3>
+                        <p class="text-lg text-eduwork-text-paragraph">Misi mentor kami adalah membimbing kamu sampai
+                            mumpuni, sehingga menjadi kandidat kompetitif dan menarik di mata rekruter.</p>
+                    </div>
+                    <div class="w-full bg-center bg-cover aspect-[20/21] rounded-2xl shadow-2xl"
+                        style="background-image: url('./images/contributor/lp/claim/img2.jpg');"></div>
+                </div>
+                <div class="flex flex-col-reverse lg:flex-row lg:items-center gap-16">
+                    <div class="flex flex-col gap-7 w-full">
+                        <h3 class="font-bold text-3xl md:text-5xl text-eduwork-neutral-100">Jadi spesialis Tech!</h3>
+                        <p class="text-lg text-eduwork-text-paragraph">Gak perlu khawatir gimana caranya bisa masuk IT
+                            industry. Pengalaman magang di Startup bisa jadi batu loncatan untuk tembus dunia IT, loh!
+                        </p>
+                    </div>
+                    <div class="w-full bg-center bg-cover aspect-[20/21] rounded-2xl shadow-2xl"
+                        style="background-image: url('./images/contributor/lp/claim/img3.jpg');"></div>
+                </div>
+                <div class="flex flex-col-reverse lg:flex-row-reverse lg:items-center gap-16">
+                    <div class="flex flex-col gap-7 w-full lg:text-end">
+                        <h3 class="font-bold text-3xl md:text-5xl text-eduwork-neutral-100">Jalin networking dengan
+                            experts! </h3>
+                        <p class="text-lg text-eduwork-text-paragraph">Maksimalkan peluang kerja kamu dengan networking
+                            sebanyak-banyaknya.
+                            Yuk, kolaborasi bareng mereka yang sudah tahunan di industri!
+                        </p>
+                    </div>
+                    <div class="w-full bg-center bg-cover aspect-[20/21] rounded-2xl shadow-2xl"
+                        style="background-image: url('./images/contributor/lp/claim/img4.jpg');"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End of Claim -->
+
+    <!-- Program -->
+    <div class="relative w-[90%] lg:w-[1016px] flex flex-col container mx-auto z-40 mt-[50px] md:mt-[100px] pb-20">
+        <div class="mb-[40px] flex flex-col justify-center items-center text-center">
+            <h1 class="font-semibold text-[25px] md:text-[30px] text-primary">
+                Bangun Karier Berkelanjutan Bersama Alumni Connect
+            </h1>
+            <p class="text-[14px] md:text-[16px] text-[#818181]">
+                Setelah jadi alumni, kamu bisa terus beraktivitas bersama Eduwork melalui kegiatan-kegiatan di bawah.
+            </p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-5 items-stretch text-white">
+            <div class="w-full md:w-1/3 rounded-xl bg-center bg-cover"
+                style="background-image: url('./images/contributor/lp/alumni/img1.jpg');">
+                <div
+                    class="rounded-xl flex flex-col gap-4 bg-gradient-to-t from-black to-transparent px-7 py-8 pt-36 h-full justify-end">
+                    <h3 class="font-semibold text-2xl">Alumni Networking</h3>
+                    <p class="text-lg">Kamu bisa meet up dengan ex-kontributor se-Indonesia. Kenalan dengan ribuan
+                        profesional yang
+                        satu visi dan misi denganmu!</p>
+                </div>
+            </div>
+            <div class="w-full md:w-2/3 flex flex-col gap-5">
+                <div class="rounded-xl bg-center bg-cover"
+                    style="background-image: url('./images/contributor/lp/alumni/img2.jpg');">
+                    <div
+                        class="rounded-xl flex flex-col gap-4 bg-gradient-to-t from-black to-transparent px-7 py-8 pt-36 h-full justify-end">
+                        <h3 class="font-semibold text-2xl">Bantuan Karir dari Eduwork</h3>
+                        <p class="text-lg">Eduwork menghargai semua perubahan yang telah kamu berikan. Kami
+                            menawarkan layanan lanjutan dimana ex-kontributor terus updates & tips seputar industri.
+                        </p>
+                    </div>
+                </div>
+                <div class="rounded-xl bg-center bg-cover"
+                    style="background-image: url('./images/contributor/lp/alumni/img3.jpg');">
+                    <div
+                        class="rounded-xl flex flex-col gap-4 bg-gradient-to-t from-black to-transparent px-7 py-8 pt-36 h-full justify-end">
+                        <h3 class="font-semibold text-2xl">Eksklusif Akses: Webinar & Kelas</h3>
+                        <p class="text-lg">Program khusus untuk para Life-long learner yang berdedikasi penuh pada
+                            pengembangan diri. Bedanya dengan kelas biasa, kamu akan berproses bersama
+                            ex-kontributor lainnya.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story -->
+    <section class="bg-white w-full pb-20 pt-10 lg:pt-20 relative">
+        <div class="relative flex flex-col container mx-auto z-40 w-[90%] lg:w-[1026px]">
+            <h1 class="font-semibold text-[25px] md:text-[30px] text-primary text-center mb-14">
+                Para Kontributor
+            </h1>
+            <div class="flex flex-col md:flex-row justify-between items-center mb-[50px] gap-6">
+                <div class="flex gap-5 flex-row flex-wrap w-full items-center whitespace-nowrap py-5 md:py-0">
+                    <button id="category1"
+                        class="category-btn bg-primary hover:bg-primary hover:text-white px-5 py-2 text-white rounded-lg font-medium transition-all">
+                        All
+                    </button>
+                    <button id="category2"
+                        class="category-btn bg-[#E7F1FF] hover:bg-primary px-5 py-2 text-[#6C6E71] hover:text-white rounded-lg font-medium transition-all">
+                        Laravel
+                    </button>
+                    <button id="category3"
+                        class="category-btn bg-[#E7F1FF] hover:bg-primary px-5 py-2 text-[#6C6E71] hover:text-white rounded-lg font-medium transition-all">
+                        React Js
+                    </button>
+                    <button id="category4"
+                        class="category-btn bg-[#E7F1FF] hover:bg-primary px-5 py-2 text-[#6C6E71] hover:text-white rounded-lg font-medium transition-all">
+                        UI/UX
+                    </button>
+                </div>
+                <div class="flex items-center gap-3 whitespace-nowrap">
+                    <p>Sort by :</p>
+                    <select name="short" id="short"
+                        class="bg-[#E7F1FF] border-none focus:ring-0 rounded-lg font-medium text-[#6C6E71]">
+                        <option value="newest">Latest Project</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-1.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Salsabilla Putri</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Admin Sales</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-2.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Vania Amadilla</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Finance</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-3.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Ryan Suwarsono</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Programmer</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-4.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Karina Putri R</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Talent TikTok</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-5.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Fahmi Al Ayyubi</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor UI/UX Designer</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-6.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Salsabilla Putri</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Programmer</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-7.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Ahmad Fadillah</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Graphic Designer</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-8.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Nadila Syafarina</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Content Creative</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-9.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Karina Putri R</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Admin HRD</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-10.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Farah Aqilahidah</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Asisten CMO</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-11.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Stephen Wongso</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Debt Management</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-12.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Amanda Putriani</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Product Manager</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-13.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Syifa Septiani</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Digital Marketing</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-14.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Karisma Oktaviani</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor General Affair</span>
+                </div>
+                <div class="flex flex-col">
+                    <img src="./images/contributor/contributor-15.png" alt=""
+                        class="rounded-lg mb-5 aspect-square object-cover">
+                    <span class="text-eduwork-text-base text-lg font-semibold">Langit Fajar</span>
+                    <span class="text-eduwork-text-paragraph">Kontributor Video/Animator</span>
+                </div>
+            </div>
+            <!-- <button
+                class="self-center border border-[#C6C6C6] py-2 px-6 rounded-lg mt-12 font-montserrat font-medium text-[18px] hover:bg-primary hover:text-white hover:border-0">
+                See More
+            </button> -->
+            <a href="/list_contributor.html"
+                class="bg-eduwork-main text-white rounded-lg px-5 py-2 mt-10 self-center z-30">Lihat
+                Semua</a>
+        </div>
+        <img src="./images/contributor/lp/wave-bg.svg" alt="" class="w-full absolute bottom-0 z-20">
+        <div class="w-full absolute bottom-0 h-[500px] bg-gradient-to-t from-white to-transparent z-30"></div>
+    </section>
+
+    <!-- C Level -->
+    <section class="bg-white pb-16">
+        <div class="container mx-auto px-5 lg:px-20 xl:px-32 2xl:px-60 flex flex-col gap-7 items-center">
+            <h2 class="text-eduwork-main text-3xl font-semibold text-center">Mentor dari Kalangan C-level</h2>
+            <p class="text-eduwork-text-paragraph text-center lg:px-52">Puluhan mentor dengan rata-rata 5+ tahun
+                pengalaman
+                di
+                perusahaan
+                teknologi dan digital siap membimbing kamu sampai bisa.</p>
+            <div class="swiper mySwiper-c lg:px-20">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex items-center justify-center">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="./images/contributor/lp/c-level/dodi.jpeg" alt=""
+                                class="rounded-2xl mb-4 w-60 h-64 shadow-2xl object-cover">
+                            <span class="text-eduwork-text-base text-2xl">Dodi Prakoso Wibowo</span>
+                            <span class="text-eduwork-text-paragraph">CEO Elvron.com</span>
+                            <img src="./images/contributor/lp/c-level/elvron-logo.png" alt="" class="w-12">
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex items-center justify-center">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="./images/contributor/lp/c-level/bayu.jpeg" alt=""
+                                class="rounded-2xl mb-4 w-60 h-64 shadow-2xl object-cover">
+                            <span class="text-eduwork-text-base text-2xl">Bayu Ahmad Baihaqi</span>
+                            <span class="text-eduwork-text-paragraph">COO Eduwork.id</span>
+                            <img src="./images/contributor/lp/c-level/eduwork-logo.png" alt="" class="w-20 mt-2">
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex items-center justify-center">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="./images/contributor/lp/c-level/anita.jpeg" alt=""
+                                class="rounded-2xl mb-4 w-60 h-64 shadow-2xl object-cover">
+                            <span class="text-eduwork-text-base text-2xl">Anita Agustina</span>
+                            <span class="text-eduwork-text-paragraph">VP of Sales and Marketing</span>
+                            <img src="./images/contributor/lp/c-level/eduwork-logo.png" alt="" class="w-20 mt-2">
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="swiper-Button-prev-c w-8 h-8 bg-eduwork-main rounded-full text-white flex items-center justify-center absolute top-[40%] left-0 z-20"><i
+                        class="bi bi-chevron-left"></i></button>
+                <button
+                    class="swiper-Button-next-c w-8 h-8 bg-eduwork-main rounded-full text-white flex items-center justify-center absolute top-[40%] right-0 z-20"><i
+                        class="bi bi-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <!-- End of C Level -->
+
+    <!-- Testimoni -->
+    <div
+        class="w-[90%] lg:w-full flex flex-col md:flex-row mt-28 container ml-auto md:pl-[16rem] items-center gap-0 md:gap-11 pb-10">
+        <div>
+            <p class="text-[24px] font-semibold text-primary">Testimoni</p>
+            <h1 class="text-[30px] font-semibold">
+                Cerita Para Kontributor
+            </h1>
+            <div class="mt-5">
+                <button class="swiper-Button-prev">
+                    <svg class="fill-primary btn-prev" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.0359 25.9353C22.175 25.7966 22.2853 25.6317 22.3606 25.4503C22.4359 25.2688 22.4746 25.0743 22.4746 24.8778C22.4746 24.6814 22.4359 24.4869 22.3606 24.3054C22.2853 24.1239 22.175 23.9591 22.0359 23.8203L16.2159 18.0003L22.0359 12.1803C22.3164 11.8999 22.474 11.5195 22.474 11.1228C22.474 10.7262 22.3164 10.3458 22.0359 10.0653C21.7555 9.78487 21.3751 9.6273 20.9784 9.6273C20.5818 9.6273 20.2014 9.78487 19.9209 10.0653L13.0359 16.9503C12.8969 17.0891 12.7866 17.2539 12.7113 17.4354C12.636 17.6169 12.5973 17.8114 12.5973 18.0078C12.5973 18.2043 12.636 18.3988 12.7113 18.5803C12.7866 18.7617 12.8969 18.9266 13.0359 19.0653L19.9209 25.9503C20.4909 26.5203 21.4509 26.5203 22.0359 25.9353Z" />
+                    </svg>
+                </button>
+                <button class="swiper-Button-next">
+                    <svg class="fill-primary btn-next" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.9641 10.0647C13.825 10.2034 13.7147 10.3683 13.6394 10.5497C13.5641 10.7312 13.5254 10.9257 13.5254 11.1222C13.5254 11.3186 13.5641 11.5131 13.6394 11.6946C13.7147 11.8761 13.825 12.0409 13.9641 12.1797L19.7841 17.9997L13.9641 23.8197C13.6836 24.1001 13.526 24.4805 13.526 24.8772C13.526 25.2738 13.6836 25.6542 13.9641 25.9347C14.2445 26.2151 14.6249 26.3727 15.0216 26.3727C15.4182 26.3727 15.7986 26.2151 16.0791 25.9347L22.9641 19.0497C23.1031 18.9109 23.2134 18.7461 23.2887 18.5646C23.364 18.3831 23.4027 18.1886 23.4027 17.9922C23.4027 17.7957 23.364 17.6012 23.2887 17.4197C23.2134 17.2383 23.1031 17.0734 22.9641 16.9347L16.0791 10.0497C15.5091 9.47967 14.5491 9.47967 13.9641 10.0647Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="swiper mySwiper flex flex-col items-center gap-4 pb-14">
+            <div class="swiper-wrapper gap-5 flex flex-row items-stretch">
+                <div class="swiper-slide h-auto bg-white rounded-xl p-[22px] flex flex-col gap-3 h-full">
+                    <img src="./images/contributor/quotes.png" alt="" class="w-[41px]" />
+                    <h1 class="text-[16px] text-[#6C6E71]">
+                        Program Magang sangat membantu dalam banyak hal untuk memulai
+                        karir saya di dunia kerja. Problem case yang sama dengan
+                        perusahaan membantu saya unutk bisa menjawab setiap business
+                        cases.
+                    </h1>
+                    <div class="h-[1px] w-full bg-black/20"></div>
+                    <div class="flex gap-5">
+                        <img src="./images/contributor/testi-1.png" alt="" class="rounded-[10px] w-[63px] h-[61px]" />
+                        <div>
+                            <h2 class="text-[24px] font-semibold">Salsabilla Putri</h2>
+                            <p class="text-[16px] text-[#818181]">
+                                Kontributor Admin Sales
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide h-auto bg-white rounded-xl p-[22px] flex flex-col gap-3 h-full">
+                    <img src="./images/contributor/quotes.png" alt="" class="w-[41px]" />
+                    <h1 class="text-[16px] text-[#6C6E71]">
+                        Program Magang sangat membantu dalam banyak hal untuk memulai
+                        karir saya di dunia kerja. Problem case yang sama dengan
+                        perusahaan membantu saya unutk bisa menjawab setiap business
+                        cases.
+                    </h1>
+                    <div class="h-[1px] w-full bg-black/20"></div>
+                    <div class="flex gap-5">
+                        <img src="./images/contributor/testi-1.png" alt="" class="rounded-[10px] w-[63px] h-[61px]" />
+                        <div>
+                            <h2 class="text-[24px] font-semibold">Stephen
+                                Wongso</h2>
+                            <p class="text-[16px] text-[#818181]">
+                                Kontributor Debt
+                                Management
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide h-auto bg-white rounded-xl p-[22px] flex flex-col gap-3 h-full">
+                    <img src="./images/contributor/quotes.png" alt="" class="w-[41px]" />
+                    <h1 class="text-[16px] text-[#6C6E71]">
+                        Program Magang sangat membantu dalam banyak hal untuk memulai
+                        karir saya di dunia kerja. Problem case yang sama dengan
+                        perusahaan membantu saya unutk bisa menjawab setiap business
+                        cases.
+                    </h1>
+                    <div class="h-[1px] w-full bg-black/20"></div>
+                    <div class="flex gap-5">
+                        <img src="./images/contributor/testi-1.png" alt="" class="rounded-[10px] w-[63px] h-[61px]" />
+                        <div>
+                            <h2 class="text-[24px] font-semibold">Natasha Amalia Putri</h2>
+                            <p class="text-[16px] text-[#818181]">
+                                Peserta Internship Staff Admin
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide h-auto bg-white rounded-xl p-[22px] flex flex-col gap-3 h-full">
+                    <img src="./images/contributor/quotes.png" alt="" class="w-[41px]" />
+                    <h1 class="text-[16px] text-[#6C6E71]">
+                        Program Magang sangat membantu dalam banyak hal untuk memulai
+                        karir saya di dunia kerja. Problem case yang sama dengan
+                        perusahaan membantu saya unutk bisa menjawab setiap business
+                        cases.
+                    </h1>
+                    <div class="h-[1px] w-full bg-black/20"></div>
+                    <div class="flex gap-5">
+                        <img src="./images/contributor/testi-1.png" alt="" class="rounded-[10px] w-[63px] h-[61px]" />
+                        <div>
+                            <h2 class="text-[24px] font-semibold">Natasha Amalia Putri</h2>
+                            <p class="text-[16px] text-[#818181]">
+                                Peserta Internship Staff Admin
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination md:hidden"></div>
+        </div>
+    </div>
+
+    <!-- Rekrutmen -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-5 lg:px-20 xl:px-48 2xl:px-60 flex flex-col gap-5">
+            <h2 class="text-3xl text-eduwork-main font-semibold text-center">Proses Rekrutmen Transparan dan Cepat </h2>
+            <p class="text-eduwork-text-paragraph text-center">Timeline kerja Community Contributor bisa dipilih dari
+                3-6
+                bulan sesuai kebutuhan kamu!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 mt-5">
+                <div class="bg-white rounded-lg shadow-2xl px-4 pb-3 flex flex-col gap-1">
+                    <div
+                        class="rounded-full w-10 h-10 flex items-center justify-center bg-eduwork-main text-white -translate-y-3">
+                        1</div>
+                    <h3 class="text-eduwork-text-heading text-xl font-semibold">Registrasi Akun</h3>
+                    <p class="text-eduwork-text-paragraph">Buat akun Upscale dan masukkan identitas umum.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-2xl px-4 pb-3 flex flex-col gap-1">
+                    <div
+                        class="rounded-full w-10 h-10 flex items-center justify-center bg-eduwork-main text-white -translate-y-3">
+                        2</div>
+                    <h3 class="text-eduwork-text-heading text-xl font-semibold">Daftar Kontrbutor</h3>
+                    <p class="text-eduwork-text-paragraph">Pilih posisi pilihanmu di program Komunitas Kontributor.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-2xl px-4 pb-3 flex flex-col gap-1">
+                    <div
+                        class="rounded-full w-10 h-10 flex items-center justify-center bg-eduwork-main text-white -translate-y-3">
+                        3</div>
+                    <h3 class="text-eduwork-text-heading text-xl font-semibold">Interview</h3>
+                    <p class="text-eduwork-text-paragraph">Booking jadwal interview bersama HRD dan User.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-2xl px-4 pb-3 flex flex-col gap-1">
+                    <div
+                        class="rounded-full w-10 h-10 flex items-center justify-center bg-eduwork-main text-white -translate-y-3">
+                        4</div>
+                    <h3 class="text-eduwork-text-heading text-xl font-semibold">Onboarding</h3>
+                    <p class="text-eduwork-text-paragraph">Product Manager dan User akan memberikan pengenalan dan
+                        sharing
+                        knowledge terkait pekerjaan kamu.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-2xl px-4 pb-3 flex flex-col gap-1">
+                    <div
+                        class="rounded-full w-10 h-10 flex items-center justify-center bg-eduwork-main text-white -translate-y-3">
+                        5</div>
+                    <h3 class="text-eduwork-text-heading text-xl font-semibold">Bangun Portofolio</h3>
+                    <p class="text-eduwork-text-paragraph">Kerjakan proyek-proyek digital bersama teman-teman
+                        kontributor
+                        lainnya!</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-2xl px-4 pb-3 flex flex-col gap-1">
+                    <div
+                        class="rounded-full w-10 h-10 flex items-center justify-center bg-eduwork-main text-white -translate-y-3">
+                        6</div>
+                    <h3 class="text-eduwork-text-heading text-xl font-semibold">Dapat Sertifikat</h3>
+                    <p class="text-eduwork-text-paragraph">Klaim sertifikat dan bagikan pengalaman magang kamu di
+                        Eduwork.id
+                        dan platform digital lainnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Rekrutmen -->
+
+    <!-- Download App -->
+    <div class="w-[90%] lg:w-[1016px] container mx-auto mt-12 md:mt-28">
+        <section class="relative w-full rounded-[30px] bg-gradient-to-r from-primary/60 to-primary/5 px-5 md:px-[33px]">
+            <div class="relative flex flex-col-reverse gap-4 md:flex-row items-end">
+                <div class="w-full px-1 lg:w-1/2">
+                    <div class="relative flex w-full items-end justify-end">
+                        <div class="mr-0 w-full md:mr-4">
+                            <img src="./images/alumni-connects/img-app-1.png" alt="" class="relative z-10" />
+                        </div>
+                        <div class="-ml-10 w-full md:ml-0">
+                            <img src="./images/alumni-connects/img-app-2.png" alt="" class="relative z-0" />
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-1 md:px-9 lg:w-1/2">
+                    <div class="flex max-w-[500px] flex-col gap-7 py-[40px] md:py-[90px]">
+                        <h1 class="text-[36px] font-semibold leading-[45px]">
+                            Download Aplikasi Upscale
+                        </h1>
+                        <div class="flex flex-col md:flex-row gap-[10px] md:gap-[20px]">
+                            <a href="#">
+                                <img class="h-[45px] md:h-[47px]" src="./images/alumni-connects/btn-app-store.png"
+                                    alt="" />
+                            </a>
+                            <a href="#">
+                                <img class="h-[45px] md:h-[47px]" src="./images/alumni-connects/btn-google-play.png"
+                                    alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FAQ -->
+    <div class="container mx-auto mt-[100px]">
+        <section class="relative w-[90%] mx-auto h-fit md:w-full lg:w-[1016px] lg:h-[581px] z-10">
+            <h4 class="text-center text-[24px] md:text-[24px] font-semibold font-montserrat text-primary mb-[27px]">
+                Frequently Asked Question
+            </h4>
+            <h2
+                class="text-center lg:mx-[111px] font-semibold font-montserrat text-[16px] lg:text-[30px] text-[#202020] mb-[56px]">
+                Apa yang ingin kamu ketahui? Temukan jawabannya di sini.
+            </h2>
+            <div class="columns-1 md:columns-2 gap-[42px]">
+                <div
+                    class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] mb-[27px] cursor-pointer">
+                    <div
+                        class="label w-[100%] text-[14px] lg:w-[499px] h-fit lg:h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[20px] font-[600] px-[18px] py-[15px] flex flex-row items-center justify-between gap-[22px]">
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy"
+                                class="w-[36px] h-[36px] md:w-[46px] md:h-[46px] p-[6px] md:p-[8px] bg-[#187cff] rounded-[50%]"
+                                src="./images/svg/Enter.svg" alt="" />
+                            <h2>Apa itu Komunitas Kontributor</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="my-[10px] mx-[15px]">
+                            Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit
+                            amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem
+                            ipsum dolor sit amet consectetur.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 mb-[27px] rounded-[15px] cursor-pointer">
+                    <div
+                        class="label w-[100%] text-[14px] lg:w-[499px] h-fit lg:h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[20px] font-[600] px-[18px] py-[15px] flex flex-row items-center justify-between gap-[22px]">
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy"
+                                class="w-[36px] h-[36px] md:w-[46px] md:h-[46px] p-[6px] md:p-[8px] bg-[#187cff] rounded-[50%]"
+                                src="./images/svg/Cheque.svg" alt="" />
+                            <h2>Apakah ada Persyaratan Khusus</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="my-[10px] mx-[15px]">
+                            Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 mb-[27px] rounded-[15px] cursor-pointer">
+                    <div
+                        class="label w-[100%] text-[14px] lg:w-[499px] h-fit lg:h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[20px] font-[600] px-[18px] py-[15px] flex flex-row items-center justify-between gap-[22px]">
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy"
+                                class="w-[36px] h-[36px] md:w-[46px] md:h-[46px] p-[6px] md:p-[8px] bg-[#187cff] rounded-[50%]"
+                                src="./images/svg/Class.svg" alt="" />
+                            <h2>Panduan Pendaftaran</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="my-[10px] mx-[15px]">
+                            Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 mb-[27px] rounded-[15px] cursor-pointer">
+                    <div
+                        class="label w-[100%] text-[14px] lg:w-[499px] h-fit lg:h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[20px] font-[600] px-[18px] py-[15px] flex flex-row items-center justify-between gap-[22px]">
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy"
+                                class="w-[36px] h-[36px] md:w-[46px] md:h-[46px] p-[6px] md:p-[8px] bg-[#187cff] rounded-[50%]"
+                                src="./images/svg/Multiple Choice.svg" alt="" />
+                            <h2 class="w-[154px] md:w-fit">
+                                Proses Seleksinya Kontributor
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="my-[10px] mx-[15px]">
+                            Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 mb-[27px] rounded-[15px] cursor-pointer">
+                    <div
+                        class="label w-[100%] text-[14px] lg:w-[499px] h-fit lg:h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[20px] font-[600] px-[18px] py-[15px] flex flex-row items-center justify-between gap-[22px]">
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy"
+                                class="w-[36px] h-[36px] md:w-[46px] md:h-[46px] p-[6px] md:p-[8px] bg-[#187cff] rounded-[50%]"
+                                src="./images/svg/Book.svg" alt="" />
+                            <h2 class="w-[154px] md:w-fit">Apakah dipungut Biaya</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="my-[10px] mx-[15px]">
+                            Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 mb-[27px] rounded-[15px] cursor-pointer">
+                    <div
+                        class="label w-[100%] text-[14px] lg:w-[499px] h-fit lg:h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[20px] font-[600] px-[18px] py-[15px] flex flex-row items-center justify-between gap-[22px]">
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy"
+                                class="w-[36px] h-[36px] md:w-[46px] md:h-[46px] p-[6px] md:p-[8px] bg-[#187cff] rounded-[50%]"
+                                src="./images/svg/Static View Level2.svg" alt="" />
+                            <h2>Berapa Banyak Perusahaannya</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="my-[10px] mx-[15px]">
+                            Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 mb-[27px] rounded-[15px] cursor-pointer">
+                    <div
+                        class="label w-[100%] text-[14px] lg:w-[499px] h-fit lg:h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[20px] font-[600] px-[18px] py-[15px] flex flex-row items-center justify-between gap-[22px]">
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy"
+                                class="w-[36px] h-[36px] md:w-[46px] md:h-[46px] p-[6px] md:p-[8px] bg-[#187cff] rounded-[50%]"
+                                src="./images/svg/Briefcase.svg" alt="" />
+                            <h2>Bagaimana Setelah Magang</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="my-[10px] mx-[15px]">
+                            Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="acc w-full lg:w-fit h-fit text-[#202020] overflow-hidden shadow-s2 rounded-[15px] cursor-pointer">
+                    <div
+                        class="label w-[100%] text-[14px] lg:w-[499px] h-fit lg:h-[82px] font-['Montserrat'] relative bg-[#ffffff] text-[#202020] lg:text-[20px] font-[600] px-[18px] py-[15px] flex flex-row items-center justify-between gap-[22px]">
+                        <div class="flex items-center gap-4">
+                            <img loading="lazy"
+                                class="w-[36px] h-[36px] md:w-[46px] md:h-[46px] p-[6px] md:p-[8px] bg-[#187cff] rounded-[50%]"
+                                src="./images/svg/Tags.svg" alt="" />
+                            <h2>Bagaimana Budaya Kerjanya</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="my-[10px] mx-[15px]">
+                            Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer section -->
+    <section class="relative w-full h-[1270px] md:h-[1070px] pb-[20px] md:pb-0">
+        <div class="container mx-auto relative">
+            <div
+                class="absolute w-[90%] mx-auto left-1/2 -translate-x-1/2 h-fit lg:w-fit lg:h-[575px] md:pt-[86px] top-[267px]">
+                <div class="flex flex-col gap-[23px] md:flex-row text-[#ffffff]">
+                    <div class="md:w-[237.51px]">
+                        <img loading="lazy" class="w-[250px] h-[48.53px] lg:w-fit md:h-fit mx-auto md:mx-0"
+                            src="./images/logo/favicon-white.svg" alt="" srcset="" />
+                        <p class="text-[16px] md:text-[14px] mt-[37.56px] mb-[18px] text-center md:text-left">
+                            When an unknown printer took a galley of type and make a type
+                            specimen book.
+                        </p>
+                        <div class="flex flex-row mb-[60.08px]">
+                            <div class="inline-flex gap-[22px] mx-auto md:mx-0">
+                                <img loading="lazy" src="./images/svg/white-instagram.svg" alt="" srcset="" />
+                                <img loading="lazy" src="./images/svg/white-twitter.svg" alt="" srcset="" />
+                                <img loading="lazy" src="./images/svg/white-youtube.svg" alt="" srcset="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns-2 flex flex-row md:ml-[80.49px] justify-between">
+                        <div class="flex flex-col gap-[41px] w-[159.78px] h-[375px]">
+                            <div class="h-fit">
+                                <h1 class="font-[600] text-[18px] mb-[20px]">Explore Us</h1>
+                                <ul class="text-[14px] md:text-[12px]">
+                                    <a href="">
+                                        <li class="mb-[12px]">Kelas</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">Our Mentors</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">For Corporate</li>
+                                    </a>
+                                    <a href="">
+                                        <li>Community</li>
+                                    </a>
+                                </ul>
+                            </div>
+
+                            <div class="h-[167px]">
+                                <h1 class="font-[600] text-[18px] mb-[20px]">Our Services</h1>
+                                <ul class="text-[14px] md:text-[12px]">
+                                    <a href="">
+                                        <li class="mb-[12px]">Free Event</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">Video Course</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">Bootcamp</li>
+                                    </a>
+                                    <a href="">
+                                        <li>Private Mentoring</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-[41px] w-fit md:w-[198px] h-[375px] text-left">
+                            <div class="h-fit">
+                                <h1 class="font-[600] text-[18px] mb-[20px]">Category</h1>
+                                <ul class="text-[14px] md:text-[12px]">
+                                    <a href="">
+                                        <li class="mb-[12px]">Mobile Developer</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">Website Developer</li>
+                                    </a>
+                                    <a href="">
+                                        <li class="mb-[12px]">UI/UX Designer</li>
+                                    </a>
+                                    <a href="">
+                                        <li>Graphic Designer</li>
+                                    </a>
+                                </ul>
+                            </div>
+
+                            <div class="h-[167px]">
+                                <h1 class="font-[600] text-[18px] mb-[20px]">Office</h1>
+                                <ul class="text-[14px] md:text-[12px]">
+                                    <li class="mb-[12px]">PT Eduwork.id</li>
+                                    <li class="mb-[12px]">Jl. Ring Road Utara No 24</li>
+                                    <li class="mb-[12px]">Yogyakarta. Indonesia</li>
+                                    <a href="">
+                                        <li>team@eduwork.id</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1 class="font-[600] text-[18px] mt-[60px] md:mt-0 mb-[10px] text-center md:text-left">
+                            Promotions
+                        </h1>
+                        <ul class="text-[14px] md:text-[12px]">
+                            <a href="">
+                                <li class="mb-[12px] text-center md:text-left">
+                                    Submit your email for new updates
+                                </li>
+                            </a>
+                            <li class="flex flex-row">
+                                <input
+                                    class="rounded-l-[5px] bg-[#f6fcff] w-full md:w-[190.01px] h-[55px] border border-white text-[#404040]"
+                                    type="email" name="" id="" />
+                                <button
+                                    class="w-[50.09px] rounded-r-[5px] h-[55px] mb-5 md:mb-0 bg-[#a1b0c7] border border-white px-[13px]">
+                                    <img loading="lazy" class="w-[28px] h-[28px]" src="./images/svg/mail.svg" />
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:absolute bottom-0 text-center md:text-left">
+                    <p class="text-[#ffffff] text-[14px] mt-[53px] md:mt-0 md:text-[12px]">
+                        © EduWork 2020 - 2021 . All rights reserved.
+                    </p>
+                </div>
+                <div
+                    class="md:absolute md:right-0 md:bottom-0 md:float-right flex md:flex-row md:justify-between md:gap-[50px]">
+                    <div class="mx-auto md:mx-0">
+                        <p class="text-[#ffffff] text-[14px] mt-[12px] md:mt-0 md:text-[12px]">
+                            Privacy and policy
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-[#ffffff] md:flex hidden text-[12px]">Terms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave-footer xl:min-w-[1340px]"></div>
+        <div class="absolute bottom-0 w-full xl:min-w-[1340px] h-full md:h-[981px] bg-footer -z-50"></div>
+    </section>
+</body>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+<script>
+    // FAQ code
+    let label = document.querySelectorAll(".acc");
+
+    label.forEach((e) => {
+        e.addEventListener("click", () => {
+            removeClass();
+            e.classList.toggle("active");
+        });
+    });
+
+    function removeClass() {
+        label.forEach((e) => {
+            e.classList.remove("active");
+        });
+    }
+    // Event Scroll
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-90px";
+        }
+        prevScrollpos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY >= 100) {
+            document.getElementById("navbar").style.backgroundColor = "#ffffff";
+            document.getElementById("navbar").style.boxShadow =
+                "0 0 10px rgba(0,0,0,0.1)";
+        } else {
+            document.getElementById("navbar").style.backgroundColor = "transparent";
+            document.getElementById("navbar").style.boxShadow = "none";
+        }
+    });
+
+    // Kontributor category code
+    const categoryButtons = document.querySelectorAll('.category-btn')
+    categoryButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            categoryButtons.forEach(btn => {
+                btn.classList.replace('bg-primary', 'bg-[#E7F1FF]')
+                btn.classList.replace('text-white', 'text-[#6C6E71]')
+            })
+            btn.classList.replace('bg-[#E7F1FF]', 'bg-primary')
+            btn.classList.replace('text-[#6C6E71]', 'text-white')
+        })
+    })
+
+    // Skill category code
+    const skillCategoryButtons = document.querySelectorAll('.skill-btn')
+    skillCategoryButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            skillCategoryButtons.forEach(btn => {
+                btn.classList.remove('bg-eduwork-main')
+                btn.classList.replace('text-white', 'text-eduwork-main')
+            })
+            btn.classList.add('bg-eduwork-main')
+            btn.classList.replace('text-eduwork-main', 'text-white')
+        })
+    })
+
+    function openAllSkills() {
+        let lastThreeElements = Array.from(document.getElementById("skills").children).slice(-3)
+        lastThreeElements.forEach(el => {
+            el.classList.remove('hidden')
+        })
+        document.getElementById('skills-overlay').classList.add('hidden')
+        document.getElementById('open-all-skills-btn').classList.add('hidden')
+    }
+</script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "slide",
+        direction: "horizontal",
+        centerdSlides: true,
+        slideToClickedSlide: true,
+        autoplay: {
+            delay: 5000,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            520: {
+                slidesPerView: 1,
+            },
+            720: {
+                slidesPerView: 2,
+            },
+        },
+        grabCursor: true,
+        slidesPerGroup: 1,
+        navigation: {
+            nextEl: ".swiper-Button-next",
+            prevEl: ".swiper-Button-prev",
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+    });
+
+    var swiper_c = new Swiper(".mySwiper-c", {
+        effect: "slide",
+        direction: "horizontal",
+        centerdSlides: true,
+        slideToClickedSlide: true,
+        autoplay: {
+            delay: 5000,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            800: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+        },
+        grabCursor: true,
+        // slidesPerGroup: 1,
+        navigation: {
+            nextEl: ".swiper-Button-next-c",
+            prevEl: ".swiper-Button-prev-c",
+        },
+        loop: true,
+    });
+    // var btnNext = document.querySelector(".btn-next");
+    // var btnPrev = document.querySelector(".btn-prev");
+    // btnPrev.classList.add("fill-gray-300");
+    // console.log(swiper.slides.length);
+    // swiper.on("slideChange", function () {
+    //   var realIndex = swiper.realIndex;
+    //   if (realIndex == 0) {
+    //     btnPrev.classList.add("fill-gray-300");
+    //   } else {
+    //     btnPrev.classList.remove("fill-gray-300");
+    //   }
+    //   if (realIndex == swiper.slides.length - 1) {
+    //     btnNext.classList.add("fill-gray-300");
+    //   } else {
+    //     btnNext.classList.remove("fill-gray-300");
+    //   }
+    // });
+</script>
+
+</html>
